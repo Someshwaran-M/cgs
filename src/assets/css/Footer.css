@@ -1,0 +1,348 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* ═══════════════════════════════════════════════════════════
+   BASE
+═══════════════════════════════════════════════════════════ */
+.footer {
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  padding: 50px 10% 25px;
+  position: relative;
+  overflow: hidden;
+  background-color: #080e1a;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   VIDEO BACKGROUND
+═══════════════════════════════════════════════════════════ */
+.footer-video {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   OVERLAY — deep navy blue (distinct from services bg)
+═══════════════════════════════════════════════════════════ */
+.footer-overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: -1;
+  background:
+    radial-gradient(ellipse at top left,     rgba(30, 90, 255, 0.22), transparent 45%),
+    radial-gradient(ellipse at bottom right, rgba(0,  60, 200, 0.18), transparent 45%),
+    linear-gradient(
+      160deg,
+      #080e1a 0%,
+      #0b1222 40%,
+      #0d1530 70%,
+      #08101f 100%
+    );
+}
+
+/* ═══════════════════════════════════════════════════════════
+   MOBILE-ONLY BLOCKS — hidden by default, shown at ≤600 px
+═══════════════════════════════════════════════════════════ */
+.footer-mobile-header,
+.footer-mobile-nav {
+  display: none;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   DESKTOP — TOP SECTION
+═══════════════════════════════════════════════════════════ */
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 60px;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+}
+
+/* LEFT */
+.footer-left {
+  max-width: 400px;
+}
+
+/* Shine title */
+.footer-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 60px;
+  font-weight: 700;
+  line-height: 1.1;
+  color: #ffffff;
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.footer-title::after {
+  content: "";
+  position: absolute;
+  top: 0; left: -120%;
+  width: 60%; height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255,255,255,0.04),
+    rgba(100,180,255,0.45),
+    rgba(255,255,255,0.04)
+  );
+  transform: skewX(-20deg);
+  animation: rectShine 3.5s ease-in-out infinite;
+}
+
+@keyframes rectShine {
+  0%   { left: -120%; }
+  100% { left:  140%; }
+}
+
+/* Tagline */
+.footer-tagline {
+  font-family: 'Poppins', sans-serif;
+  margin-top: 16px;
+  font-size: 14px;
+  color: rgba(180, 210, 255, 0.75);
+  line-height: 1.6;
+  max-width: 380px;
+}
+
+/* Desktop social icons */
+.footer-socials {
+  display: flex;
+  gap: 14px;
+  margin-top: 28px;
+  align-items: center;
+}
+
+.footer-socials a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: rgba(30, 100, 255, 0.12);
+  border: 1px solid rgba(60, 140, 255, 0.22);
+  color: #7eb8ff;
+  text-decoration: none;
+  transition: background 0.3s, color 0.3s, transform 0.3s;
+}
+
+.footer-socials a:hover {
+  background: #1e55cc;
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+/* RIGHT — two link columns */
+.footer-right {
+  display: flex;
+  gap: 80px;
+}
+
+.footer-links h4 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  margin-bottom: 20px;
+  color: rgba(120, 180, 255, 0.80);
+  text-transform: uppercase;
+}
+
+.footer-links a {
+  font-family: 'Poppins', sans-serif;
+  display: block;
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: rgba(200, 225, 255, 0.80);
+  text-decoration: none;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.footer-links a:hover {
+  color: #60a5fa;
+  transform: translateX(5px);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   BOTTOM BAR
+═══════════════════════════════════════════════════════════ */
+.footer-bottom {
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(60, 120, 255, 0.18);
+  padding-top: 25px;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+}
+
+/* Logo + brand name in one line */
+.footer-copy {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.footer-copy img {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+}
+
+/* Brand name — "CodeGenze" white, "Solutions" blue — one line */
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.footer-brand-name {
+  font-family: 'Poppins', sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: #ffffff;
+  white-space: nowrap;
+  letter-spacing: 0.3px;
+}
+
+.footer-brand-name span {
+  color: #3b82f6;             /* blue "Solutions" */
+}
+
+.footer-copy-year {
+  font-family: 'Poppins', sans-serif;
+  font-size: 11px;
+  color: rgba(140, 180, 255, 0.55);
+  margin-top: 2px;
+  white-space: nowrap;
+}
+
+/* Scroll-top arrow — blue glow */
+.scroll-top {
+  width: 42px; height: 42px;
+  background: rgba(30, 80, 220, 0.20);
+  border: 1.5px solid rgba(60, 140, 255, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  color: #60a5fa;
+  box-shadow: 0 0 14px rgba(59, 130, 246, 0.35);
+  transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+}
+
+.scroll-top:hover {
+  transform: scale(1.12) translateY(-2px);
+  background: rgba(30, 80, 220, 0.40);
+  box-shadow: 0 0 24px rgba(59, 130, 246, 0.65), 0 0 6px rgba(59, 130, 246, 0.40);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   TABLET  (≤900 px)
+═══════════════════════════════════════════════════════════ */
+@media (max-width: 900px) {
+  .footer-title { font-size: 40px; }
+  .footer-right  { gap: 40px; }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   MOBILE  (≤600 px)
+═══════════════════════════════════════════════════════════ */
+@media (max-width: 600px) {
+
+  .footer {
+    padding: 36px 6% 20px;
+    text-align: center;
+  }
+
+  .footer-top { display: none; }
+
+  /* ── mobile header: logo + name only ── */
+  .footer-mobile-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 28px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .footer-mobile-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .footer-mobile-logo img { width: 30px; }
+
+  .footer-mobile-logo span {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #fff;
+  }
+
+  /* ── nav grid: 2 cols × 3 rows ── */
+  .footer-mobile-nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px 36px;
+    margin: 0 auto 32px;
+    width: 100%;
+    max-width: 280px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .footer-mobile-nav a {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: rgba(200, 225, 255, 0.85);
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    transition: color 0.3s;
+  }
+
+  .footer-mobile-nav a:hover { color: #60a5fa; }
+
+  .footer-mobile-nav a svg {
+    width: 15px; height: 15px;
+    opacity: 0.75;
+    flex-shrink: 0;
+    stroke: currentColor;
+  }
+
+  /* ── bottom bar ── */
+  .footer-bottom {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+    margin-top: 0;
+    border-top: 1px solid rgba(60, 120, 255, 0.18);
+    padding-top: 20px;
+  }
+
+  .footer-copy img { display: none; }
+
+  .footer-brand-name { font-size: 14px; }
+
+  .footer-copy-year { font-size: 10px; }
+
+  .scroll-top { display: none; }
+}

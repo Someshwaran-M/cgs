@@ -1,0 +1,504 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+.career-page {
+  overflow-x: hidden;
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.career-hero {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  background-color: #1a2e52; /* Dark blue to blend with image edges */
+  overflow: hidden;
+}
+
+.hero-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Fills the screen to remove gaps */
+  object-position: center top; /* Keeps the top visible so text isn't cropped */
+  z-index: 1;
+  transition: opacity 1s ease-in-out;
+}
+
+
+
+.hero-overlay {
+  display: none; /* Hide overlay so the baked-in text is bright and clear */
+}
+
+.career-hero-text {
+  position: relative;
+  z-index: 3;
+  padding: 0 10%;
+  max-width: 860px;
+}
+
+.career-hero-text h1 {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.career-hero-text p {
+  font-size: 18px;
+  max-width: 600px;
+  margin: auto;
+  line-height: 1.7;
+  opacity: 0.92;
+}
+
+/* ============================================================
+   INTRO
+   ============================================================ */
+.career-intro {
+  padding: 80px 10%;
+  background: #f5f7fb;
+}
+
+.intro-container {
+  display: flex;
+  gap: 60px;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.intro-image {
+  flex: 1;
+}
+
+.intro-image img {
+  width: 100%;
+  border-radius: 8px; /* Square shape with a tiny polish */
+  transition: 0.4s;
+}
+
+.intro-image img:hover {
+  transform: scale(1.04);
+}
+
+.intro-text {
+  flex: 1;
+}
+
+.intro-text h5 {
+  font-size: 13px;
+  letter-spacing: 2px;
+  color: #234587;
+  margin-bottom: 10px;
+}
+
+.intro-text h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1a2e52;
+  margin-bottom: 16px;
+  line-height: 1.3;
+}
+
+.line {
+  width: 60px;
+  height: 3px;
+  background: #234587;
+  margin-bottom: 20px;
+  border-radius: 2px;
+}
+
+.intro-text p {
+  font-size: 14.5px;
+  color: #555;
+  line-height: 1.75;
+  margin-bottom: 14px;
+}
+
+.intro-btn {
+  margin-top: 10px;
+  padding: 12px 28px;
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.intro-btn:hover {
+  background: #234587;
+  transform: translateY(-2px);
+}
+
+/* ============================================================
+   BENEFITS
+   ============================================================ */
+.career-benefits {
+  padding: 80px 10%;
+  text-align: center;
+  background: #f8f9fb;
+}
+
+.benefit-main-title {
+  font-size: 28px;
+  margin-bottom: 10px;
+  color: #234587;
+  font-weight: 600;
+}
+
+.benefit-subtext {
+  max-width: 900px;
+  margin: 0 auto 40px;
+  color: #555;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.benefit-row {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.benefit-item {
+  max-width: 200px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.benefit-item svg {
+  color: #000;
+  margin-bottom: 12px;
+  transition: all 0.3s ease;
+}
+
+.benefit-item:hover svg {
+  color: #234587;
+  transform: translateY(-5px) scale(1.15);
+}
+
+.benefit-item h4 {
+  font-size: 16px;
+  margin-bottom: 6px;
+  color: #222;
+}
+
+.benefit-item p {
+  font-size: 13px;
+  color: #666;
+  line-height: 1.5;
+}
+
+.benefit-item:hover {
+  transform: translateY(-6px);
+}
+
+/* ============================================================
+   WHO WE ARE LOOKING FOR
+   ============================================================ */
+.career-looking {
+  position: relative;
+  padding: 100px 10%;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  color: #000;
+  background-color: #ffffff;
+}
+
+.looking-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: contain; /* Shrinks the image slightly so it's fully visible without cropping */
+  background-repeat: no-repeat;
+  background-position: right center; /* Moves the image to the right corner */
+  z-index: 1;
+  animation: curvePanY 15s ease-in-out infinite alternate;
+}
+
+@keyframes curvePanY {
+  0% { transform: translateY(3%); }
+  100% { transform: translateY(-3%); }
+}
+
+.looking-overlay {
+  display: none;
+}
+
+.looking-container {
+  position: relative;
+  z-index: 3;
+  max-width: 1000px;
+  width: 100%;
+  text-align: center;
+}
+
+.looking-container h2 {
+  font-size: 36px;
+  font-weight: 600;
+  color: #234587;
+}
+
+.looking-line {
+  width: 100px;
+  height: 3px;
+  background: #000;
+  margin: 15px auto 40px;
+  border-radius: 2px;
+}
+
+.looking-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  text-align: left;
+}
+
+.looking-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.looking-list li {
+  font-size: 16px;
+  color: #000;
+  margin-bottom: 20px;
+  line-height: 1.6;
+  position: relative;
+  padding-left: 24px;
+}
+
+.looking-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 8px;
+  height: 8px;
+  background: #234587;
+  border-radius: 50%;
+}
+
+/* ============================================================
+   OPPORTUNITIES IMAGE
+   ============================================================ */
+.career-opportunities {
+  padding: 80px 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f8f9fb;
+}
+
+.opportunity-image-wrapper {
+  max-width: 900px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.opportunity-image-wrapper img {
+  width: 100%;
+  max-width: 800px;
+  border-radius: 12px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+  animation: floatZoom 6s ease-in-out infinite;
+}
+
+@keyframes floatZoom {
+  0%   { transform: translateY(0) scale(1); }
+  50%  { transform: translateY(-15px) scale(1.03); }
+  100% { transform: translateY(0) scale(1); }
+}
+
+.opportunity-image-wrapper img:hover {
+  transform: scale(1.05);
+  transition: 0.4s;
+}
+
+/* ============================================================
+   JOIN SECTION
+   ============================================================ */
+.career-join {
+  position: relative;
+  padding: 120px 10%;
+  text-align: center;
+  color: #000;
+  overflow: hidden;
+  cursor: pointer;
+  background: black;
+}
+
+.join-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center; /* Centers the image, moving it up from bottom */
+  z-index: 1;
+  transition: transform 0.4s ease;
+}
+
+.join-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0);
+  transition: 0.4s;
+  z-index: 2;
+}
+
+.join-content {
+  position: relative;
+  z-index: 3;
+}
+
+.join-content h2 {
+  font-size: 38px;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+.join-hover {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 0.4s ease;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.join-hover p {
+  font-size: 15px;
+  line-height: 1.75;
+  color: #222;
+}
+
+/* HOVER REVEAL */
+.career-join:hover .join-overlay {
+  background: rgba(255, 255, 255, 0.85);
+}
+
+.career-join:hover .join-image {
+  transform: scale(1.05);
+}
+
+.career-join:hover .join-hover {
+  opacity: 1;
+  transform: translateY(0);
+  margin-top: 20px;
+}
+
+/* ============================================================
+   ANIMATION UTILITY
+   ============================================================ */
+.fade-up {
+  animation: fadeUp 1s ease;
+}
+
+@keyframes fadeUp {
+  0%   { opacity: 0; transform: translateY(40px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 900px) {
+  .intro-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .line {
+    margin: 0 auto 20px;
+  }
+
+  .benefit-row {
+    gap: 30px;
+  }
+
+  .benefit-item {
+    max-width: 140px;
+  }
+
+  .benefit-subtext {
+    font-size: 14px;
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .career-hero-text h1 {
+    font-size: 30px;
+  }
+
+  .career-hero-text p {
+    font-size: 15px;
+  }
+
+  .career-opportunities {
+    padding: 60px 20px;
+  }
+
+  .opportunity-image-wrapper img {
+    max-width: 100%;
+  }
+
+  /* Always show join content on mobile (touch has no hover) */
+  .join-overlay {
+    background: rgba(255, 255, 255, 0.85);
+  }
+
+  .join-hover {
+    opacity: 1;
+    transform: none;
+    margin-top: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .looking-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .career-hero-text h1 {
+    font-size: 26px;
+  }
+
+  .looking-container h2 {
+    font-size: 26px;
+  }
+
+  .intro-text h2 {
+    font-size: 22px;
+  }
+}
+
