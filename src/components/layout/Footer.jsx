@@ -1,206 +1,421 @@
-import "../../assets/css/Footer.css";
-import logo from "../../assets/images/logo/Logo.png";
-import footerVideo from "../../assets/videos/Footer.mp4";
-import { ArrowUp, Mail, Facebook, Instagram, Linkedin } from "lucide-react";
+import React from "react";
+import {
+  ArrowUpRight,
+  Mail,
+  Phone,
+  MapPin,
+  Linkedin,
+  Twitter,
+  Instagram,
+  Facebook,
+} from "lucide-react";
 
-/* ── Nav icons (inline SVG for full control) ── */
-const IcoHome = () => (
-  <svg
-    viewBox="0 0 24 24"
-    fill="none"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
-    <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" />
-  </svg>
-);
-const IcoAbout = () => (
-  <svg
-    viewBox="0 0 24 24"
-    fill="none"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
-    <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z" />
-  </svg>
-);
-const IcoServices = () => (
-  <svg
-    viewBox="0 0 24 24"
-    fill="none"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
-    <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
-  </svg>
-);
-const IcoCareer = () => (
-  <svg
-    viewBox="0 0 24 24"
-    fill="none"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
-    <circle cx="12" cy="12" r="10" />
-  </svg>
-);
-const IcoInternships = () => (
-  <svg
-    viewBox="0 0 24 24"
-    fill="none"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
-    <path d="M20 7H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z" />
-    <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" />
-  </svg>
-);
-const IcoContact = () => (
-  <svg
-    viewBox="0 0 24 24"
-    fill="none"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
-    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-    <polyline points="22,6 12,13 2,6" />
-  </svg>
-);
+const Footer = () => {
+  const companyLinks = [
+    { name: "About Us", href: "#about" },
+    { name: "Services", href: "#services" },
+    { name: "Projects", href: "#projects" },
+    { name: "Contact", href: "#contact" },
+  ];
 
-/* ────────────────────────────────────────────────────────── */
+  const exploreLinks = [
+    { name: "Pricing", href: "#pricing" },
+    { name: "Internship", href: "#internship" },
+    { name: "Careers", href: "#careers" },
+    { name: "Testimonials", href: "#testimonials" },
+    { name: "FAQ", href: "#faq" },
+    { name: "Blog", href: "#blog" },
+  ];
 
-function Footer() {
-  const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
+  const socialLinks = [
+    {
+      name: "LinkedIn",
+      href: "#",
+      icon: Linkedin,
+    },
+    {
+      name: "Twitter",
+      href: "#",
+      icon: Twitter,
+    },
+    {
+      name: "Instagram",
+      href: "#",
+      icon: Instagram,
+    },
+    {
+      name: "Facebook",
+      href: "#",
+      icon: Facebook,
+    },
+  ];
 
   return (
-    <footer className="footer">
-      {/* VIDEO BACKGROUND */}
-      <video autoPlay loop muted playsInline className="footer-video">
-        <source src={footerVideo} type="video/mp4" />
-      </video>
-      <div className="footer-overlay" />
+    <footer className="bg-[#061525] text-white">
 
-      {/* ════════════════════════════════════════════
-          MOBILE HEADER — logo + name only (no icons)
-      ════════════════════════════════════════════ */}
-      <div className="footer-mobile-header">
-        <div className="footer-mobile-logo">
-          <img src={logo} alt="CodeGenz logo" />
-          <span>CODEGENZ</span>
+      {/* =====================================================
+          MAIN FOOTER
+      ====================================================== */}
+
+      <div className="mx-auto max-w-[1680px] px-8 py-20 xl:px-12">
+
+        <div className="grid grid-cols-4 gap-16">
+
+          {/* =================================================
+              BRAND
+          ================================================== */}
+
+          <div className="col-span-1">
+
+            <a
+              href="#home"
+              className="inline-flex items-center"
+            >
+              <img
+                src="/logo.png"
+                alt="CodeGenZ Solutions"
+                className="h-[78px] w-auto object-contain"
+              />
+            </a>
+
+            <p
+              className="
+                mt-6
+                max-w-[300px]
+                text-[13px]
+                leading-7
+                text-white/45
+              "
+            >
+              Building modern digital solutions that transform
+              ideas into meaningful technology experiences.
+            </p>
+
+            {/* SOCIAL */}
+
+            <div className="mt-7 flex items-center gap-3">
+
+              {socialLinks.map((social) => {
+                const Icon = social.icon;
+
+                return (
+                  <a
+                    key={social.name}
+                    href={social.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={social.name}
+                    className="
+                      flex
+                      h-10
+                      w-10
+                      items-center
+                      justify-center
+                      rounded-full
+                      border
+                      border-white/[0.10]
+                      text-white/45
+                      transition-all
+                      duration-300
+                      hover:border-[#5EA6FF]
+                      hover:bg-[#1769C2]
+                      hover:text-white
+                    "
+                  >
+                    <Icon size={15} strokeWidth={1.5} />
+                  </a>
+                );
+              })}
+
+            </div>
+          </div>
+
+          {/* =================================================
+              COMPANY
+          ================================================== */}
+
+          <div>
+
+            <p
+              className="
+                mb-7
+                text-[9px]
+                font-semibold
+                tracking-[0.3em]
+                text-[#63A9FF]
+              "
+            >
+              COMPANY
+            </p>
+
+            <div className="flex flex-col gap-4">
+
+              {companyLinks.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  className="
+                    group
+                    flex
+                    w-fit
+                    items-center
+                    gap-2
+                    text-[12px]
+                    tracking-[0.08em]
+                    text-white/50
+                    transition-colors
+                    duration-300
+                    hover:text-white
+                  "
+                >
+                  {link.name}
+
+                  <ArrowUpRight
+                    size={13}
+                    className="
+                      opacity-0
+                      transition-all
+                      duration-300
+                      group-hover:translate-x-1
+                      group-hover:opacity-100
+                    "
+                  />
+                </a>
+              ))}
+
+            </div>
+          </div>
+
+          {/* =================================================
+              EXPLORE
+          ================================================== */}
+
+          <div>
+
+            <p
+              className="
+                mb-7
+                text-[9px]
+                font-semibold
+                tracking-[0.3em]
+                text-[#63A9FF]
+              "
+            >
+              EXPLORE
+            </p>
+
+            <div className="flex flex-col gap-4">
+
+              {exploreLinks.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  className="
+                    group
+                    flex
+                    w-fit
+                    items-center
+                    gap-2
+                    text-[12px]
+                    tracking-[0.08em]
+                    text-white/50
+                    transition-colors
+                    duration-300
+                    hover:text-white
+                  "
+                >
+                  {link.name}
+
+                  <ArrowUpRight
+                    size={13}
+                    className="
+                      opacity-0
+                      transition-all
+                      duration-300
+                      group-hover:translate-x-1
+                      group-hover:opacity-100
+                    "
+                  />
+                </a>
+              ))}
+
+            </div>
+          </div>
+
+          {/* =================================================
+              CONTACT
+          ================================================== */}
+
+          <div>
+
+            <p
+              className="
+                mb-7
+                text-[9px]
+                font-semibold
+                tracking-[0.3em]
+                text-[#63A9FF]
+              "
+            >
+              GET IN TOUCH
+            </p>
+
+            {/* EMAIL */}
+
+            <a
+              href="mailto:info@codegenzsolutions.com"
+              className="
+                group
+                mb-5
+                flex
+                items-start
+                gap-3
+                text-white/55
+                transition-colors
+                duration-300
+                hover:text-white
+              "
+            >
+              <Mail
+                size={16}
+                strokeWidth={1.4}
+                className="mt-1 shrink-0 text-[#5EA6FF]"
+              />
+
+              <div>
+                <span className="block text-[9px] tracking-[0.2em] text-white/25">
+                  EMAIL
+                </span>
+
+                <span className="mt-1 block text-[12px]">
+                  info@codegenzsolutions.com
+                </span>
+              </div>
+            </a>
+
+            {/* PHONE */}
+
+            <a
+              href="tel:+919384712673"
+              className="
+                group
+                mb-5
+                flex
+                items-start
+                gap-3
+                text-white/55
+                transition-colors
+                duration-300
+                hover:text-white
+              "
+            >
+              <Phone
+                size={16}
+                strokeWidth={1.4}
+                className="mt-1 shrink-0 text-[#5EA6FF]"
+              />
+
+              <div>
+                <span className="block text-[9px] tracking-[0.2em] text-white/25">
+                  PHONE
+                </span>
+
+                <span className="mt-1 block text-[12px]">
+                  +91 93847 12673
+                </span>
+              </div>
+            </a>
+
+            {/* LOCATION */}
+
+            <div className="flex items-start gap-3 text-white/55">
+              <MapPin
+                size={16}
+                strokeWidth={1.4}
+                className="mt-1 shrink-0 text-[#5EA6FF]"
+              />
+
+              <div>
+                <span className="block text-[9px] tracking-[0.2em] text-white/25">
+                  LOCATION
+                </span>
+
+                <span className="mt-1 block text-[12px]">
+                  Tamil Nadu, India
+                </span>
+              </div>
+            </div>
+
+          </div>
+
         </div>
       </div>
+      {/* =====================================================
+          COPYRIGHT
+      ====================================================== */}
 
-      {/* ════════════════════════════════════════════
-          MOBILE NAV — 6 items, 2 cols × 3 rows
-          HOME      | ABOUT
-          SERVICES  | CAREER
-          INTERNSHIPS | CONTACT
-      ════════════════════════════════════════════ */}
-      <nav className="footer-mobile-nav">
-        <a href="#">
-          <IcoHome />
-          HOME
-        </a>
-        <a href="#">
-          <IcoAbout />
-          ABOUT
-        </a>
-        <a href="#">
-          <IcoServices />
-          SERVICES
-        </a>
-        <a href="#">
-          <IcoCareer />
-          CAREER
-        </a>
-        <a href="#">
-          <IcoInternships />
-          INTERNSHIPS
-        </a>
-        <a href="#">
-          <IcoContact />
-          CONTACT
-        </a>
-      </nav>
+      <div className="border-t border-white/[0.06] bg-[#04111F]">
 
-      {/* ════════════════════════════════════════════
-          DESKTOP TOP SECTION
-      ════════════════════════════════════════════ */}
-      <div className="footer-top">
-        {/* LEFT */}
-        <div className="footer-left">
-          <h1 className="footer-title">CodeGenz Solutions</h1>
+        <div
+          className="
+            mx-auto
+            flex
+            max-w-[1680px]
+            items-center
+            justify-between
+            px-8
+            py-5
+            xl:px-12
+          "
+        >
 
-          <p className="footer-tagline">
-            Simple, effective solutions built to perform — from idea to
-            execution.
+          <p
+            className="
+              text-[9px]
+              tracking-[0.08em]
+              text-white/25
+            "
+          >
+            © {new Date().getFullYear()} CodeGenZ Solutions.
+            All rights reserved.
           </p>
 
-          {/* Desktop social icons */}
-          <div className="footer-socials">
-            <a href="mailto:hello@codegenz.com" aria-label="Email">
-              <Mail size={16} />
+          <div className="flex items-center gap-6">
+
+            <a
+              href="#privacy"
+              className="
+                text-[9px]
+                tracking-[0.08em]
+                text-white/25
+                transition-colors
+                hover:text-white
+              "
+            >
+              Privacy Policy
             </a>
-            <a href="#" aria-label="Facebook">
-              <Facebook size={16} />
+
+            <a
+              href="#terms"
+              className="
+                text-[9px]
+                tracking-[0.08em]
+                text-white/25
+                transition-colors
+                hover:text-white
+              "
+            >
+              Terms & Conditions
             </a>
-            <a href="#" aria-label="Instagram">
-              <Instagram size={16} />
-            </a>
-            <a href="#" aria-label="LinkedIn">
-              <Linkedin size={16} />
-            </a>
+
           </div>
+
         </div>
 
-        {/* RIGHT — two columns */}
-        <div className="footer-right">
-          <div className="footer-links">
-            <h4>COMPANY</h4>
-            <a href="#">Home</a>
-            <a href="#">About Us</a>
-            <a href="#">Services</a>
-            <a href="#">Projects</a>
-            <a href="#">Careers</a>
-            <a href="#">Internships</a>
-            <a href="#">Contact</a>
-          </div>
-        </div>
       </div>
 
-      {/* ════════════════════════════════════════════
-          BOTTOM BAR  (shared — desktop + mobile)
-      ════════════════════════════════════════════ */}
-      <div className="footer-bottom">
-        {/* Logo + brand — matches navbar style */}
-        <div className="footer-copy">
-          <img src={logo} alt="CodeGenze logo" />
-          <div className="footer-brand">
-            <span className="footer-brand-name">
-              CodeGenze <span>Solutions</span>
-            </span>
-            <span className="footer-copy-year">© 2026 CODEGENZE SOLUTIONS</span>
-          </div>
-        </div>
-
-        {/* Scroll top — blue glow */}
-        <div
-          className="scroll-top"
-          onClick={scrollToTop}
-          role="button"
-          aria-label="Scroll to top"
-        >
-          <ArrowUp size={18} />
-        </div>
-      </div>
     </footer>
   );
-}
+};
 
 export default Footer;

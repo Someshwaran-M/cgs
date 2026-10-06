@@ -1,44 +1,50 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
-import Header from "../layout/Header";
+import Navbar from "../layout/Navbar";
 import Footer from "../layout/Footer";
 
-import Home from "../pages/Home";
-import AboutPage from "../pages/AboutPage";
-import ServicesPage from "../pages/ServicesPage";
-import CareerPage from "../pages/CareerPage";
-import InternshipsPage from "../pages/InternshipsPage";
-import ContactPage from "../pages/ContactPage";
+// Pages
+import Home from "../../Pages/Home";
+import About from "../../Pages/About";
+import Services from "../../Pages/Services";
+import Contact from "../../Pages/Contact";
+import Project from "../../Pages/Project";
 
-import { PageLoaderProvider } from "./PageLoaderProvider";
-import CursorFollower from "./CursorFollower";
+import Pricing from "../../Pages/Menu/Pricing";
+import Internship from "../../Pages/Menu/Internship";
+import Career from "../../Pages/Menu/Career";
+import Testimonials from "../../Pages/Menu/Testimonials";
+import Faq from "../../Pages/Menu/Faq";
+import Blog from "../../Pages/Menu/Blog";
+import FollowUs from "../../Pages/Menu/FollowUs";
 
-function CommonPath() {
+const CommonPath = () => {
   return (
-    <Router>
-      <PageLoaderProvider>
-        {/* Global Cursor */}
-        <CursorFollower />
+    <div className="min-h-screen bg-white">
+      <Navbar />
 
-        {/* Navbar */}
-        <Header />
-
-        {/* Routes */}
+      <main>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/services" element={<ServicesPage />} />
-          <Route path="/career" element={<CareerPage />} />
-          <Route path="/internships" element={<InternshipsPage />} />
-          <Route path="/contact" element={<ContactPage />} />
-        </Routes>
+          <Route path="/about" element={<About />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/projects" element={<Project />} />
+          <Route path="/contact" element={<Contact />} />
 
-        {/* Footer */}
-        <Footer />
-      </PageLoaderProvider>
-    </Router>
+          <Route path="/pricing" element={<Pricing />} />
+          <Route path="/internship" element={<Internship />} />
+          <Route path="/career" element={<Career />} />
+          <Route path="/testimonials" element={<Testimonials />} />
+          <Route path="/faq" element={<Faq />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/follow-us" element={<FollowUs />} />
+        </Routes>
+      </main>
+
+      <Footer />
+    </div>
   );
-}
+};
 
 export default CommonPath;
