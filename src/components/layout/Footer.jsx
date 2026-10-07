@@ -1,100 +1,193 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
-  ArrowUpRight,
   Mail,
   Phone,
   MapPin,
   Linkedin,
-  Twitter,
   Instagram,
   Facebook,
+  ArrowUp,
+  ArrowUpRight,
+  MessageCircle,
 } from "lucide-react";
 
 const Footer = () => {
+  // ============================================
+  // SCROLL TO TOP
+  // ============================================
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
+  // ============================================
+  // WHATSAPP
+  // ============================================
+  const whatsappMessage = encodeURIComponent(
+    "Hello CodeGenZ Solutions, I would like to discuss a project with you."
+  );
+
+  const whatsappUrl = `https://wa.me/919384712673?text=${whatsappMessage}`;
+
+  // ============================================
+  // COMPANY LINKS
+  // ============================================
   const companyLinks = [
-    { name: "About Us", href: "#about" },
-    { name: "Services", href: "#services" },
-    { name: "Projects", href: "#projects" },
-    { name: "Contact", href: "#contact" },
+    {
+      name: "Home",
+      href: "/",
+    },
+    {
+      name: "About Us",
+      href: "/about",
+    },
+    {
+      name: "Services",
+      href: "/services",
+    },
+    {
+      name: "Our Process",
+      href: "/our-process",
+    },
+    {
+      name: "Contact",
+      href: "/contact",
+    },
   ];
 
+  // ============================================
+  // EXPLORE LINKS
+  // ============================================
   const exploreLinks = [
-    { name: "Pricing", href: "#pricing" },
-    { name: "Internship", href: "#internship" },
-    { name: "Careers", href: "#careers" },
-    { name: "Testimonials", href: "#testimonials" },
-    { name: "FAQ", href: "#faq" },
-    { name: "Blog", href: "#blog" },
+    {
+      name: "Projects",
+      href: "/projects",
+    },
+    {
+      name: "Pricing",
+      href: "/pricing",
+    },
+    {
+      name: "Internship",
+      href: "/internship",
+    },
+    {
+      name: "Careers",
+      href: "/careers",
+    },
+    {
+      name: "Testimonials",
+      href: "/testimonials",
+    },
+    {
+      name: "FAQ",
+      href: "/faq",
+    },
+    {
+      name: "Blog",
+      href: "/blog",
+    },
   ];
 
+  // ============================================
+  // SOCIAL LINKS
+  // ============================================
   const socialLinks = [
     {
       name: "LinkedIn",
-      href: "#",
+      href: "https://www.linkedin.com/company/codegenzsolutions/",
       icon: Linkedin,
     },
     {
-      name: "Twitter",
-      href: "#",
-      icon: Twitter,
-    },
-    {
       name: "Instagram",
-      href: "#",
+      href: "https://www.instagram.com/codegenzsolutions?stkn=MXI2dW9qY2h0N3hmdQ==",
       icon: Instagram,
     },
     {
       name: "Facebook",
-      href: "#",
+      href: "https://www.facebook.com/share/19gZhW65uq/",
       icon: Facebook,
     },
   ];
 
+  // ============================================
+  // CONTACT DETAILS
+  // ============================================
+  const contactDetails = [
+    {
+      icon: Mail,
+      label: "EMAIL",
+      value: "info@codegenzsolutions.com",
+      href: "mailto:info@codegenzsolutions.com",
+    },
+    {
+      icon: Phone,
+      label: "PHONE",
+      value: "+91 93847 12673",
+      href: "tel:+919384712673",
+    },
+    {
+      icon: MapPin,
+      label: "LOCATION",
+      value: "Tamil Nadu, India",
+      href: "https://www.google.com/maps/search/?api=1&query=Tamil+Nadu%2C+India",
+    },
+  ];
+
   return (
-    <footer className="bg-[#061525] text-white">
+    <footer className="relative overflow-hidden bg-[#061525] font-['Roboto'] text-white">
+      {/* =========================================================
+          BACKGROUND
+      ========================================================= */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div className="absolute -left-40 top-20 h-96 w-96 rounded-full bg-blue-500/[0.025] blur-3xl" />
 
-      {/* =====================================================
+        <div className="absolute -right-40 bottom-20 h-96 w-96 rounded-full bg-cyan-400/[0.02] blur-3xl" />
+
+        <div
+          className="absolute inset-0 opacity-[0.025]"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(255,255,255,0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.4) 1px, transparent 1px)",
+            backgroundSize: "72px 72px",
+          }}
+        />
+      </div>
+
+      {/* =========================================================
           MAIN FOOTER
-      ====================================================== */}
-
-      <div className="mx-auto max-w-[1680px] px-8 py-20 xl:px-12">
-
-        <div className="grid grid-cols-4 gap-16">
-
-          {/* =================================================
-              BRAND
-          ================================================== */}
-
-          <div className="col-span-1">
-
-            <a
-              href="#home"
-              className="inline-flex items-center"
+      ========================================================= */}
+      <div className="relative mx-auto max-w-[1600px] px-6 pb-16 pt-16 sm:px-8 md:px-12 lg:px-14 xl:px-16">
+        <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-[1.45fr_1fr_1fr_1.2fr] lg:gap-10 xl:gap-16">
+          {/* =====================================================
+              COMPANY INFORMATION
+          ===================================================== */}
+          <div className="flex flex-col">
+            {/* LOGO */}
+            <Link
+              to="/"
+              onClick={scrollToTop}
+              className="group mb-7 inline-flex w-fit"
+              aria-label="CodeGenZ Solutions Home"
             >
               <img
                 src="/logo.png"
                 alt="CodeGenZ Solutions"
-                className="h-[78px] w-auto object-contain"
+                className="h-auto w-[105px] object-contain opacity-90 transition duration-300 group-hover:opacity-100"
               />
-            </a>
+            </Link>
 
-            <p
-              className="
-                mt-6
-                max-w-[300px]
-                text-[13px]
-                leading-7
-                text-white/45
-              "
-            >
-              Building modern digital solutions that transform
-              ideas into meaningful technology experiences.
+            {/* DESCRIPTION */}
+            <p className="max-w-[360px] text-[14px] font-normal leading-7 tracking-[0.02em] text-slate-400 sm:text-[15px]">
+              Building modern digital solutions that transform ideas into
+              meaningful technology experiences.
             </p>
 
-            {/* SOCIAL */}
-
-            <div className="mt-7 flex items-center gap-3">
-
+            {/* SOCIAL ICONS */}
+            <div className="mt-8 flex items-center gap-3">
               {socialLinks.map((social) => {
                 const Icon = social.icon;
 
@@ -103,317 +196,165 @@ const Footer = () => {
                     key={social.name}
                     href={social.href}
                     target="_blank"
-                    rel="noreferrer"
+                    rel="noopener noreferrer"
                     aria-label={social.name}
-                    className="
-                      flex
-                      h-10
-                      w-10
-                      items-center
-                      justify-center
-                      rounded-full
-                      border
-                      border-white/[0.10]
-                      text-white/45
-                      transition-all
-                      duration-300
-                      hover:border-[#5EA6FF]
-                      hover:bg-[#1769C2]
-                      hover:text-white
-                    "
+                    className="group flex h-12 w-12 items-center justify-center rounded-full border border-slate-700/80 bg-white/[0.015] text-slate-500 transition-all duration-300 hover:border-[#1683ff]/70 hover:bg-[#1683ff]/10 hover:text-[#1683ff]"
                   >
-                    <Icon size={15} strokeWidth={1.5} />
+                    <Icon
+                      size={17}
+                      strokeWidth={1.6}
+                      className="transition-transform duration-300 group-hover:scale-110"
+                    />
                   </a>
                 );
               })}
-
             </div>
           </div>
 
-          {/* =================================================
-              COMPANY
-          ================================================== */}
-
+          {/* =====================================================
+              COMPANY LINKS
+          ===================================================== */}
           <div>
+            <h3 className="mb-7 text-[11px] font-bold uppercase tracking-[0.32em] text-[#1683ff]">
+              Company
+            </h3>
 
-            <p
-              className="
-                mb-7
-                text-[9px]
-                font-semibold
-                tracking-[0.3em]
-                text-[#63A9FF]
-              "
-            >
-              COMPANY
-            </p>
-
-            <div className="flex flex-col gap-4">
-
+            <nav className="flex flex-col gap-4">
               {companyLinks.map((link) => (
-                <a
+                <Link
                   key={link.name}
-                  href={link.href}
-                  className="
-                    group
-                    flex
-                    w-fit
-                    items-center
-                    gap-2
-                    text-[12px]
-                    tracking-[0.08em]
-                    text-white/50
-                    transition-colors
-                    duration-300
-                    hover:text-white
-                  "
+                  to={link.href}
+                  onClick={scrollToTop}
+                  className="group flex w-fit items-center gap-1 text-[14px] font-medium tracking-[0.04em] text-slate-400 transition-all duration-300 hover:translate-x-1 hover:text-white"
                 >
-                  {link.name}
+                  <span>{link.name}</span>
 
                   <ArrowUpRight
                     size={13}
-                    className="
-                      opacity-0
-                      transition-all
-                      duration-300
-                      group-hover:translate-x-1
-                      group-hover:opacity-100
-                    "
+                    strokeWidth={1.7}
+                    className="opacity-0 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:opacity-100"
                   />
-                </a>
+                </Link>
               ))}
-
-            </div>
+            </nav>
           </div>
 
-          {/* =================================================
+          {/* =====================================================
               EXPLORE
-          ================================================== */}
-
+          ===================================================== */}
           <div>
+            <h3 className="mb-7 text-[11px] font-bold uppercase tracking-[0.32em] text-[#1683ff]">
+              Explore
+            </h3>
 
-            <p
-              className="
-                mb-7
-                text-[9px]
-                font-semibold
-                tracking-[0.3em]
-                text-[#63A9FF]
-              "
-            >
-              EXPLORE
-            </p>
-
-            <div className="flex flex-col gap-4">
-
+            <nav className="flex flex-col gap-4">
               {exploreLinks.map((link) => (
-                <a
+                <Link
                   key={link.name}
-                  href={link.href}
-                  className="
-                    group
-                    flex
-                    w-fit
-                    items-center
-                    gap-2
-                    text-[12px]
-                    tracking-[0.08em]
-                    text-white/50
-                    transition-colors
-                    duration-300
-                    hover:text-white
-                  "
+                  to={link.href}
+                  onClick={scrollToTop}
+                  className="group flex w-fit items-center gap-1 text-[14px] font-medium tracking-[0.04em] text-slate-400 transition-all duration-300 hover:translate-x-1 hover:text-white"
                 >
-                  {link.name}
+                  <span>{link.name}</span>
 
                   <ArrowUpRight
                     size={13}
-                    className="
-                      opacity-0
-                      transition-all
-                      duration-300
-                      group-hover:translate-x-1
-                      group-hover:opacity-100
-                    "
+                    strokeWidth={1.7}
+                    className="opacity-0 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:opacity-100"
                   />
-                </a>
+                </Link>
               ))}
-
-            </div>
+            </nav>
           </div>
 
-          {/* =================================================
-              CONTACT
-          ================================================== */}
-
-          <div>
-
-            <p
-              className="
-                mb-7
-                text-[9px]
-                font-semibold
-                tracking-[0.3em]
-                text-[#63A9FF]
-              "
-            >
+          {/* =====================================================
               GET IN TOUCH
-            </p>
+          ===================================================== */}
+          <div>
+            <h3 className="mb-7 text-[11px] font-bold uppercase tracking-[0.32em] text-[#1683ff]">
+              Get In Touch
+            </h3>
 
-            {/* EMAIL */}
+            <div className="flex flex-col gap-7">
+              {contactDetails.map((item) => {
+                const Icon = item.icon;
 
-            <a
-              href="mailto:info@codegenzsolutions.com"
-              className="
-                group
-                mb-5
-                flex
-                items-start
-                gap-3
-                text-white/55
-                transition-colors
-                duration-300
-                hover:text-white
-              "
-            >
-              <Mail
-                size={16}
-                strokeWidth={1.4}
-                className="mt-1 shrink-0 text-[#5EA6FF]"
-              />
+                return (
+                  <a
+                    key={item.label}
+                    href={item.href}
+                    target={
+                      item.label === "LOCATION" ? "_blank" : undefined
+                    }
+                    rel={
+                      item.label === "LOCATION"
+                        ? "noopener noreferrer"
+                        : undefined
+                    }
+                    className="group flex items-start gap-4"
+                  >
+                    {/* ICON */}
+                    <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center text-[#1683ff]">
+                      <Icon
+                        size={19}
+                        strokeWidth={1.5}
+                        className="transition-transform duration-300 group-hover:scale-110"
+                      />
+                    </div>
 
-              <div>
-                <span className="block text-[9px] tracking-[0.2em] text-white/25">
-                  EMAIL
-                </span>
+                    {/* TEXT */}
+                    <div className="min-w-0">
+                      <p className="mb-1 text-[10px] font-medium uppercase tracking-[0.24em] text-slate-600">
+                        {item.label}
+                      </p>
 
-                <span className="mt-1 block text-[12px]">
-                  info@codegenzsolutions.com
-                </span>
-              </div>
-            </a>
-
-            {/* PHONE */}
-
-            <a
-              href="tel:+919384712673"
-              className="
-                group
-                mb-5
-                flex
-                items-start
-                gap-3
-                text-white/55
-                transition-colors
-                duration-300
-                hover:text-white
-              "
-            >
-              <Phone
-                size={16}
-                strokeWidth={1.4}
-                className="mt-1 shrink-0 text-[#5EA6FF]"
-              />
-
-              <div>
-                <span className="block text-[9px] tracking-[0.2em] text-white/25">
-                  PHONE
-                </span>
-
-                <span className="mt-1 block text-[12px]">
-                  +91 93847 12673
-                </span>
-              </div>
-            </a>
-
-            {/* LOCATION */}
-
-            <div className="flex items-start gap-3 text-white/55">
-              <MapPin
-                size={16}
-                strokeWidth={1.4}
-                className="mt-1 shrink-0 text-[#5EA6FF]"
-              />
-
-              <div>
-                <span className="block text-[9px] tracking-[0.2em] text-white/25">
-                  LOCATION
-                </span>
-
-                <span className="mt-1 block text-[12px]">
-                  Tamil Nadu, India
-                </span>
-              </div>
+                      <p className="break-all text-[13px] font-medium tracking-[0.02em] text-slate-400 transition-colors duration-300 group-hover:text-white sm:text-[14px]">
+                        {item.value}
+                      </p>
+                    </div>
+                  </a>
+                );
+              })}
             </div>
-
           </div>
-
         </div>
       </div>
-      {/* =====================================================
-          COPYRIGHT
-      ====================================================== */}
 
-      <div className="border-t border-white/[0.06] bg-[#04111F]">
-
-        <div
-          className="
-            mx-auto
-            flex
-            max-w-[1680px]
-            items-center
-            justify-between
-            px-8
-            py-5
-            xl:px-12
-          "
-        >
-
-          <p
-            className="
-              text-[9px]
-              tracking-[0.08em]
-              text-white/25
-            "
-          >
-            © {new Date().getFullYear()} CodeGenZ Solutions.
-            All rights reserved.
+      {/* =========================================================
+          BOTTOM BAR
+      ========================================================= */}
+      <div className="relative border-t border-slate-800/70">
+        <div className="mx-auto flex max-w-[1600px] flex-col gap-4 px-6 py-5 sm:px-8 md:flex-row md:items-center md:justify-between md:px-12 lg:px-14 xl:px-16">
+          {/* COPYRIGHT */}
+          <p className="text-[11px] font-medium tracking-[0.04em] text-slate-600">
+            © 2026 CodeGenZ Solutions. All rights reserved.
           </p>
 
-          <div className="flex items-center gap-6">
-
-            <a
-              href="#privacy"
-              className="
-                text-[9px]
-                tracking-[0.08em]
-                text-white/25
-                transition-colors
-                hover:text-white
-              "
+          {/* LEGAL LINKS */}
+          <div className="flex items-center gap-4 sm:gap-5">
+            <Link
+              to="/privacy-policy"
+              onClick={scrollToTop}
+              className="text-[11px] font-medium tracking-[0.04em] text-slate-600 transition-colors duration-300 hover:text-white"
             >
               Privacy Policy
-            </a>
+            </Link>
 
-            <a
-              href="#terms"
-              className="
-                text-[9px]
-                tracking-[0.08em]
-                text-white/25
-                transition-colors
-                hover:text-white
-              "
+            <span className="h-3 w-px bg-slate-800" />
+
+            <Link
+              to="/terms-and-conditions"
+              onClick={scrollToTop}
+              className="text-[11px] font-medium tracking-[0.04em] text-slate-600 transition-colors duration-300 hover:text-white"
             >
               Terms & Conditions
-            </a>
-
+            </Link>
           </div>
-
         </div>
-
       </div>
 
+
+      
     </footer>
   );
 };

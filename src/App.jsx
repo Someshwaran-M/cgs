@@ -18,6 +18,7 @@ import Testimonials from "./Pages/Menu/Testimonials";
 import Faq from "./Pages/Menu/Faq";
 import Blog from "./Pages/Menu/Blog";
 import FollowUs from "./Pages/Menu/FollowUs";
+import GetAQuote from "./Pages/Menu/GetAQuote";
 
 import "./App.css";
 
@@ -61,6 +62,7 @@ function App() {
                 <Route path="/faq" element={<Faq />} />
                 <Route path="/blog" element={<Blog />} />
                 <Route path="/follow-us" element={<FollowUs />} />
+                <Route path="/get-a-quote" element={<GetAQuote />} />
               </Routes>
             </main>
 

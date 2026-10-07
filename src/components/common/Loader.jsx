@@ -3,36 +3,18 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const Loader = ({ onComplete }) => {
   const [loading, setLoading] = useState(true);
-  const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    const duration = 2200;
-    const interval = 20;
-    const step = 100 / (duration / interval);
+    // Short premium loading time
+    const timer = setTimeout(() => {
+      setLoading(false);
 
-    const timer = setInterval(() => {
-      setProgress((prev) => {
-        const next = prev + step;
+      if (onComplete) {
+        onComplete();
+      }
+    }, 1250);
 
-        if (next >= 100) {
-          clearInterval(timer);
-
-          setTimeout(() => {
-            setLoading(false);
-
-            if (onComplete) {
-              onComplete();
-            }
-          }, 350);
-
-          return 100;
-        }
-
-        return next;
-      });
-    }, interval);
-
-    return () => clearInterval(timer);
+    return () => clearTimeout(timer);
   }, [onComplete]);
 
   return (
@@ -40,107 +22,295 @@ const Loader = ({ onComplete }) => {
       {loading && (
         <motion.div
           initial={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.7, ease: "easeInOut" }}
+          exit={{
+            opacity: 0,
+            scale: 1.01,
+          }}
+          transition={{
+            duration: 0.35,
+            ease: "easeOut",
+          }}
           className="
             fixed
             inset-0
-            z-[9999]
+            z-[99999]
             flex
+            min-h-[100dvh]
+            w-full
             items-center
             justify-center
             overflow-hidden
-            bg-[#061525]
+            bg-white
           "
         >
-          {/* Background lines */}
+          {/* Subtle CGS background */}
 
-          <div className="absolute inset-0 opacity-[0.035]">
+          <div className="pointer-events-none absolute inset-0">
             <div
               className="
                 absolute
                 left-1/2
                 top-1/2
-                h-[700px]
-                w-[700px]
                 -translate-x-1/2
                 -translate-y-1/2
-                rounded-full
-                border
-                border-white
+                select-none
+                font-['Roboto']
+                text-[180px]
+                font-black
+                tracking-[-0.14em]
+                text-[#061525]/[0.018]
+                sm:text-[250px]
+                md:text-[330px]
               "
-            />
+            >
+              CGS
+            </div>
 
-            <div
+            <motion.div
+              animate={{
+                scale: [1, 1.08, 1],
+                opacity: [0.12, 0.22, 0.12],
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
               className="
                 absolute
                 left-1/2
                 top-1/2
-                h-[520px]
-                w-[520px]
+                h-[200px]
+                w-[200px]
                 -translate-x-1/2
                 -translate-y-1/2
                 rounded-full
-                border
-                border-white
+                bg-[#1769C2]/[0.06]
+                blur-[55px]
+                sm:h-[250px]
+                sm:w-[250px]
               "
             />
           </div>
 
-          {/* Main loader */}
+          {/* Main */}
 
-          <div className="relative z-10 flex w-[320px] flex-col items-center">
-            {/* Logo */}
+          <div className="relative z-10 flex flex-col items-center">
+            {/* Logo frame */}
 
-            <motion.div
-              initial={{ opacity: 0, scale: 0.85 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{
-                duration: 0.8,
-                ease: [0.16, 1, 0.3, 1],
-              }}
-              className="relative"
+            <div
+              className="
+                relative
+                flex
+                h-[170px]
+                w-[170px]
+                items-center
+                justify-center
+                sm:h-[195px]
+                sm:w-[195px]
+                md:h-[220px]
+                md:w-[220px]
+              "
             >
-              {/* Logo glow */}
+              {/* Outer circle */}
+
+              <motion.div
+                initial={{
+                  opacity: 0,
+                  scale: 0.85,
+                }}
+                animate={{
+                  opacity: 1,
+                  scale: 1,
+                }}
+                transition={{
+                  duration: 0.45,
+                  ease: [0.16, 1, 0.3, 1],
+                }}
+                className="
+                  absolute
+                  inset-0
+                  rounded-full
+                  border
+                  border-[#061525]/[0.07]
+                "
+              />
+
+              {/* Blue rotating accent */}
+
+              <motion.div
+                animate={{
+                  rotate: 360,
+                }}
+                transition={{
+                  duration: 1.8,
+                  repeat: Infinity,
+                  ease: "linear",
+                }}
+                className="
+                  absolute
+                  inset-0
+                  rounded-full
+                  border
+                  border-transparent
+                  border-t-[#1769C2]
+                  border-r-[#1769C2]/20
+                "
+              />
+
+              {/* Inner circle */}
 
               <div
                 className="
                   absolute
-                  inset-0
-                  scale-75
+                  inset-[14px]
                   rounded-full
-                  bg-[#1769C2]/20
-                  blur-[45px]
+                  border
+                  border-[#1769C2]/[0.07]
                 "
               />
 
-              <img
-                src="/logo.png"
-                alt="CodeGenZ Solutions"
+              {/* Logo plate */}
+
+              <motion.div
+                initial={{
+                  opacity: 0,
+                  scale: 0.7,
+                }}
+                animate={{
+                  opacity: 1,
+                  scale: 1,
+                }}
+                transition={{
+                  duration: 0.55,
+                  delay: 0.08,
+                  ease: [0.16, 1, 0.3, 1],
+                }}
                 className="
                   relative
-                  h-[105px]
-                  w-auto
-                  object-contain
-                  brightness-110
+                  flex
+                  h-[108px]
+                  w-[108px]
+                  items-center
+                  justify-center
+                  rounded-full
+                  bg-white
+                  shadow-[0_12px_40px_rgba(6,21,37,0.08)]
+                  ring-1
+                  ring-[#061525]/[0.05]
+                  sm:h-[124px]
+                  sm:w-[124px]
+                  md:h-[140px]
+                  md:w-[140px]
                 "
-              />
-            </motion.div>
+              >
+                {/* Logo glow */}
+
+                <div
+                  className="
+                    absolute
+                    inset-[28%]
+                    rounded-full
+                    bg-[#1769C2]/[0.08]
+                    blur-[18px]
+                  "
+                />
+
+                {/* Actual logo */}
+
+                <motion.img
+                  src="/logo.png"
+                  alt="CodeGenZ Solutions"
+                  initial={{
+                    opacity: 0,
+                    scale: 0.8,
+                  }}
+                  animate={{
+                    opacity: 1,
+                    scale: 1,
+                  }}
+                  transition={{
+                    duration: 0.5,
+                    delay: 0.2,
+                    ease: "easeOut",
+                  }}
+                  className="
+                    relative
+                    z-10
+                    h-[62px]
+                    w-[62px]
+                    object-contain
+                    sm:h-[72px]
+                    sm:w-[72px]
+                    md:h-[82px]
+                    md:w-[82px]
+                  "
+                />
+              </motion.div>
+
+              {/* Small orbit dot */}
+
+              <motion.div
+                animate={{
+                  rotate: 360,
+                }}
+                transition={{
+                  duration: 1.8,
+                  repeat: Infinity,
+                  ease: "linear",
+                }}
+                className="
+                  absolute
+                  inset-0
+                  rounded-full
+                "
+              >
+                <span
+                  className="
+                    absolute
+                    left-1/2
+                    top-[-2px]
+                    h-[5px]
+                    w-[5px]
+                    -translate-x-1/2
+                    rounded-full
+                    bg-[#1769C2]
+                    shadow-[0_0_10px_rgba(23,105,194,0.4)]
+                  "
+                />
+              </motion.div>
+            </div>
 
             {/* Brand */}
 
             <motion.div
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.35, duration: 0.6 }}
-              className="mt-4 text-center"
+              initial={{
+                opacity: 0,
+                y: 8,
+              }}
+              animate={{
+                opacity: 1,
+                y: 0,
+              }}
+              transition={{
+                delay: 0.25,
+                duration: 0.4,
+              }}
+              className="
+                mt-6
+                flex
+                flex-col
+                items-center
+              "
             >
               <h1
                 className="
-                  text-[17px]
+                  font-['Roboto']
+                  text-[14px]
                   font-semibold
-                  tracking-[0.32em]
-                  text-white
+                  tracking-[0.2em]
+                  text-[#061525]
+                  sm:text-[16px]
                 "
               >
                 CODEGENZ
@@ -148,89 +318,48 @@ const Loader = ({ onComplete }) => {
 
               <p
                 className="
-                  mt-2
+                  mt-1
+                  font-['Roboto']
                   text-[7px]
                   font-medium
-                  tracking-[0.38em]
-                  text-[#63A9FF]
+                  tracking-[0.4em]
+                  text-[#1769C2]
                 "
               >
                 SOLUTIONS
               </p>
             </motion.div>
 
-            {/* Loading bar */}
+            {/* Minimal loading dots */}
 
-            <div className="mt-12 w-full">
-              <div
-                className="
-                  relative
-                  h-[1px]
-                  w-full
-                  overflow-hidden
-                  bg-white/[0.10]
-                "
-              >
-                <motion.div
-                  className="
-                    absolute
-                    left-0
-                    top-0
-                    h-full
-                    bg-[#3B8DFF]
-                  "
-                  style={{
-                    width: `${progress}%`,
-                  }}
-                />
-              </div>
-
-              {/* Progress */}
-
-              <div className="mt-3 flex items-center justify-between">
-                <span
-                  className="
-                    text-[7px]
-                    font-medium
-                    tracking-[0.28em]
-                    text-white/30
-                  "
-                >
-                  INITIALIZING
-                </span>
-
-                <span
-                  className="
-                    text-[8px]
-                    font-semibold
-                    tracking-[0.15em]
-                    text-[#63A9FF]
-                  "
-                >
-                  {Math.floor(progress)
-                    .toString()
-                    .padStart(2, "0")}
-                  %
-                </span>
-              </div>
-            </div>
-
-            {/* Bottom branding */}
-
-            <motion.p
+            <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 0.8, duration: 0.6 }}
-              className="
-                mt-8
-                text-[6px]
-                font-medium
-                tracking-[0.3em]
-                text-white/20
-              "
+              transition={{ delay: 0.35 }}
+              className="mt-6 flex items-center gap-[5px]"
             >
-              A GENZACY COMPANY
-            </motion.p>
+              {[0, 1, 2].map((dot) => (
+                <motion.span
+                  key={dot}
+                  animate={{
+                    opacity: [0.2, 1, 0.2],
+                    scale: [0.8, 1, 0.8],
+                  }}
+                  transition={{
+                    duration: 0.8,
+                    repeat: Infinity,
+                    delay: dot * 0.12,
+                    ease: "easeInOut",
+                  }}
+                  className="
+                    h-[4px]
+                    w-[4px]
+                    rounded-full
+                    bg-[#1769C2]
+                  "
+                />
+              ))}
+            </motion.div>
           </div>
         </motion.div>
       )}

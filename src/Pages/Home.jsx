@@ -1,11 +1,10 @@
 import React from "react";
+
 import {
   ArrowUpRight,
   Code2,
-  Layers3,
-  Globe2,
-  Sparkles,
 } from "lucide-react";
+
 import HomeFaq from "./homepages/HomeFaq";
 import HomeTestimonials from "./homepages/HomeTestimonials";
 import Pricing from "./Menu/Pricing";
@@ -29,12 +28,14 @@ const Home = () => {
         id="home"
         className="
           relative
-          flex
           min-h-screen
-          items-center
           overflow-hidden
-          px-8
-          pt-[130px]
+          bg-[#071C2E]
+          px-6
+          pt-[120px]
+          pb-20
+          sm:px-8
+          lg:px-12
           xl:px-16
         "
       >
@@ -57,25 +58,38 @@ const Home = () => {
           }}
         />
 
-        
+        {/* =====================================================
+            BACKGROUND OVERLAY
+        ====================================================== */}
 
+        <div
+          className="
+            absolute
+            inset-0
+            z-[1]
+            bg-gradient-to-r
+            from-[#071C2E]/90
+            via-[#071C2E]/65
+            to-[#071C2E]/20
+          "
+        />
 
         {/* =====================================================
-            BACKGROUND DECORATION
+            BACKGROUND GLOW
         ====================================================== */}
 
         <div
           className="
             pointer-events-none
             absolute
-            right-[-180px]
-            top-[80px]
+            -left-40
+            top-20
             z-[2]
-            h-[520px]
-            w-[520px]
+            h-[500px]
+            w-[500px]
             rounded-full
-            bg-[#1769C2]/[0.055]
-            blur-[100px]
+            bg-[#1769C2]/[0.06]
+            blur-[120px]
           "
         />
 
@@ -83,19 +97,19 @@ const Home = () => {
           className="
             pointer-events-none
             absolute
-            bottom-[-180px]
-            left-[-120px]
+            -right-40
+            bottom-0
             z-[2]
-            h-[420px]
-            w-[420px]
+            h-[500px]
+            w-[500px]
             rounded-full
-            bg-[#63A9FF]/[0.05]
-            blur-[100px]
+            bg-[#63A9FF]/[0.08]
+            blur-[120px]
           "
         />
 
         {/* =====================================================
-            MAIN CONTAINER
+            MAIN HERO CONTAINER
         ====================================================== */}
 
         <div
@@ -106,74 +120,76 @@ const Home = () => {
             grid
             w-full
             max-w-[1680px]
-            grid-cols-2
             items-center
-            gap-20
+            gap-14
+            lg:grid-cols-[0.95fr_1.05fr]
+            lg:gap-16
+            xl:gap-24
           "
         >
 
-          {/* =====================================================
+          {/* ===================================================
               LEFT CONTENT
-          ====================================================== */}
+          ==================================================== */}
 
           <div className="max-w-[760px]">
 
             {/* Eyebrow */}
 
-            <div
-              className="
-                mb-7
-                flex
-                items-center
-                gap-3
-              "
-            >
-              <span className="h-px w-10 bg-[#1769C2]" />
+            <div className="mb-7 flex items-center gap-3">
+
+              <span className="h-px w-10 bg-[#63A9FF]" />
 
               <span
                 className="
                   text-[10px]
-                  font-semibold
+                  font-bold
                   tracking-[0.32em]
-                  text-[#1769C2]
+                  text-[#63A9FF]
                 "
               >
                 CODEGENZ SOLUTIONS
               </span>
+
             </div>
 
-            {/* Heading */}
+
+            {/* Main Heading */}
 
             <h1
               className="
-                text-[clamp(52px,5.8vw,92px)]
+                text-[clamp(48px,5.5vw,88px)]
                 font-semibold
                 leading-[0.98]
                 tracking-[-0.055em]
-                text-[#0B243D]
+                text-white
               "
             >
               We build
+
               <br />
 
-              <span className="text-[#1769C2]">
+              <span className="text-[#63A9FF]">
                 digital
               </span>{" "}
               experiences
+
               <br />
 
               that matter.
             </h1>
+
 
             {/* Description */}
 
             <p
               className="
                 mt-8
-                max-w-[590px]
+                max-w-[600px]
                 text-[15px]
+                font-medium
                 leading-8
-                text-[#60758A]
+                text-white/75
               "
             >
               CodeGenZ Solutions creates modern websites, web
@@ -181,9 +197,24 @@ const Home = () => {
               businesses grow, connect and move forward.
             </p>
 
-            {/* Buttons */}
 
-            <div className="mt-10 flex items-center gap-4">
+            {/* =================================================
+                BUTTONS
+            ================================================== */}
+
+            <div
+              className="
+                mt-10
+                flex
+                flex-col
+                items-start
+                gap-4
+                sm:flex-row
+                sm:items-center
+              "
+            >
+
+              {/* View Work */}
 
               <a
                 href="#projects"
@@ -197,17 +228,18 @@ const Home = () => {
                   bg-[#1769C2]
                   px-7
                   text-[10px]
-                  font-semibold
+                  font-bold
                   tracking-[0.18em]
                   text-white
-                  shadow-[0_12px_30px_rgba(23,105,194,0.18)]
+                  shadow-[0_15px_35px_rgba(23,105,194,0.22)]
                   transition-all
                   duration-300
                   hover:-translate-y-1
-                  hover:bg-[#0F559F]
-                  hover:shadow-[0_18px_40px_rgba(23,105,194,0.25)]
+                  hover:bg-[#0E579F]
+                  hover:shadow-[0_20px_45px_rgba(23,105,194,0.28)]
                 "
               >
+
                 VIEW OUR WORK
 
                 <span
@@ -226,7 +258,11 @@ const Home = () => {
                 >
                   <ArrowUpRight size={14} />
                 </span>
+
               </a>
+
+
+              {/* Start Project */}
 
               <a
                 href="#contact"
@@ -236,19 +272,22 @@ const Home = () => {
                   items-center
                   rounded-full
                   border
-                  border-[#DCE5ED]
-                  bg-white/60
+                  border-white/30
+                  bg-white/10
                   px-7
                   text-[10px]
-                  font-semibold
+                  font-bold
                   tracking-[0.18em]
-                  text-[#203B58]
+                  text-white
+                  shadow-[0_8px_25px_rgba(0,0,0,0.08)]
                   backdrop-blur-sm
                   transition-all
                   duration-300
-                  hover:border-[#1769C2]
-                  hover:bg-white
-                  hover:text-[#1769C2]
+                  hover:-translate-y-1
+                  hover:border-[#63A9FF]
+                  hover:bg-white/15
+                  hover:text-[#63A9FF]
+                  hover:shadow-[0_12px_30px_rgba(23,105,194,0.10)]
                 "
               >
                 START A PROJECT
@@ -256,306 +295,288 @@ const Home = () => {
 
             </div>
 
-            {/* Small trust line */}
+
+            {/* =================================================
+                SERVICE LINE
+            ================================================== */}
 
             <div
               className="
                 mt-12
                 flex
+                flex-wrap
                 items-center
-                gap-5
+                gap-x-5
+                gap-y-3
                 text-[9px]
+                font-semibold
                 tracking-[0.18em]
-                text-[#8A9AAC]
+                text-white/60
               "
             >
-              <span>WEB DEVELOPMENT</span>
 
-              <span className="h-1 w-1 rounded-full bg-[#1769C2]" />
+              <span>
+                WEB DEVELOPMENT
+              </span>
 
-              <span>WEB APPLICATIONS</span>
+              <span
+                className="
+                  h-1
+                  w-1
+                  rounded-full
+                  bg-[#63A9FF]
+                "
+              />
 
-              <span className="h-1 w-1 rounded-full bg-[#1769C2]" />
+              <span>
+                WEB APPLICATIONS
+              </span>
 
-              <span>DIGITAL SOLUTIONS</span>
+              <span
+                className="
+                  h-1
+                  w-1
+                  rounded-full
+                  bg-[#63A9FF]
+                "
+              />
+
+              <span>
+                DIGITAL SOLUTIONS
+              </span>
+
             </div>
 
           </div>
 
-          {/* =====================================================
-              RIGHT VISUAL
-          ====================================================== */}
 
-          <div className="relative flex h-[600px] items-center justify-center">
+          {/* ===================================================
+              RIGHT VIDEO
+          ==================================================== */}
 
-            {/* Main circle */}
+          <div
+            className="
+              relative
+              w-full
+            "
+          >
 
-            <div
-              className="
-                absolute
-                h-[440px]
-                w-[440px]
-                rounded-full
-                border
-                border-[#DCE8F2]
-                bg-white/10
-              "
-            />
-
-            {/* Inner circle */}
+            {/* Video Glow */}
 
             <div
               className="
+                pointer-events-none
                 absolute
-                h-[340px]
-                w-[340px]
-                rounded-full
-                border
-                border-[#1769C2]/10
+                -inset-6
+                rounded-[38px]
+                bg-[#1769C2]/[0.12]
+                blur-3xl
               "
             />
 
-            {/* Rotating ring */}
 
-            <div
-              className="
-                absolute
-                h-[500px]
-                w-[500px]
-                rounded-full
-                border
-                border-dashed
-                border-[#1769C2]/15
-              "
-            />
-
-            {/* Center */}
+            {/* Video Frame */}
 
             <div
               className="
                 relative
-                flex
-                h-[250px]
-                w-[250px]
-                flex-col
-                items-center
-                justify-center
-                rounded-full
+                overflow-hidden
+                rounded-[30px]
                 border
-                border-[#DCE5ED]
-                bg-white/90
-                shadow-[0_30px_80px_rgba(15,65,105,0.12)]
-                backdrop-blur-md
+                border-white/20
+                bg-[#071C2E]/80
+                p-2
+                shadow-[0_30px_90px_rgba(0,0,0,0.30)]
+                backdrop-blur-sm
               "
             >
 
+              {/* Video */}
+
               <div
                 className="
-                  mb-5
-                  flex
-                  h-14
-                  w-14
-                  items-center
-                  justify-center
-                  rounded-2xl
-                  bg-[#1769C2]
-                  text-white
-                  shadow-[0_12px_30px_rgba(23,105,194,0.25)]
+                  relative
+                  aspect-[16/11]
+                  overflow-hidden
+                  rounded-[24px]
+                  bg-[#071C2E]
                 "
               >
-                <Code2 size={27} strokeWidth={1.5} />
-              </div>
 
-              <p
-                className="
-                  text-[12px]
-                  font-semibold
-                  tracking-[0.25em]
-                  text-[#0B243D]
-                "
-              >
-                CODEGENZ
-              </p>
-
-              <p
-                className="
-                  mt-2
-                  text-[8px]
-                  tracking-[0.3em]
-                  text-[#8A9AAC]
-                "
-              >
-                DIGITAL SOLUTIONS
-              </p>
-
-            </div>
-
-            {/* =================================================
-                FLOATING DIGITAL CARD
-            ================================================== */}
-
-            <div
-              className="
-                absolute
-                left-[5%]
-                top-[20%]
-                flex
-                items-center
-                gap-3
-                rounded-2xl
-                border
-                border-[#E2EAF1]
-                bg-white/90
-                px-4
-                py-3
-                shadow-[0_15px_40px_rgba(15,65,105,0.08)]
-                backdrop-blur-md
-              "
-            >
-              <div
-                className="
-                  flex
-                  h-9
-                  w-9
-                  items-center
-                  justify-center
-                  rounded-xl
-                  bg-[#EEF6FF]
-                  text-[#1769C2]
-                "
-              >
-                <Globe2 size={17} />
-              </div>
-
-              <div>
-                <p
+                <video
                   className="
-                    text-[9px]
-                    font-semibold
-                    tracking-[0.1em]
-                    text-[#203B58]
+                    absolute
+                    inset-0
+                    h-full
+                    w-full
+                    object-cover
+                  "
+                  src="/background.mp4"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="auto"
+                />
+
+
+                {/* Video Overlay */}
+
+                <div
+                  className="
+                    pointer-events-none
+                    absolute
+                    inset-0
+                    bg-gradient-to-tr
+                    from-[#071C2E]/30
+                    via-transparent
+                    to-[#1769C2]/10
+                  "
+                />
+
+
+                {/* Bottom Gradient */}
+
+                <div
+                  className="
+                    pointer-events-none
+                    absolute
+                    inset-x-0
+                    bottom-0
+                    h-32
+                    bg-gradient-to-t
+                    from-black/30
+                    to-transparent
+                  "
+                />
+
+
+                {/* Digital Innovation Label */}
+
+                <div
+                  className="
+                    absolute
+                    bottom-5
+                    left-5
+                    rounded-full
+                    border
+                    border-white/20
+                    bg-black/30
+                    px-4
+                    py-2
+                    backdrop-blur-md
                   "
                 >
-                  DIGITAL
-                </p>
 
-                <p className="mt-1 text-[8px] text-[#8A9AAC]">
-                  Global presence
-                </p>
-              </div>
-            </div>
+                  <span
+                    className="
+                      text-[8px]
+                      font-semibold
+                      tracking-[0.25em]
+                      text-white
+                    "
+                  >
+                    DIGITAL INNOVATION
+                  </span>
 
-            {/* =================================================
-                FLOATING SOLUTIONS CARD
-            ================================================== */}
+                </div>
 
-            <div
-              className="
-                absolute
-                bottom-[17%]
-                right-[3%]
-                flex
-                items-center
-                gap-3
-                rounded-2xl
-                border
-                border-[#E2EAF1]
-                bg-white/90
-                px-4
-                py-3
-                shadow-[0_15px_40px_rgba(15,65,105,0.08)]
-                backdrop-blur-md
-              "
-            >
-              <div
-                className="
-                  flex
-                  h-9
-                  w-9
-                  items-center
-                  justify-center
-                  rounded-xl
-                  bg-[#EEF6FF]
-                  text-[#1769C2]
-                "
-              >
-                <Layers3 size={17} />
-              </div>
 
-              <div>
-                <p
+                {/* Live Indicator */}
+
+                <div
                   className="
-                    text-[9px]
-                    font-semibold
-                    tracking-[0.1em]
-                    text-[#203B58]
+                    absolute
+                    right-5
+                    top-5
+                    flex
+                    items-center
+                    gap-2
+                    rounded-full
+                    border
+                    border-white/20
+                    bg-black/30
+                    px-3
+                    py-2
+                    backdrop-blur-md
                   "
                 >
-                  SOLUTIONS
-                </p>
 
-                <p className="mt-1 text-[8px] text-[#8A9AAC]">
-                  Built for growth
-                </p>
+                  <span
+                    className="
+                      h-2
+                      w-2
+                      rounded-full
+                      bg-[#7CFF4F]
+                    "
+                  />
+
+                  <span
+                    className="
+                      text-[8px]
+                      font-semibold
+                      tracking-[0.18em]
+                      text-white
+                    "
+                  >
+                    LIVE
+                  </span>
+
+                </div>
+
               </div>
+
             </div>
 
-            {/* Accent */}
 
-            <div
-              className="
-                absolute
-                right-[18%]
-                top-[12%]
-                flex
-                h-10
-                w-10
-                items-center
-                justify-center
-                rounded-full
-                bg-[#1769C2]
-                text-white
-                shadow-[0_10px_25px_rgba(23,105,194,0.22)]
-              "
-            >
-              <Sparkles size={16} />
-            </div>
+           
 
           </div>
 
         </div>
 
+
         {/* =====================================================
-            BOTTOM SCROLL INDICATOR
+            SCROLL INDICATOR
         ====================================================== */}
 
         <div
           className="
             absolute
-            bottom-8
+            bottom-7
             left-1/2
-            flex
+            hidden
             -translate-x-1/2
             flex-col
             items-center
             gap-3
+            md:flex
           "
         >
+
           <span
             className="
               text-[7px]
-              font-semibold
+              font-bold
               tracking-[0.3em]
-              text-[#8A9AAC]
+              text-white/60
             "
           >
             SCROLL TO EXPLORE
           </span>
 
-          <span className="h-8 w-px bg-[#1769C2]/30" />
+          <span
+            className="
+              h-8
+              w-px
+              bg-[#63A9FF]/50
+            "
+          />
+
         </div>
 
       </section>
+
 
       {/* =========================================================
           INTRO STRIP
@@ -566,8 +587,9 @@ const Home = () => {
           border-y
           border-[#E9EFF4]
           bg-[#F8FAFC]
-          px-8
+          px-6
           py-10
+          sm:px-8
           xl:px-16
         "
       >
@@ -577,8 +599,12 @@ const Home = () => {
             mx-auto
             flex
             max-w-[1680px]
-            items-center
+            flex-col
+            items-start
             justify-between
+            gap-6
+            lg:flex-row
+            lg:items-center
           "
         >
 
@@ -586,14 +612,16 @@ const Home = () => {
             className="
               max-w-[700px]
               text-[13px]
+              font-medium
               leading-7
-              text-[#60758A]
+              text-[#52697D]
             "
           >
             From concept to launch, we combine creativity,
             technology and strategy to create digital solutions
             that are practical, scalable and built around your goals.
           </p>
+
 
           <a
             href="#services"
@@ -603,11 +631,15 @@ const Home = () => {
               items-center
               gap-3
               text-[9px]
-              font-semibold
+              font-bold
               tracking-[0.2em]
               text-[#1769C2]
+              transition-colors
+              duration-300
+              hover:text-[#0E579F]
             "
           >
+
             EXPLORE SERVICES
 
             <ArrowUpRight
@@ -619,27 +651,73 @@ const Home = () => {
                 group-hover:-translate-y-1
               "
             />
+
           </a>
 
         </div>
 
       </section>
 
+
+      {/* =========================================================
+          ABOUT PREVIEW
+      ========================================================== */}
+
       <AboutPreview />
+
+
+      {/* =========================================================
+          WHY CODEGENZ
+      ========================================================== */}
 
       <HomeAbout />
 
+
+      {/* =========================================================
+          SERVICES
+      ========================================================== */}
+
       <HomeServices />
+
+
+      {/* =========================================================
+          PROCESS
+      ========================================================== */}
 
       <HomeProcess />
 
+
+      {/* =========================================================
+          TECHNOLOGY
+      ========================================================== */}
+
       <HomeTechnology />
+
+
+      {/* =========================================================
+          PROJECTS
+      ========================================================== */}
 
       <HomeProject />
 
+
+      {/* =========================================================
+          TESTIMONIALS
+      ========================================================== */}
+
       <HomeTestimonials />
 
+
+      {/* =========================================================
+          FAQ
+      ========================================================== */}
+
       <HomeFaq />
+
+
+      {/* =========================================================
+          FINAL CTA
+      ========================================================== */}
 
       <HomeCTA />
 
