@@ -67,8 +67,8 @@ const Footer = () => {
       href: "/projects",
     },
     {
-      name: "Careers",
-      href: "/careers",
+      name: "Career",
+      href: "/career",
     },
     {
       name: "Internship",

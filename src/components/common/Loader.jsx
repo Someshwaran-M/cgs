@@ -2,12 +2,22 @@ import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Loader = ({ onComplete }) => {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(() => {
+    // Show loader only when this page is opened/refreshed
+    return !sessionStorage.getItem("cgs_loader_shown");
+  });
 
   useEffect(() => {
-    // Short premium loading time
+    if (!loading) {
+      if (onComplete) onComplete();
+      return;
+    }
+
     const timer = setTimeout(() => {
       setLoading(false);
+
+      // Remember that loader has already been shown
+      sessionStorage.setItem("cgs_loader_shown", "true");
 
       if (onComplete) {
         onComplete();
@@ -15,10 +25,10 @@ const Loader = ({ onComplete }) => {
     }, 1250);
 
     return () => clearTimeout(timer);
-  }, [onComplete]);
+  }, [loading, onComplete]);
 
   return (
-    <AnimatePresence>
+    <AnimatePresence mode="wait">
       {loading && (
         <motion.div
           initial={{ opacity: 1 }}
@@ -43,7 +53,7 @@ const Loader = ({ onComplete }) => {
             bg-white
           "
         >
-          {/* Subtle CGS background */}
+          {/* Background */}
 
           <div className="pointer-events-none absolute inset-0">
             <div
@@ -93,10 +103,11 @@ const Loader = ({ onComplete }) => {
             />
           </div>
 
-          {/* Main */}
+          {/* Main Loader */}
 
           <div className="relative z-10 flex flex-col items-center">
-            {/* Logo frame */}
+
+            {/* Logo Container */}
 
             <div
               className="
@@ -112,7 +123,8 @@ const Loader = ({ onComplete }) => {
                 md:w-[220px]
               "
             >
-              {/* Outer circle */}
+
+              {/* Outer Circle */}
 
               <motion.div
                 initial={{
@@ -136,7 +148,7 @@ const Loader = ({ onComplete }) => {
                 "
               />
 
-              {/* Blue rotating accent */}
+              {/* Rotating Blue Accent */}
 
               <motion.div
                 animate={{
@@ -158,7 +170,7 @@ const Loader = ({ onComplete }) => {
                 "
               />
 
-              {/* Inner circle */}
+              {/* Inner Circle */}
 
               <div
                 className="
@@ -170,7 +182,7 @@ const Loader = ({ onComplete }) => {
                 "
               />
 
-              {/* Logo plate */}
+              {/* Logo Plate */}
 
               <motion.div
                 initial={{
@@ -204,7 +216,8 @@ const Loader = ({ onComplete }) => {
                   md:w-[140px]
                 "
               >
-                {/* Logo glow */}
+
+                {/* Logo Glow */}
 
                 <div
                   className="
@@ -216,7 +229,7 @@ const Loader = ({ onComplete }) => {
                   "
                 />
 
-                {/* Actual logo */}
+                {/* Logo */}
 
                 <motion.img
                   src="/logo.png"
@@ -248,7 +261,7 @@ const Loader = ({ onComplete }) => {
                 />
               </motion.div>
 
-              {/* Small orbit dot */}
+              {/* Orbit Dot */}
 
               <motion.div
                 animate={{
@@ -330,7 +343,7 @@ const Loader = ({ onComplete }) => {
               </p>
             </motion.div>
 
-            {/* Minimal loading dots */}
+            {/* Loading Dots */}
 
             <motion.div
               initial={{ opacity: 0 }}
@@ -360,6 +373,7 @@ const Loader = ({ onComplete }) => {
                 />
               ))}
             </motion.div>
+
           </div>
         </motion.div>
       )}

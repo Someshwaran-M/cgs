@@ -259,15 +259,15 @@ const Navbar = () => {
                 src="/logo.png"
                 alt="CodeGenZ Solutions"
                 className="
-                  h-[62px]
+                  h-[58px]
                   w-auto
                   object-contain
                   transition-transform
                   duration-500
                   group-hover/logo:scale-[1.02]
-                  sm:h-[72px]
-                  md:h-[82px]
-                  lg:h-[88px]
+                  sm:h-[52px]
+                  md:h-[62px]
+                  lg:h-[68px]
                 "
               />
             </a>
