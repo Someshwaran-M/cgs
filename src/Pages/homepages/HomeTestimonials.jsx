@@ -3,8 +3,8 @@ import { motion } from "framer-motion";
 import {
   ArrowUpRight,
   Star,
-  ExternalLink,
-  MessageCircle,
+  Quote,
+  ArrowRight,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -16,405 +16,268 @@ const GOOGLE_REVIEW_URL =
   "https://www.google.com/search?q=codegenz+solutions#lrd=0x3babd5c76ca22ec7:0xb1dcf11c9cd9a344,1,,,,";
 
 /* =========================================================
-   HOME TESTIMONIAL / GOOGLE REVIEW SECTION
+   THREE FEATURED CLIENT REVIEWS
+========================================================= */
+
+const reviews = [
+  {
+    name: "Nagendhiran",
+    meta: "3 reviews",
+    time: "3 months ago",
+    review:
+      "Their communication was friendly, responsive, and they patiently understood all my requirements before starting the work. The quality, formatting, and overall presentation were outstanding. I truly appreciate their dedication and effort. If anyone is looking for a reliable service for internship reports or academic documentation, I would highly recommend them.",
+  },
+  {
+    name: "suriyan chinnadurai",
+    meta: "2 reviews",
+    time: "3 months ago",
+    review:
+      "I am thoroughly impressed by the excellent visual presentation and user-friendly interface. 🥰 Everything looks fantastic and is so easy to navigate! Great job on this outstanding experience. 🎉👏 👍",
+  },
+  {
+    name: "Gowsalya raman",
+    meta: "4 reviews",
+    time: "3 months ago",
+    review:
+      "I had a great experience working with CodeGenZ Solutions software company. The entire team was professional, responsive and highly knowledgeable. Communication was excellent throughout the project and questions or concerns were addressed promptly. The software was delivered on time at expected level. I particularly appreciated their attention to transparency, detailed manner of explaining and commitment to customer satisfaction.",
+  },
+];
+
+/* =========================================================
+   REVIEW CARD
+========================================================= */
+
+const ReviewCard = ({ review }) => {
+  return (
+    <article
+      className="
+        group
+        relative
+        w-[320px]
+        shrink-0
+        overflow-hidden
+        rounded-[20px]
+        border
+        border-[#DCE5ED]
+        bg-white
+        p-6
+        transition-all
+        duration-500
+        hover:-translate-y-1
+        hover:border-[#B8CDE0]
+        hover:shadow-[0_20px_50px_rgba(7,26,45,0.08)]
+        sm:w-[390px]
+        sm:p-7
+        lg:w-[430px]
+      "
+    >
+      {/* Top accent */}
+      <div
+        className="
+          absolute
+          left-0
+          right-0
+          top-0
+          h-[2px]
+          origin-left
+          scale-x-0
+          bg-[#1769C2]
+          transition-transform
+          duration-500
+          group-hover:scale-x-100
+        "
+      />
+
+      {/* Header */}
+      <div className="flex items-start justify-between gap-4">
+
+        <div className="flex items-center gap-3">
+
+          {/* Avatar */}
+          <div
+            className="
+              flex
+              h-10
+              w-10
+              shrink-0
+              items-center
+              justify-center
+              rounded-full
+              bg-[#071827]
+              text-[11px]
+              font-semibold
+              text-white
+            "
+          >
+            {review.name.charAt(0).toUpperCase()}
+          </div>
+
+          <div>
+
+            <h3 className="text-[12px] font-semibold text-[#17324D]">
+              {review.name}
+            </h3>
+
+            <div className="mt-1 flex items-center gap-2">
+
+              <span className="text-[8px] text-[#8A9AAC]">
+                {review.meta}
+              </span>
+
+              <span className="h-1 w-1 rounded-full bg-[#CBD5DE]" />
+
+              <span className="text-[8px] text-[#8A9AAC]">
+                {review.time}
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        {/* Google */}
+        <div
+          className="
+            flex
+            h-8
+            w-8
+            items-center
+            justify-center
+            rounded-full
+            border
+            border-[#E5EBF0]
+            bg-[#F8FAFC]
+            text-[13px]
+            font-bold
+          "
+        >
+          <span className="text-[#4285F4]">G</span>
+        </div>
+
+      </div>
+
+      {/* Stars */}
+      <div className="mt-6 flex items-center gap-1">
+
+        {[1, 2, 3, 4, 5].map((star) => (
+          <Star
+            key={star}
+            size={12}
+            fill="currentColor"
+            className="text-[#F4B400]"
+          />
+        ))}
+
+      </div>
+
+      {/* Quote */}
+      <div className="mt-5 flex gap-3">
+
+        <Quote
+          size={18}
+          strokeWidth={1.4}
+          className="mt-1 shrink-0 text-[#1769C2]/30"
+        />
+
+        <p className="text-[11px] leading-6 text-[#64788C] sm:text-[12px] sm:leading-7">
+          {review.review}
+        </p>
+
+      </div>
+
+      {/* Bottom */}
+      <div className="mt-6 flex items-center justify-between border-t border-[#E8EDF1] pt-4">
+
+        <span className="text-[7px] font-medium tracking-[0.2em] text-[#A3AFBA]">
+          VERIFIED EXPERIENCE
+        </span>
+
+        <ArrowUpRight
+          size={13}
+          className="
+            text-[#B0BCC7]
+            transition-all
+            duration-300
+            group-hover:-translate-y-1
+            group-hover:translate-x-1
+            group-hover:text-[#1769C2]
+          "
+        />
+
+      </div>
+    </article>
+  );
+};
+
+/* =========================================================
+   HOME TESTIMONIALS
 ========================================================= */
 
 const HomeTestimonials = () => {
   return (
     <section
       id="home-testimonials"
-      className="relative w-full overflow-hidden bg-white px-6 py-20 text-[#102A43] sm:px-8 lg:px-12 xl:px-16 xl:py-28"
+      className="
+        relative
+        w-full
+        overflow-hidden
+        bg-[#F7F9FB]
+        py-20
+        font-['Roboto',sans-serif]
+        sm:py-24
+        lg:py-28
+      "
     >
       {/* =====================================================
-          PREMIUM BACKGROUND
-      ===================================================== */}
+          BACKGROUND
+      ====================================================== */}
 
-      <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        {/* Large rotating ring */}
-        <motion.div
-          animate={{
-            rotate: 360,
-          }}
-          transition={{
-            duration: 70,
-            repeat: Infinity,
-            ease: "linear",
-          }}
-          className="absolute -left-[300px] top-[80px] h-[620px] w-[620px] rounded-full border border-[#DCE5ED]/70"
-        />
-
-        {/* Right rotating ring */}
-        <motion.div
-          animate={{
-            rotate: -360,
-          }}
-          transition={{
-            duration: 60,
-            repeat: Infinity,
-            ease: "linear",
-          }}
-          className="absolute -right-[300px] top-[100px] h-[650px] w-[650px] rounded-full border border-[#DCE5ED]/60"
-        />
-
-        {/* Inner rings */}
-        <div className="absolute -left-[140px] top-[210px] h-[400px] w-[400px] rounded-full border border-[#DCE5ED]/50" />
-
-        <div className="absolute -right-[130px] top-[250px] h-[400px] w-[400px] rounded-full border border-[#DCE5ED]/50" />
+      <div className="pointer-events-none absolute inset-0">
 
         {/* Soft blue glow */}
-        <motion.div
-          animate={{
-            scale: [1, 1.15, 1],
-            opacity: [0.02, 0.055, 0.02],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-          className="absolute left-[15%] top-[20%] h-[300px] w-[300px] rounded-full bg-[#1769C2] blur-[110px]"
+        <div
+          className="
+            absolute
+            left-[-180px]
+            top-[25%]
+            h-[350px]
+            w-[350px]
+            rounded-full
+            bg-[#1769C2]/[0.045]
+            blur-[120px]
+          "
         />
 
-        <motion.div
-          animate={{
-            scale: [1, 1.12, 1],
-            opacity: [0.02, 0.05, 0.02],
-          }}
-          transition={{
-            duration: 10,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-          className="absolute right-[15%] top-[35%] h-[320px] w-[320px] rounded-full bg-[#1769C2] blur-[120px]"
+        <div
+          className="
+            absolute
+            bottom-[-160px]
+            right-[-120px]
+            h-[350px]
+            w-[350px]
+            rounded-full
+            bg-[#1769C2]/[0.035]
+            blur-[120px]
+          "
         />
 
-        {/* Floating dots */}
-        <motion.div
-          animate={{
-            y: [-10, 10, -10],
-            opacity: [0.25, 0.8, 0.25],
-          }}
-          transition={{
-            duration: 4,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-          className="absolute left-[10%] top-[30%] h-1.5 w-1.5 rounded-full bg-[#1769C2]/40"
-        />
+        {/* Architectural lines */}
+        <div className="absolute left-[6%] top-0 h-full w-px bg-[#071827]/[0.025]" />
 
-        <motion.div
-          animate={{
-            y: [10, -10, 10],
-            opacity: [0.2, 0.7, 0.2],
-          }}
-          transition={{
-            duration: 5,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-          className="absolute right-[12%] top-[35%] h-2 w-2 rounded-full bg-[#1769C2]/30"
-        />
+        <div className="absolute right-[6%] top-0 h-full w-px bg-[#071827]/[0.025]" />
+
       </div>
 
       {/* =====================================================
           CONTENT
-      ===================================================== */}
+      ====================================================== */}
 
-      <div className="relative mx-auto max-w-[1680px]">
-        {/* =====================================================
+      <div className="relative mx-auto max-w-[1500px]">
+
+        {/* ===================================================
             HEADER
-        ===================================================== */}
-
-        <motion.div
-          initial={{
-            opacity: 0,
-            y: 25,
-          }}
-          whileInView={{
-            opacity: 1,
-            y: 0,
-          }}
-          viewport={{
-            once: true,
-            amount: 0.2,
-          }}
-          transition={{
-            duration: 0.7,
-          }}
-          className="grid grid-cols-1 gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-end"
-        >
-          {/* LEFT */}
-          <div>
-            <div className="mb-5 flex items-center gap-3">
-              <span className="h-px w-10 bg-[#1769C2]" />
-
-              <span className="text-[9px] font-semibold tracking-[0.3em] text-[#1769C2]">
-                GOOGLE REVIEWS
-              </span>
-            </div>
-
-            <h2 className="max-w-[760px] text-[clamp(38px,5vw,64px)] font-semibold leading-[1.02] tracking-[-0.05em] text-[#0B243D]">
-              What people say
-              <br />
-
-              <span className="text-[#1769C2]">
-                about CodeGenZ.
-              </span>
-            </h2>
-          </div>
-
-          {/* RIGHT */}
-          <div className="lg:pb-2">
-            <p className="max-w-[520px] text-[13px] leading-7 text-[#718398] lg:ml-auto">
-              We value every experience shared by our clients,
-              partners, and learners. Explore our genuine Google
-              reviews and see what people think about working with us.
-            </p>
-
-            <div className="mt-6 flex flex-wrap items-center gap-4 lg:justify-end">
-              <a
-                href={GOOGLE_REVIEW_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group inline-flex items-center gap-2 text-[9px] font-semibold tracking-[0.2em] text-[#1769C2]"
-              >
-                VIEW ON GOOGLE
-
-                <ArrowUpRight
-                  size={13}
-                  className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
-                />
-              </a>
-
-              <span className="hidden h-4 w-px bg-[#DCE5ED] sm:block" />
-
-              <Link
-                to="/testimonials"
-                className="group inline-flex items-center gap-2 text-[9px] font-semibold tracking-[0.2em] text-[#8A9AAC] transition-colors hover:text-[#1769C2]"
-              >
-                VIEW ALL REVIEWS
-
-                <ArrowUpRight
-                  size={13}
-                  className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
-                />
-              </Link>
-            </div>
-          </div>
-        </motion.div>
-
-        {/* =====================================================
-            GOOGLE REVIEW FEATURE
-        ===================================================== */}
-
-        <motion.div
-          initial={{
-            opacity: 0,
-            y: 35,
-          }}
-          whileInView={{
-            opacity: 1,
-            y: 0,
-          }}
-          viewport={{
-            once: true,
-            amount: 0.15,
-          }}
-          transition={{
-            duration: 0.75,
-            delay: 0.1,
-          }}
-          className="relative mt-14 overflow-hidden rounded-[30px] bg-[#061525]"
-        >
-          {/* ===================================================
-              DECORATIVE ELEMENTS
-          =================================================== */}
-
-          <motion.div
-            animate={{
-              rotate: 360,
-            }}
-            transition={{
-              duration: 50,
-              repeat: Infinity,
-              ease: "linear",
-            }}
-            className="pointer-events-none absolute -right-28 -top-36 h-[440px] w-[440px] rounded-full border border-[#63A9FF]/10"
-          />
-
-          <div className="pointer-events-none absolute -right-12 -top-12 h-[270px] w-[270px] rounded-full border border-[#63A9FF]/10" />
-
-          <div className="pointer-events-none absolute bottom-[-180px] left-[35%] h-[350px] w-[350px] rounded-full bg-[#1769C2]/10 blur-[100px]" />
-
-          <motion.div
-            animate={{
-              y: [-10, 10, -10],
-              opacity: [0.2, 0.7, 0.2],
-            }}
-            transition={{
-              duration: 5,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-            className="pointer-events-none absolute left-[10%] top-[20%] h-2 w-2 rounded-full bg-[#63A9FF]/40"
-          />
-
-          {/* ===================================================
-              CARD CONTENT
-          =================================================== */}
-
-          <div className="relative z-10 grid grid-cols-1 gap-10 px-7 py-9 sm:px-10 sm:py-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-center lg:px-16 lg:py-14">
-            {/* LEFT */}
-            <motion.div
-              initial={{
-                opacity: 0,
-                x: -20,
-              }}
-              whileInView={{
-                opacity: 1,
-                x: 0,
-              }}
-              viewport={{
-                once: true,
-              }}
-              transition={{
-                duration: 0.6,
-              }}
-            >
-              <div className="flex items-center gap-4">
-                {/* Google icon */}
-                <motion.div
-                  animate={{
-                    y: [-2, 2, -2],
-                  }}
-                  transition={{
-                    duration: 3,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }}
-                  className="flex h-12 w-12 items-center justify-center rounded-full bg-white text-xl font-bold shadow-lg"
-                >
-                  <span className="text-[#4285F4]">
-                    G
-                  </span>
-                </motion.div>
-
-                <div>
-                  <p className="text-[11px] font-semibold text-white">
-                    CodeGenZ Solutions
-                  </p>
-
-                  <p className="mt-1 text-[8px] tracking-[0.16em] text-white/40">
-                    GOOGLE BUSINESS PROFILE
-                  </p>
-                </div>
-              </div>
-
-              {/* Stars */}
-              <div className="mt-7 flex items-center gap-1">
-                {[1, 2, 3, 4, 5].map((star) => (
-                  <motion.div
-                    key={star}
-                    initial={{
-                      opacity: 0,
-                      scale: 0.5,
-                    }}
-                    whileInView={{
-                      opacity: 1,
-                      scale: 1,
-                    }}
-                    viewport={{
-                      once: true,
-                    }}
-                    transition={{
-                      delay: star * 0.08,
-                      duration: 0.3,
-                    }}
-                  >
-                    <Star
-                      size={17}
-                      fill="currentColor"
-                      className="text-[#F4B400]"
-                    />
-                  </motion.div>
-                ))}
-
-                <span className="ml-2 text-[9px] text-white/40">
-                  Client feedback
-                </span>
-              </div>
-            </motion.div>
-
-            {/* RIGHT */}
-            <motion.div
-              initial={{
-                opacity: 0,
-                x: 20,
-              }}
-              whileInView={{
-                opacity: 1,
-                x: 0,
-              }}
-              viewport={{
-                once: true,
-              }}
-              transition={{
-                duration: 0.6,
-                delay: 0.1,
-              }}
-            >
-              <p className="text-[9px] font-semibold tracking-[0.25em] text-[#63A9FF]">
-                REAL EXPERIENCES
-              </p>
-
-              <h3 className="mt-3 text-[clamp(25px,3vw,40px)] font-semibold leading-[1.15] tracking-[-0.03em] text-white">
-                Trusted by people who
-                <br className="hidden sm:block" />
-                choose quality.
-              </h3>
-
-              <p className="mt-4 max-w-[600px] text-[12px] leading-7 text-white/50">
-                Discover genuine feedback from our clients and
-                community on Google. Every review helps us continue
-                improving the quality of our work and services.
-              </p>
-
-              {/* Buttons */}
-              <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-                {/* Google */}
-                <a
-                  href={GOOGLE_REVIEW_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group inline-flex items-center justify-center gap-3 rounded-full bg-white px-6 py-3.5 text-[9px] font-semibold tracking-[0.18em] text-[#061525] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_15px_35px_rgba(255,255,255,0.12)]"
-                >
-                  VIEW GOOGLE REVIEWS
-
-                  <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#061525] text-white transition-transform duration-300 group-hover:rotate-45">
-                    <ArrowUpRight size={13} />
-                  </span>
-                </a>
-
-                {/* All Reviews */}
-                <Link
-                  to="/testimonials"
-                  className="group inline-flex items-center justify-center gap-3 rounded-full border border-white/10 px-6 py-3.5 text-[9px] font-semibold tracking-[0.18em] text-white/70 transition-all duration-300 hover:border-white/30 hover:bg-white/5 hover:text-white"
-                >
-                  READ ALL REVIEWS
-
-                  <ArrowUpRight
-                    size={13}
-                    className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
-                  />
-                </Link>
-              </div>
-            </motion.div>
-          </div>
-        </motion.div>
-
-        {/* =====================================================
-            SIMPLE TRUST STRIP
-        ===================================================== */}
+        ==================================================== */}
 
         <motion.div
           initial={{
@@ -425,48 +288,368 @@ const HomeTestimonials = () => {
             opacity: 1,
             y: 0,
           }}
+          transition={{
+            duration: 0.7,
+          }}
           viewport={{
             once: true,
+            amount: 0.2,
+          }}
+          className="px-5 sm:px-8 lg:px-10"
+        >
+
+          <div className="flex items-center justify-between">
+
+            <div className="flex items-center gap-3">
+
+              <span className="relative flex h-2 w-2 items-center justify-center">
+
+                <motion.span
+                  animate={{
+                    scale: [1, 1.7, 1],
+                    opacity: [0.4, 0, 0.4],
+                  }}
+                  transition={{
+                    duration: 2.2,
+                    repeat: Infinity,
+                  }}
+                  className="absolute h-2 w-2 rounded-full bg-[#1769C2]"
+                />
+
+                <span className="relative h-1.5 w-1.5 rounded-full bg-[#1769C2]" />
+
+              </span>
+
+              <span className="text-[8px] font-semibold tracking-[0.3em] text-[#1769C2] sm:text-[9px]">
+                CLIENT REVIEWS
+              </span>
+
+            </div>
+
+            <span className="hidden text-[8px] tracking-[0.25em] text-[#A2AFBA] sm:block">
+              CODEGENZ / TRUST
+            </span>
+
+          </div>
+
+        </motion.div>
+
+        {/* ===================================================
+            INTRO
+        ==================================================== */}
+
+        <motion.div
+          initial={{
+            opacity: 0,
+            y: 25,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          transition={{
+            duration: 0.7,
+            delay: 0.05,
+          }}
+          viewport={{
+            once: true,
+            amount: 0.2,
+          }}
+          className="
+            mt-10
+            grid
+            gap-8
+            px-5
+            sm:px-8
+            lg:grid-cols-[1fr_0.7fr]
+            lg:items-end
+            lg:gap-16
+            lg:px-10
+          "
+        >
+
+          {/* Heading */}
+          <div>
+
+            <p className="mb-4 text-[8px] font-medium tracking-[0.25em] text-[#8A9AAC]">
+              GOOGLE FEEDBACK
+            </p>
+
+            <h2
+              className="
+                max-w-[760px]
+                text-[clamp(2.8rem,5vw,5.8rem)]
+                font-medium
+                leading-[0.91]
+                tracking-[-0.065em]
+                text-[#071A2D]
+              "
+            >
+              What our clients
+              <br />
+
+              <span className="text-[#1769C2]">
+                say about us.
+              </span>
+            </h2>
+
+          </div>
+
+          {/* Description */}
+          <div className="lg:pb-1">
+
+            <p className="max-w-[480px] text-[12px] leading-7 text-[#718398] lg:ml-auto lg:text-right sm:text-[13px]">
+              Real experiences from people who have worked with CodeGenZ
+              Solutions. A small selection of feedback from our Google reviews.
+            </p>
+
+            <div className="mt-5 flex flex-wrap items-center gap-5 lg:justify-end">
+
+              <a
+                href={GOOGLE_REVIEW_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="
+                  group
+                  inline-flex
+                  items-center
+                  gap-2
+                  text-[8px]
+                  font-semibold
+                  tracking-[0.2em]
+                  text-[#1769C2]
+                "
+              >
+                VIEW ON GOOGLE
+
+                <ArrowUpRight
+                  size={12}
+                  className="transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1"
+                />
+              </a>
+
+              <span className="hidden h-4 w-px bg-[#D8E1E8] sm:block" />
+
+              <Link
+                to="/testimonials"
+                className="
+                  group
+                  inline-flex
+                  items-center
+                  gap-2
+                  text-[8px]
+                  font-semibold
+                  tracking-[0.2em]
+                  text-[#8A9AAC]
+                  transition-colors
+                  duration-300
+                  hover:text-[#1769C2]
+                "
+              >
+                VIEW ALL REVIEWS
+
+                <ArrowUpRight
+                  size={12}
+                  className="transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1"
+                />
+              </Link>
+
+            </div>
+
+          </div>
+
+        </motion.div>
+
+        {/* ===================================================
+            MOVING REVIEW TRACK
+        ==================================================== */}
+
+        <div className="relative mt-14 overflow-hidden">
+
+          {/* Left fade */}
+          <div
+            className="
+              pointer-events-none
+              absolute
+              left-0
+              top-0
+              z-20
+              h-full
+              w-16
+              bg-gradient-to-r
+              from-[#F7F9FB]
+              to-transparent
+              sm:w-24
+              lg:w-36
+            "
+          />
+
+          {/* Right fade */}
+          <div
+            className="
+              pointer-events-none
+              absolute
+              right-0
+              top-0
+              z-20
+              h-full
+              w-16
+              bg-gradient-to-l
+              from-[#F7F9FB]
+              to-transparent
+              sm:w-24
+              lg:w-36
+            "
+          />
+
+          {/* Moving track */}
+          <motion.div
+            animate={{
+              x: ["0%", "-50%"],
+            }}
+            transition={{
+              duration: 32,
+              repeat: Infinity,
+              ease: "linear",
+            }}
+            className="flex w-max gap-5 pl-5 sm:gap-6 sm:pl-8 lg:gap-7 lg:pl-10"
+          >
+
+            {/* First set */}
+            {reviews.map((review) => (
+              <ReviewCard
+                key={`first-${review.name}`}
+                review={review}
+              />
+            ))}
+
+            {/* Duplicate set for seamless animation */}
+            {reviews.map((review) => (
+              <ReviewCard
+                key={`second-${review.name}`}
+                review={review}
+              />
+            ))}
+
+          </motion.div>
+
+        </div>
+
+        {/* ===================================================
+            REVIEW INDICATOR
+        ==================================================== */}
+
+        <motion.div
+          initial={{
+            opacity: 0,
+          }}
+          whileInView={{
+            opacity: 1,
           }}
           transition={{
             duration: 0.6,
-            delay: 0.15,
           }}
-          className="mt-8 flex flex-col items-center justify-between gap-5 border-t border-[#DCE5ED] pt-7 sm:flex-row"
+          viewport={{
+            once: true,
+          }}
+          className="
+            mt-8
+            flex
+            items-center
+            justify-center
+            gap-3
+            px-5
+          "
         >
-          <div className="flex items-center gap-3">
-            <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#F7FAFC]">
-              <MessageCircle
-                size={15}
-                className="text-[#1769C2]"
-              />
-            </div>
 
-            <div>
-              <p className="text-[10px] font-semibold text-[#203B58]">
-                Your feedback matters.
-              </p>
+          <span className="h-px w-10 bg-[#D6E0E8]" />
 
-              <p className="mt-1 text-[8px] text-[#8A9AAC]">
-                We appreciate every review and experience shared.
-              </p>
-            </div>
+          <span className="text-[7px] font-medium tracking-[0.25em] text-[#A2AFBA]">
+            MOVING CLIENT STORIES
+          </span>
+
+          <span className="h-px w-10 bg-[#D6E0E8]" />
+
+        </motion.div>
+
+        {/* ===================================================
+            BOTTOM CTA
+        ==================================================== */}
+
+        <motion.div
+          initial={{
+            opacity: 0,
+            y: 15,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          transition={{
+            duration: 0.65,
+          }}
+          viewport={{
+            once: true,
+          }}
+          className="
+            mx-5
+            mt-10
+            flex
+            flex-col
+            items-start
+            justify-between
+            gap-5
+            border-t
+            border-[#DCE5ED]
+            pt-7
+            sm:mx-8
+            sm:flex-row
+            sm:items-center
+            lg:mx-10
+          "
+        >
+
+          <div>
+
+            <p className="text-[11px] font-medium text-[#203B58] sm:text-xs">
+              Your experience matters.
+            </p>
+
+            <p className="mt-1 text-[9px] text-[#8A9AAC] sm:text-[10px]">
+              Explore more feedback or share your own experience.
+            </p>
+
           </div>
 
           <a
             href={GOOGLE_REVIEW_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex items-center gap-2 text-[9px] font-semibold tracking-[0.18em] text-[#1769C2]"
+            className="
+              group
+              inline-flex
+              items-center
+              gap-3
+              text-[8px]
+              font-semibold
+              tracking-[0.2em]
+              text-[#1769C2]
+              transition-colors
+              duration-300
+              hover:text-[#071A2D]
+            "
           >
             SHARE YOUR EXPERIENCE
 
-            <ArrowUpRight
-              size={13}
-              className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
+            <ArrowRight
+              size={12}
+              className="transition-transform duration-300 group-hover:translate-x-1"
             />
+
           </a>
+
         </motion.div>
+
       </div>
     </section>
   );
