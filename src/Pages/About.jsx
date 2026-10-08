@@ -1,33 +1,37 @@
 import React from "react";
 import { motion } from "framer-motion";
 import {
-  FaBullseye,
-  FaRocket,
-  FaFlagCheckered,
-  FaArrowRight,
-  FaCheck,
-  FaCode,
-  FaGlobe,
-  FaLightbulb,
-} from "react-icons/fa";
+  ArrowUpRight,
+  ArrowRight,
+  Target,
+  Rocket,
+  Flag,
+  Code2,
+  Globe2,
+  Lightbulb,
+  Check,
+  Layers3,
+  Users,
+  Sparkles,
+} from "lucide-react";
 
 const About = () => {
   const vmg = [
     {
       number: "01",
-      icon: <FaBullseye />,
+      icon: Target,
       title: "Our Vision",
       text: "To become a globally trusted technology partner, known for crafting digital experiences that are simple, reliable, and built to last.",
     },
     {
       number: "02",
-      icon: <FaRocket />,
+      icon: Rocket,
       title: "Our Mission",
       text: "To empower businesses and individuals with well-structured, scalable solutions — delivered with clarity, precision, and genuine care for every client's needs.",
     },
     {
       number: "03",
-      icon: <FaFlagCheckered />,
+      icon: Flag,
       title: "Our Goal",
       text: "To consistently deliver high-quality, future-ready products while building long-term relationships founded on trust, transparency, and results.",
     },
@@ -50,473 +54,373 @@ const About = () => {
     "Long-term technology partnership",
   ];
 
+  const journey = [
+    {
+      year: "01",
+      title: "Understand",
+      text: "We begin by understanding your business, audience, challenges and objectives.",
+    },
+    {
+      year: "02",
+      title: "Shape",
+      text: "Ideas are transformed into a clear digital direction with purpose and structure.",
+    },
+    {
+      year: "03",
+      title: "Build",
+      text: "Design and technology come together to create reliable digital experiences.",
+    },
+    {
+      year: "04",
+      title: "Grow",
+      text: "We continue refining the product so it can evolve with your business.",
+    },
+  ];
+
   return (
     <motion.main
       id="about"
-      className="w-full overflow-hidden bg-white text-[#102A43]"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.7 }}
+      className="w-full overflow-hidden bg-white font-['Roboto',sans-serif] text-[#0B243D]"
     >
       {/* =========================================================
           HERO
       ========================================================== */}
 
-      <section
-        className="
-          relative
-          flex
-          min-h-[560px]
-          items-end
-          overflow-hidden
-          bg-[#061525]
-          px-8
-          pb-24
-          pt-[140px]
-          xl:px-16
-        "
-      >
-        {/* Background decoration */}
+      <section className="relative min-h-[720px] overflow-hidden bg-[#061525] sm:min-h-[760px] lg:min-h-[820px]">
 
-        <div
-          className="
-            pointer-events-none
-            absolute
-            right-[-150px]
-            top-[-150px]
-            h-[550px]
-            w-[550px]
-            rounded-full
-            border
-            border-[#1769C2]/15
-          "
-        />
+        {/* Huge background word */}
+        <div className="pointer-events-none absolute -right-8 bottom-[-40px] select-none text-[180px] font-bold leading-none tracking-[-0.1em] text-white/[0.025] sm:text-[260px] lg:text-[420px]">
+          ABOUT
+        </div>
 
-        <div
-          className="
-            pointer-events-none
-            absolute
-            right-[-50px]
-            top-[-50px]
-            h-[350px]
-            w-[350px]
-            rounded-full
-            border
-            border-[#63A9FF]/10
-          "
-        />
+        {/* Side accent */}
+        <div className="absolute right-8 top-1/2 hidden -translate-y-1/2 lg:block">
+          <div className="flex flex-col items-center gap-5">
+            <span className="h-24 w-px bg-gradient-to-b from-transparent via-[#579FFF] to-transparent" />
 
-        <div
-          className="
-            pointer-events-none
-            absolute
-            bottom-[-220px]
-            left-[35%]
-            h-[500px]
-            w-[500px]
-            rounded-full
-            bg-[#1769C2]/10
-            blur-[120px]
-          "
-        />
+            <span className="text-[8px] tracking-[0.35em] text-white/25 [writing-mode:vertical-rl]">
+              CODEGENZ SOLUTIONS
+            </span>
 
-        {/* Decorative lines */}
+            <span className="h-24 w-px bg-gradient-to-b from-[#579FFF] via-white/10 to-transparent" />
+          </div>
+        </div>
 
-        <div className="absolute right-[10%] top-[30%] h-[180px] w-px bg-white/[0.08]" />
+        {/* Blue atmospheric light */}
+        <div className="pointer-events-none absolute -left-40 bottom-[-180px] h-[500px] w-[500px] rounded-full bg-[#1769C2]/10 blur-[130px]" />
 
-        <div className="absolute right-[10%] top-[30%] h-px w-[180px] bg-white/[0.08]" />
+        <div className="pointer-events-none absolute right-[-160px] top-[-160px] h-[500px] w-[500px] rounded-full bg-[#1769C2]/10 blur-[120px]" />
 
-        <div className="absolute bottom-[18%] left-[8%] h-px w-[100px] bg-[#63A9FF]/30" />
+        <div className="relative z-10 mx-auto flex min-h-[720px] w-full max-w-[1600px] items-end px-6 pb-20 pt-36 sm:min-h-[760px] sm:px-8 sm:pb-24 lg:min-h-[820px] lg:px-12 lg:pb-28">
 
-        {/* Content */}
+          <div className="grid w-full gap-14 lg:grid-cols-[1.25fr_0.75fr] lg:items-end">
 
-        <div className="relative z-10 mx-auto w-full max-w-[1680px]">
-          <motion.div
-            initial={{ opacity: 0, y: 35 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <div className="mb-7 flex items-center gap-4">
-              <span className="h-px w-12 bg-[#63A9FF]" />
-
-              <span
-                className="
-                  text-[9px]
-                  font-semibold
-                  tracking-[0.35em]
-                  text-[#63A9FF]
-                "
-              >
-                CODEGENZ SOLUTIONS
-              </span>
-            </div>
-
-            <h1
-              className="
-                max-w-[900px]
-                text-[clamp(50px,6vw,90px)]
-                font-semibold
-                leading-[0.95]
-                tracking-[-0.055em]
-                text-white
-              "
+            {/* Main heading */}
+            <motion.div
+              initial={{ opacity: 0, y: 45 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.9,
+                ease: [0.22, 1, 0.36, 1],
+              }}
             >
-              About
-              <span className="text-[#63A9FF]"> Company</span>
-            </h1>
 
-            <div className="mt-8 flex items-center gap-3">
-              <a
-                href="#home"
-                className="
-                  text-[9px]
-                  font-medium
-                  tracking-[0.2em]
-                  text-white/40
-                  transition-colors
-                  hover:text-white
-                "
-              >
-                HOME
-              </a>
+              <div className="mb-7 flex items-center gap-4">
+                <span className="h-px w-12 bg-[#579FFF]" />
 
-              <span className="text-[#63A9FF]">/</span>
+                <span className="text-[9px] font-semibold tracking-[0.35em] text-[#6EAEFF]">
+                  CODEGENZ SOLUTIONS
+                </span>
+              </div>
 
-              <span
-                className="
-                  text-[9px]
-                  font-medium
-                  tracking-[0.2em]
-                  text-white
-                "
-              >
-                ABOUT COMPANY
+              <h1 className="max-w-[1000px] text-[clamp(4rem,8vw,8.8rem)] font-medium leading-[0.83] tracking-[-0.075em] text-white">
+                More than
+                <br />
+
+                <span className="text-white/30">
+                  technology.
+                </span>
+              </h1>
+
+              <div className="mt-7 flex items-center gap-3">
+                <span className="h-px w-10 bg-[#579FFF]" />
+
+                <span className="text-[clamp(1.8rem,3vw,3.5rem)] font-light tracking-[-0.05em] text-[#579FFF]">
+                  We create impact.
+                </span>
+              </div>
+
+            </motion.div>
+
+            {/* Hero information */}
+            <motion.div
+              initial={{ opacity: 0, x: 35 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{
+                duration: 0.8,
+                delay: 0.2,
+              }}
+              className="lg:pb-2"
+            >
+
+              <p className="max-w-[500px] text-sm leading-7 text-white/45 sm:text-base sm:leading-8">
+                Technology has changed the way people live, work and connect.
+                We believe great digital products should make that experience
+                simpler, clearer and more meaningful.
+              </p>
+
+              <div className="mt-8 flex items-center gap-4">
+
+                <a
+                  href="#story"
+                  className="group inline-flex items-center gap-4 rounded-full bg-white px-6 py-3.5 text-[9px] font-semibold tracking-[0.2em] text-[#061525] transition-all duration-300 hover:-translate-y-1"
+                >
+                  OUR STORY
+
+                  <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#061525] text-white transition-transform duration-300 group-hover:rotate-45">
+                    <ArrowUpRight size={13} />
+                  </span>
+                </a>
+
+                <a
+                  href="/contact?quote=true"
+                  className="text-[9px] font-semibold tracking-[0.2em] text-white/45 transition-colors duration-300 hover:text-white"
+                >
+                  START A PROJECT
+                </a>
+
+              </div>
+
+            </motion.div>
+
+          </div>
+        </div>
+
+        {/* Bottom information strip */}
+        <div className="absolute bottom-0 left-0 right-0 border-t border-white/10">
+
+          <div className="mx-auto flex max-w-[1600px] items-center justify-between px-6 py-4 sm:px-8 lg:px-12">
+
+            <span className="text-[8px] font-semibold tracking-[0.3em] text-white/25">
+              ABOUT COMPANY
+            </span>
+
+            <div className="flex items-center gap-3">
+              <span className="h-px w-8 bg-white/15" />
+
+              <span className="text-[8px] tracking-[0.25em] text-[#579FFF]">
+                01 — 04
               </span>
             </div>
-          </motion.div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      {/* =========================================================
+          COMPANY STORY
+      ========================================================== */}
+
+      <section
+        id="story"
+        className="bg-white py-24 sm:py-28 lg:py-36"
+      >
+        <div className="mx-auto w-full max-w-[1600px] px-6 sm:px-8 lg:px-12">
+
+          <div className="grid gap-16 lg:grid-cols-[0.75fr_1.25fr] lg:gap-28">
+
+            {/* Label column */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+            >
+
+              <div className="sticky top-32">
+
+                <span className="text-[9px] font-semibold tracking-[0.3em] text-[#1769C2]">
+                  WHO WE ARE
+                </span>
+
+                <div className="mt-5 h-px w-16 bg-[#1769C2]" />
+
+                <p className="mt-5 max-w-[250px] text-xs leading-6 text-[#8A9AAC]">
+                  A technology partner focused on creating practical,
+                  scalable and meaningful digital experiences.
+                </p>
+
+              </div>
+
+            </motion.div>
+
+            {/* Story */}
+            <motion.div
+              initial={{ opacity: 0, y: 35 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+
+              <h2 className="max-w-[900px] text-[clamp(2.8rem,5.5vw,6.3rem)] font-medium leading-[0.9] tracking-[-0.07em] text-[#0B243D]">
+                Technology that creates
+                <span className="text-[#1769C2]">
+                  {" "}meaningful impact.
+                </span>
+              </h2>
+
+              <div className="mt-12 grid gap-8 border-t border-[#E2E9F0] pt-10 md:grid-cols-2">
+
+                <p className="text-sm leading-8 text-[#60758A]">
+                  Technology has revolutionized the way humans live, work, and
+                  interact. From communication to healthcare, transportation,
+                  and entertainment, technological advancements have
+                  significantly improved efficiency and convenience.
+                </p>
+
+                <p className="text-sm leading-8 text-[#60758A]">
+                  Advanced digital solutions continue to transform businesses
+                  and create new opportunities. At CodeGenZ Solutions, we focus
+                  on creating practical and scalable technology experiences
+                  that help businesses move forward.
+                </p>
+
+              </div>
+
+              {/* Mini metrics */}
+              <div className="mt-14 grid grid-cols-2 border-y border-[#E2E9F0] sm:grid-cols-4">
+
+                {[
+                  ["01", "IDEAS"],
+                  ["02", "DESIGN"],
+                  ["03", "TECH"],
+                  ["04", "GROWTH"],
+                ].map(([number, label]) => (
+                  <div
+                    key={number}
+                    className="border-r border-[#E2E9F0] px-4 py-6 first:pl-0 last:border-r-0 sm:px-6"
+                  >
+                    <span className="text-2xl font-medium tracking-[-0.05em] text-[#1769C2]">
+                      {number}
+                    </span>
+
+                    <p className="mt-2 text-[8px] font-semibold tracking-[0.2em] text-[#8A9AAC]">
+                      {label}
+                    </p>
+                  </div>
+                ))}
+
+              </div>
+
+            </motion.div>
+
+          </div>
         </div>
       </section>
 
       {/* =========================================================
-          WHO WE ARE
+          THE CODEGENZ WAY
       ========================================================== */}
 
-      <section className="px-8 py-24 xl:px-16 xl:py-32">
-        <div className="mx-auto grid max-w-[1680px] grid-cols-2 items-center gap-20">
+      <section className="relative overflow-hidden bg-[#F4F7FA] py-24 sm:py-28 lg:py-36">
 
-          {/* Content */}
+        <div className="mx-auto w-full max-w-[1600px] px-6 sm:px-8 lg:px-12">
 
-          <motion.div
-            initial={{ opacity: 0, x: -45 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7 }}
-            viewport={{ once: true }}
-          >
-            <div className="mb-6 flex items-center gap-3">
-              <span className="h-px w-10 bg-[#1769C2]" />
+          <div className="grid gap-16 lg:grid-cols-[1fr_1.3fr] lg:gap-24">
 
-              <span
-                className="
-                  text-[9px]
-                  font-semibold
-                  tracking-[0.3em]
-                  text-[#1769C2]
-                "
-              >
-                WHO WE ARE
-              </span>
-            </div>
-
-            <h2
-              className="
-                max-w-[720px]
-                text-[clamp(36px,4vw,60px)]
-                font-semibold
-                leading-[1.04]
-                tracking-[-0.045em]
-                text-[#0B243D]
-              "
+            {/* Left */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
             >
-              Technology that creates
-              <span className="text-[#1769C2]">
-                {" "}
-                meaningful impact.
+
+              <span className="text-[9px] font-semibold tracking-[0.3em] text-[#1769C2]">
+                THE CODEGENZ WAY
               </span>
-            </h2>
 
-            <p className="mt-8 max-w-[650px] text-[14px] leading-8 text-[#60758A]">
-              Technology has revolutionized the way humans live, work, and
-              interact. From communication to healthcare, transportation, and
-              entertainment, technological advancements have significantly
-              improved efficiency and convenience.
-            </p>
+              <h2 className="mt-5 max-w-[550px] text-[clamp(2.8rem,5vw,5.5rem)] font-medium leading-[0.92] tracking-[-0.065em] text-[#0B243D]">
+                Think clearly.
+                <br />
 
-            <p className="mt-5 max-w-[650px] text-[14px] leading-8 text-[#60758A]">
-              Advanced digital solutions continue to transform businesses and
-              create new opportunities. At CodeGenZ Solutions, we focus on
-              creating practical and scalable technology experiences that help
-              businesses move forward.
-            </p>
+                <span className="text-[#1769C2]">
+                  Build better.
+                </span>
+              </h2>
 
-            <a
-              href="#services"
-              className="
-                group
-                mt-9
-                inline-flex
-                items-center
-                gap-4
-                rounded-full
-                bg-[#1769C2]
-                px-7
-                py-4
-                text-[9px]
-                font-semibold
-                tracking-[0.2em]
-                text-white
-                shadow-[0_12px_30px_rgba(23,105,194,0.18)]
-                transition-all
-                duration-300
-                hover:-translate-y-1
-                hover:bg-[#0F559F]
-              "
-            >
-              DISCOVER MORE
-
-              <span
-                className="
-                  transition-transform
-                  duration-300
-                  group-hover:translate-x-1
-                "
-              >
-                <FaArrowRight size={12} />
-              </span>
-            </a>
-          </motion.div>
-
-          {/* Premium Technology Visual */}
-
-          <motion.div
-            initial={{ opacity: 0, x: 45 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="
-              relative
-              flex
-              min-h-[500px]
-              items-center
-              justify-center
-            "
-          >
-            {/* Outer rings */}
-
-            <div
-              className="
-                absolute
-                h-[440px]
-                w-[440px]
-                rounded-full
-                border
-                border-[#1769C2]/10
-              "
-            />
-
-            <div
-              className="
-                absolute
-                h-[350px]
-                w-[350px]
-                rounded-full
-                border
-                border-[#1769C2]/15
-              "
-            />
-
-            <div
-              className="
-                absolute
-                h-[260px]
-                w-[260px]
-                rounded-full
-                bg-[#1769C2]/10
-                blur-[45px]
-              "
-            />
-
-            {/* Dashed ring */}
-
-            <div
-              className="
-                absolute
-                h-[470px]
-                w-[470px]
-                animate-[spin_30s_linear_infinite]
-                rounded-full
-                border
-                border-dashed
-                border-[#1769C2]/10
-              "
-            />
-
-            {/* Center */}
-
-            <div
-              className="
-                relative
-                z-10
-                flex
-                h-[245px]
-                w-[245px]
-                flex-col
-                items-center
-                justify-center
-                rounded-full
-                border
-                border-[#DCE5ED]
-                bg-white
-                shadow-[0_30px_90px_rgba(15,65,105,0.13)]
-              "
-            >
-              <div
-                className="
-                  flex
-                  h-[72px]
-                  w-[72px]
-                  items-center
-                  justify-center
-                  rounded-[20px]
-                  bg-[#1769C2]
-                  text-white
-                  shadow-[0_15px_35px_rgba(23,105,194,0.25)]
-                "
-              >
-                <FaCode size={28} />
-              </div>
-
-              <p
-                className="
-                  mt-5
-                  text-[12px]
-                  font-semibold
-                  tracking-[0.25em]
-                  text-[#0B243D]
-                "
-              >
-                CODEGENZ
+              <p className="mt-7 max-w-[470px] text-sm leading-7 text-[#718398]">
+                We combine creative thinking with technical execution to
+                transform ideas into digital experiences that are useful,
+                scalable and built with intention.
               </p>
 
-              <p
-                className="
-                  mt-2
-                  text-[8px]
-                  tracking-[0.25em]
-                  text-[#8A9AAC]
-                "
-              >
-                DIGITAL SOLUTIONS
-              </p>
+            </motion.div>
+
+            {/* Right principles */}
+            <div>
+
+              {[
+                {
+                  number: "01",
+                  title: "Clarity",
+                  text: "We believe good technology begins with understanding. Clear communication keeps every decision purposeful.",
+                },
+                {
+                  number: "02",
+                  title: "Craft",
+                  text: "We pay attention to the details that shape the experience, from interface interactions to technical architecture.",
+                },
+                {
+                  number: "03",
+                  title: "Reliability",
+                  text: "We build solutions that are structured, maintainable and ready to evolve as your needs change.",
+                },
+                {
+                  number: "04",
+                  title: "Partnership",
+                  text: "We work alongside our clients rather than simply delivering a project and walking away.",
+                },
+              ].map((item, index) => (
+                <motion.div
+                  key={item.number}
+                  initial={{ opacity: 0, x: 30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    duration: 0.55,
+                    delay: index * 0.1,
+                  }}
+                  className="group border-t border-[#D8E2EA] py-7 sm:py-8"
+                >
+
+                  <div className="grid gap-4 sm:grid-cols-[70px_180px_1fr] sm:items-start">
+
+                    <span className="text-[9px] font-semibold tracking-[0.2em] text-[#1769C2]">
+                      {item.number}
+                    </span>
+
+                    <h3 className="text-xl font-medium tracking-[-0.03em] text-[#0B243D] transition-colors duration-300 group-hover:text-[#1769C2]">
+                      {item.title}
+                    </h3>
+
+                    <p className="max-w-[500px] text-xs leading-6 text-[#718398]">
+                      {item.text}
+                    </p>
+
+                  </div>
+
+                </motion.div>
+              ))}
+
             </div>
 
-            {/* Floating item 01 */}
-
-            <div
-              className="
-                absolute
-                left-[2%]
-                top-[17%]
-                flex
-                items-center
-                gap-3
-                rounded-2xl
-                border
-                border-[#E2EAF1]
-                bg-white
-                px-4
-                py-3
-                shadow-[0_15px_40px_rgba(15,65,105,0.08)]
-              "
-            >
-              <div
-                className="
-                  flex
-                  h-9
-                  w-9
-                  items-center
-                  justify-center
-                  rounded-xl
-                  bg-[#EEF6FF]
-                  text-[#1769C2]
-                "
-              >
-                <FaGlobe size={15} />
-              </div>
-
-              <div>
-                <p className="text-[9px] font-semibold tracking-[0.1em] text-[#203B58]">
-                  DIGITAL
-                </p>
-
-                <p className="mt-1 text-[8px] text-[#8A9AAC]">
-                  Connected experiences
-                </p>
-              </div>
-            </div>
-
-            {/* Floating item 02 */}
-
-            <div
-              className="
-                absolute
-                bottom-[15%]
-                right-[2%]
-                flex
-                items-center
-                gap-3
-                rounded-2xl
-                border
-                border-[#E2EAF1]
-                bg-white
-                px-4
-                py-3
-                shadow-[0_15px_40px_rgba(15,65,105,0.08)]
-              "
-            >
-              <div
-                className="
-                  flex
-                  h-9
-                  w-9
-                  items-center
-                  justify-center
-                  rounded-xl
-                  bg-[#EEF6FF]
-                  text-[#1769C2]
-                "
-              >
-                <FaLightbulb size={15} />
-              </div>
-
-              <div>
-                <p className="text-[9px] font-semibold tracking-[0.1em] text-[#203B58]">
-                  INNOVATION
-                </p>
-
-                <p className="mt-1 text-[8px] text-[#8A9AAC]">
-                  Ideas into solutions
-                </p>
-              </div>
-            </div>
-
-            {/* Small dots */}
-
-            <span className="absolute left-[15%] bottom-[25%] h-2 w-2 rounded-full bg-[#1769C2]" />
-
-            <span className="absolute right-[15%] top-[18%] h-2 w-2 rounded-full bg-[#63A9FF]" />
-
-            <span className="absolute right-[25%] bottom-[8%] h-3 w-3 rounded-full border border-[#1769C2]" />
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -524,293 +428,264 @@ const About = () => {
           VISION / MISSION / GOAL
       ========================================================== */}
 
-      <section className="bg-[#F7FAFC] px-8 py-24 xl:px-16 xl:py-28">
-        <div className="mx-auto max-w-[1680px]">
+      <section className="bg-[#061525] py-24 sm:py-28 lg:py-36">
 
+        <div className="mx-auto w-full max-w-[1600px] px-6 sm:px-8 lg:px-12">
+
+          {/* Heading */}
           <motion.div
-            className="mx-auto max-w-[700px] text-center"
             initial={{ opacity: 0, y: 25 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
             viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="max-w-[850px]"
           >
-            <span
-              className="
-                text-[9px]
-                font-semibold
-                tracking-[0.3em]
-                text-[#1769C2]
-              "
-            >
+
+            <span className="text-[9px] font-semibold tracking-[0.32em] text-[#579FFF]">
               OUR PURPOSE
             </span>
 
-            <h2
-              className="
-                mt-4
-                text-[clamp(34px,4vw,55px)]
-                font-semibold
-                tracking-[-0.04em]
-                text-[#0B243D]
-              "
-            >
-              Vision, Mission &amp; Goal
+            <h2 className="mt-5 text-[clamp(2.8rem,5vw,5.8rem)] font-medium leading-[0.9] tracking-[-0.065em] text-white">
+              What keeps us
+              <br />
+
+              <span className="text-white/30">
+                moving forward.
+              </span>
             </h2>
 
-            <p className="mt-5 text-[14px] leading-7 text-[#718398]">
-              The principles that guide every product we build.
-            </p>
           </motion.div>
 
-          {/* Timeline */}
+          {/* Purpose list */}
+          <div className="mt-16 border-t border-white/10">
 
-          <div className="relative mt-20">
+            {vmg.map((item, index) => {
 
-            {/* Desktop line */}
+              const Icon = item.icon;
 
-            <div className="absolute left-[16.66%] right-[16.66%] top-[42px] hidden h-px bg-[#DCE5ED] lg:block">
-              <motion.div
-                className="h-full origin-left bg-[#1769C2]"
-                initial={{ scaleX: 0 }}
-                whileInView={{ scaleX: 1 }}
-                transition={{
-                  duration: 1.4,
-                  ease: "easeInOut",
-                }}
-                viewport={{ once: true }}
-              />
-            </div>
-
-            <div className="grid grid-cols-1 gap-14 lg:grid-cols-3">
-              {vmg.map((item, index) => (
+              return (
                 <motion.div
-                  key={item.title}
-                  className="relative text-center"
-                  initial={{ opacity: 0, y: 30 }}
+                  key={item.number}
+                  initial={{ opacity: 0, y: 25 }}
                   whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
                   transition={{
                     duration: 0.6,
-                    delay: index * 0.18,
+                    delay: index * 0.1,
                   }}
-                  viewport={{ once: true }}
+                  className="group border-b border-white/10 py-8 sm:py-10 lg:py-12"
                 >
-                  {/* Icon */}
 
-                  <div
-                    className="
-                      relative
-                      z-10
-                      mx-auto
-                      flex
-                      h-[84px]
-                      w-[84px]
-                      items-center
-                      justify-center
-                      rounded-full
-                      border
-                      border-[#D8E4EE]
-                      bg-white
-                      shadow-[0_12px_35px_rgba(15,65,105,0.08)]
-                    "
-                  >
-                    <div
-                      className="
-                        flex
-                        h-[58px]
-                        w-[58px]
-                        items-center
-                        justify-center
-                        rounded-full
-                        bg-[#1769C2]
-                        text-white
-                      "
-                    >
-                      {item.icon}
+                  <div className="grid gap-7 lg:grid-cols-[80px_100px_280px_1fr_50px] lg:items-center">
+
+                    {/* Number */}
+                    <span className="text-[10px] font-semibold tracking-[0.2em] text-[#579FFF]">
+                      {item.number}
+                    </span>
+
+                    {/* Icon */}
+                    <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-white/10 text-[#579FFF] transition-all duration-300 group-hover:border-[#579FFF]/30 group-hover:bg-[#1769C2] group-hover:text-white">
+                      <Icon size={20} strokeWidth={1.4} />
                     </div>
+
+                    {/* Title */}
+                    <h3 className="text-xl font-medium tracking-[-0.03em] text-white sm:text-2xl">
+                      {item.title}
+                    </h3>
+
+                    {/* Description */}
+                    <p className="max-w-[600px] text-xs leading-7 text-white/40 sm:text-sm">
+                      {item.text}
+                    </p>
+
+                    {/* Arrow */}
+                    <ArrowUpRight
+                      size={18}
+                      className="hidden text-[#579FFF] transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 lg:block"
+                    />
+
                   </div>
 
-                  {/* Number */}
-
-                  <span
-                    className="
-                      mt-5
-                      block
-                      text-[8px]
-                      font-semibold
-                      tracking-[0.25em]
-                      text-[#1769C2]
-                    "
-                  >
-                    {item.number}
-                  </span>
-
-                  {/* Title */}
-
-                  <h3 className="mt-3 text-[20px] font-semibold text-[#0B243D]">
-                    {item.title}
-                  </h3>
-
-                  {/* Description */}
-
-                  <p className="mx-auto mt-4 max-w-[380px] text-[13px] leading-7 text-[#718398]">
-                    {item.text}
-                  </p>
                 </motion.div>
-              ))}
-            </div>
+              );
+            })}
+
           </div>
+
         </div>
       </section>
 
       {/* =========================================================
-          SERVICES
+          JOURNEY
       ========================================================== */}
 
-      <section
-        id="about-services"
-        className="px-8 py-24 xl:px-16 xl:py-32"
-      >
-        <div className="mx-auto max-w-[1680px]">
+      <section className="bg-white py-24 sm:py-28 lg:py-36">
 
-          <motion.div
-            className="flex items-end justify-between"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <div>
-              <span
-                className="
-                  text-[9px]
-                  font-semibold
-                  tracking-[0.3em]
-                  text-[#1769C2]
-                "
-              >
+        <div className="mx-auto w-full max-w-[1600px] px-6 sm:px-8 lg:px-12">
+
+          <div className="grid gap-14 lg:grid-cols-[0.6fr_1.4fr] lg:gap-24">
+
+            {/* Intro */}
+            <motion.div
+              initial={{ opacity: 0, x: -25 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+            >
+
+              <span className="text-[9px] font-semibold tracking-[0.3em] text-[#1769C2]">
+                OUR JOURNEY
+              </span>
+
+              <h2 className="mt-5 text-[clamp(2.7rem,4.5vw,5rem)] font-medium leading-[0.92] tracking-[-0.06em] text-[#0B243D]">
+                From thought
+                <br />
+
+                <span className="text-[#1769C2]">
+                  to reality.
+                </span>
+              </h2>
+
+              <p className="mt-7 max-w-[380px] text-sm leading-7 text-[#718398]">
+                Every project moves through a clear process designed to keep
+                ideas focused and execution purposeful.
+              </p>
+
+            </motion.div>
+
+            {/* Journey timeline */}
+            <div className="relative">
+
+              {/* Vertical line */}
+              <div className="absolute bottom-0 left-[17px] top-0 hidden w-px bg-[#DCE5ED] sm:block" />
+
+              <div className="space-y-0">
+
+                {journey.map((item, index) => (
+                  <motion.div
+                    key={item.year}
+                    initial={{ opacity: 0, x: 30 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{
+                      duration: 0.55,
+                      delay: index * 0.1,
+                    }}
+                    className="group relative border-t border-[#DCE5ED] py-8 sm:pl-16 sm:py-10"
+                  >
+
+                    {/* Timeline point */}
+                    <span className="absolute left-[10px] top-[43px] hidden h-4 w-4 rounded-full border-4 border-white bg-[#1769C2] shadow-[0_0_0_1px_#1769C2] sm:block" />
+
+                    <div className="flex flex-col gap-5 sm:flex-row sm:items-start">
+
+                      <span className="text-[9px] font-semibold tracking-[0.2em] text-[#1769C2]">
+                        {item.year}
+                      </span>
+
+                      <div className="flex-1">
+
+                        <h3 className="text-xl font-medium tracking-[-0.03em] text-[#0B243D] transition-colors duration-300 group-hover:text-[#1769C2] sm:text-2xl">
+                          {item.title}
+                        </h3>
+
+                        <p className="mt-3 max-w-[560px] text-xs leading-7 text-[#718398] sm:text-sm">
+                          {item.text}
+                        </p>
+
+                      </div>
+
+                      <ArrowRight
+                        size={17}
+                        className="text-[#AAB8C4] transition-all duration-300 group-hover:translate-x-2 group-hover:text-[#1769C2]"
+                      />
+
+                    </div>
+
+                  </motion.div>
+                ))}
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      {/* =========================================================
+          WHAT WE DO
+      ========================================================== */}
+
+      <section className="bg-[#F4F7FA] py-24 sm:py-28 lg:py-36">
+
+        <div className="mx-auto w-full max-w-[1600px] px-6 sm:px-8 lg:px-12">
+
+          <div className="grid gap-14 lg:grid-cols-[0.65fr_1.35fr] lg:gap-24">
+
+            {/* Heading */}
+            <motion.div
+              initial={{ opacity: 0, y: 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+            >
+
+              <span className="text-[9px] font-semibold tracking-[0.3em] text-[#1769C2]">
                 WHAT WE DO
               </span>
 
-              <h2
-                className="
-                  mt-4
-                  text-[clamp(36px,4vw,58px)]
-                  font-semibold
-                  tracking-[-0.04em]
-                  text-[#0B243D]
-                "
-              >
-                What We Do Best
+              <h2 className="mt-5 text-[clamp(2.7rem,4.5vw,5rem)] font-medium leading-[0.92] tracking-[-0.06em] text-[#0B243D]">
+                Capabilities
+                <br />
+
+                <span className="text-[#8A9AAC]">
+                  that connect.
+                </span>
               </h2>
+
+            </motion.div>
+
+            {/* Service list */}
+            <div className="border-t border-[#DCE5ED]">
+
+              {services.map((service, index) => (
+                <motion.a
+                  key={service}
+                  href="/services"
+                  initial={{ opacity: 0, y: 15 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    duration: 0.45,
+                    delay: index * 0.06,
+                  }}
+                  className="group flex items-center justify-between gap-5 border-b border-[#DCE5ED] py-6 sm:py-7"
+                >
+
+                  <div className="flex items-center gap-5 sm:gap-8">
+
+                    <span className="text-[9px] font-semibold tracking-[0.15em] text-[#A0AFBD]">
+                      0{index + 1}
+                    </span>
+
+                    <span className="text-base font-medium tracking-[-0.02em] text-[#203B58] transition-colors duration-300 group-hover:text-[#1769C2] sm:text-lg">
+                      {service}
+                    </span>
+
+                  </div>
+
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#D4DFE8] text-[#8A9AAC] transition-all duration-300 group-hover:border-[#1769C2] group-hover:bg-[#1769C2] group-hover:text-white">
+                    <ArrowUpRight size={13} />
+                  </span>
+
+                </motion.a>
+              ))}
+
             </div>
 
-            <p
-              className="
-                hidden
-                max-w-[420px]
-                text-right
-                text-[13px]
-                leading-7
-                text-[#718398]
-                lg:block
-              "
-            >
-              From design to deployment, our team handles every stage of your
-              digital journey.
-            </p>
-          </motion.div>
-
-          {/* Service list */}
-
-          <div className="mt-14 border-t border-[#E4EBF2]">
-            {services.map((service, index) => (
-              <motion.a
-                href="#contact"
-                key={service}
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{
-                  duration: 0.45,
-                  delay: index * 0.06,
-                }}
-                viewport={{ once: true }}
-                className="
-                  group
-                  flex
-                  items-center
-                  justify-between
-                  border-b
-                  border-[#E4EBF2]
-                  py-6
-                  transition-all
-                  duration-300
-                  hover:px-4
-                "
-              >
-                <div className="flex items-center gap-7">
-                  <span
-                    className="
-                      text-[9px]
-                      font-medium
-                      tracking-[0.15em]
-                      text-[#A0AFBD]
-                    "
-                  >
-                    0{index + 1}
-                  </span>
-
-                  <span
-                    className="
-                      text-[17px]
-                      font-medium
-                      tracking-[-0.01em]
-                      text-[#203B58]
-                      transition-colors
-                      duration-300
-                      group-hover:text-[#1769C2]
-                    "
-                  >
-                    {service}
-                  </span>
-                </div>
-
-                <span
-                  className="
-                    flex
-                    h-10
-                    w-10
-                    items-center
-                    justify-center
-                    rounded-full
-                    border
-                    border-[#DCE5ED]
-                    text-[#8A9AAC]
-                    transition-all
-                    duration-300
-                    group-hover:border-[#1769C2]
-                    group-hover:bg-[#1769C2]
-                    group-hover:text-white
-                  "
-                >
-                  <FaArrowRight size={12} />
-                </span>
-              </motion.a>
-            ))}
           </div>
-
-          <p
-            className="
-              mt-8
-              max-w-[720px]
-              text-[13px]
-              leading-7
-              text-[#718398]
-            "
-          >
-            From design to deployment, our team handles every stage of your
-            digital journey — ensuring quality, consistency, and measurable
-            results at every step.
-          </p>
         </div>
       </section>
 
@@ -818,236 +693,157 @@ const About = () => {
           WHY CODEGENZ
       ========================================================== */}
 
-      <section className="bg-[#061525] px-8 py-24 xl:px-16 xl:py-28">
-        <div className="mx-auto grid max-w-[1680px] grid-cols-2 items-center gap-20">
+      <section className="bg-[#061525] py-24 sm:py-28 lg:py-36">
 
-          {/* Left */}
+        <div className="mx-auto w-full max-w-[1600px] px-6 sm:px-8 lg:px-12">
 
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7 }}
-            viewport={{ once: true }}
-          >
-            <span
-              className="
-                text-[9px]
-                font-semibold
-                tracking-[0.3em]
-                text-[#63A9FF]
-              "
+          <div className="grid gap-16 lg:grid-cols-[1fr_1fr] lg:gap-28">
+
+            {/* Main statement */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
             >
-              WHY CODEGENZ
-            </span>
 
-            <h2
-              className="
-                mt-5
-                max-w-[650px]
-                text-[clamp(38px,4vw,62px)]
-                font-semibold
-                leading-[1]
-                tracking-[-0.045em]
-                text-white
-              "
-            >
-              Technology with
-              <span className="text-[#63A9FF]"> purpose.</span>
-            </h2>
+              <span className="text-[9px] font-semibold tracking-[0.3em] text-[#579FFF]">
+                WHY CODEGENZ
+              </span>
 
-            <p
-              className="
-                mt-7
-                max-w-[620px]
-                text-[14px]
-                leading-8
-                text-white/45
-              "
-            >
-              We combine technical expertise with a genuine understanding of
-              business goals, ensuring every solution we deliver adds real
-              value — not just visual appeal.
-            </p>
+              <h2 className="mt-5 max-w-[650px] text-[clamp(3rem,5vw,6rem)] font-medium leading-[0.88] tracking-[-0.07em] text-white">
+                Technology
+                <br />
 
-            <p
-              className="
-                mt-5
-                max-w-[620px]
-                text-[14px]
-                leading-8
-                text-white/45
-              "
-            >
-              Our team stays closely involved through every phase of the
-              project, from planning to launch and beyond, so you always have
-              a reliable technology partner by your side.
-            </p>
-          </motion.div>
-
-          {/* Right */}
-
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7 }}
-            viewport={{ once: true }}
-            className="space-y-4"
-          >
-            {strengths.map((item, index) => (
-              <div
-                key={item}
-                className="
-                  flex
-                  items-center
-                  gap-5
-                  border-b
-                  border-white/[0.08]
-                  py-5
-                "
-              >
-                <span
-                  className="
-                    flex
-                    h-8
-                    w-8
-                    shrink-0
-                    items-center
-                    justify-center
-                    rounded-full
-                    border
-                    border-[#63A9FF]/30
-                    text-[#63A9FF]
-                  "
-                >
-                  <FaCheck size={11} />
+                <span className="text-white/30">
+                  with purpose.
                 </span>
+              </h2>
 
-                <span
-                  className="
-                    text-[13px]
-                    tracking-[0.02em]
-                    text-white/65
-                  "
-                >
-                  {item}
-                </span>
+              <p className="mt-8 max-w-[580px] text-sm leading-8 text-white/40 sm:text-base">
+                We combine technical expertise with a genuine understanding of
+                business goals, ensuring every solution we deliver adds real
+                value — not just visual appeal.
+              </p>
 
-                <span
-                  className="
-                    ml-auto
-                    text-[8px]
-                    tracking-[0.15em]
-                    text-white/20
-                  "
-                >
-                  0{index + 1}
-                </span>
+              <div className="mt-10 flex items-center gap-4">
+
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#1769C2] text-white">
+                  <Code2 size={20} strokeWidth={1.4} />
+                </div>
+
+                <div>
+                  <p className="text-[9px] font-semibold tracking-[0.18em] text-white">
+                    DIGITAL PARTNER
+                  </p>
+
+                  <p className="mt-1 text-[9px] text-white/30">
+                    From idea to growth
+                  </p>
+                </div>
+
               </div>
-            ))}
-          </motion.div>
+
+            </motion.div>
+
+            {/* Strengths */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+            >
+
+              <div className="border-t border-white/10">
+
+                {strengths.map((item, index) => (
+                  <div
+                    key={item}
+                    className="group flex items-center gap-5 border-b border-white/10 py-6 sm:py-7"
+                  >
+
+                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-[#579FFF]/30 text-[#579FFF]">
+                      <Check size={11} />
+                    </span>
+
+                    <span className="text-sm tracking-[0.01em] text-white/60 transition-colors duration-300 group-hover:text-white">
+                      {item}
+                    </span>
+
+                    <span className="ml-auto text-[8px] tracking-[0.15em] text-white/20">
+                      0{index + 1}
+                    </span>
+
+                  </div>
+                ))}
+
+              </div>
+
+            </motion.div>
+
+          </div>
         </div>
       </section>
 
       {/* =========================================================
-          CTA
+          FINAL CTA
       ========================================================== */}
 
-      <section className="px-8 py-24 xl:px-16 xl:py-28">
-        <motion.div
-          className="
-            mx-auto
-            max-w-[1680px]
-            rounded-[30px]
-            bg-[#F4F8FC]
-            px-10
-            py-16
-            text-center
-            xl:px-20
-          "
-          initial={{ opacity: 0, y: 25 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          viewport={{ once: true }}
-        >
-          <span
-            className="
-              text-[9px]
-              font-semibold
-              tracking-[0.3em]
-              text-[#1769C2]
-            "
-          >
-            LET'S BUILD SOMETHING
-          </span>
+      <section className="relative overflow-hidden bg-white py-24 sm:py-28 lg:py-36">
 
-          <h2
-            className="
-              mx-auto
-              mt-5
-              max-w-[850px]
-              text-[clamp(36px,5vw,68px)]
-              font-semibold
-              leading-[1]
-              tracking-[-0.05em]
-              text-[#0B243D]
-            "
+        {/* Decorative typography */}
+        <div className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 select-none whitespace-nowrap text-[150px] font-bold tracking-[-0.1em] text-[#061525]/[0.025] sm:text-[240px] lg:text-[360px]">
+          CREATE
+        </div>
+
+        <div className="relative z-10 mx-auto w-full max-w-[1600px] px-6 sm:px-8 lg:px-12">
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="mx-auto max-w-[950px] text-center"
           >
-            Have an idea?
-            <span className="text-[#1769C2]">
-              {" "}
-              Let's make it real.
+
+            <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-[#061525] text-white shadow-[0_15px_40px_rgba(6,21,37,0.15)] sm:h-16 sm:w-16">
+              <Sparkles size={23} strokeWidth={1.3} />
+            </div>
+
+            <span className="mt-7 block text-[9px] font-semibold tracking-[0.3em] text-[#1769C2]">
+              LET'S BUILD SOMETHING
             </span>
-          </h2>
 
-          <p
-            className="
-              mx-auto
-              mt-6
-              max-w-[600px]
-              text-[14px]
-              leading-7
-              text-[#718398]
-            "
-          >
-            Tell us about your project and let's create a digital solution
-            built around your goals.
-          </p>
+            <h2 className="mt-5 text-[clamp(3rem,5.5vw,6.5rem)] font-medium leading-[0.88] tracking-[-0.07em] text-[#0B243D]">
+              Have an idea?
+              <br />
 
-          <a
-            href="#contact"
-            className="
-              group
-              mt-8
-              inline-flex
-              items-center
-              gap-4
-              rounded-full
-              bg-[#1769C2]
-              px-8
-              py-4
-              text-[9px]
-              font-semibold
-              tracking-[0.2em]
-              text-white
-              transition-all
-              duration-300
-              hover:-translate-y-1
-              hover:bg-[#0F559F]
-            "
-          >
-            START A PROJECT
+              <span className="text-[#1769C2]">
+                Let's make it real.
+              </span>
+            </h2>
 
-            <FaArrowRight
-              size={12}
-              className="
-                transition-transform
-                duration-300
-                group-hover:translate-x-1
-              "
-            />
-          </a>
-        </motion.div>
+            <p className="mx-auto mt-7 max-w-[600px] text-sm leading-7 text-[#718398] sm:text-base">
+              Tell us about your project and let's create a digital solution
+              built around your goals.
+            </p>
+
+            <a
+              href="/contact?quote=true"
+              className="group mt-9 inline-flex items-center gap-4 rounded-full bg-[#1769C2] px-7 py-4 text-[9px] font-semibold tracking-[0.2em] text-white shadow-[0_15px_35px_rgba(23,105,194,0.2)] transition-all duration-300 hover:-translate-y-1 hover:bg-[#0F559F]"
+            >
+              START A PROJECT
+
+              <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white/10 transition-transform duration-300 group-hover:rotate-45">
+                <ArrowUpRight size={13} />
+              </span>
+            </a>
+
+          </motion.div>
+
+        </div>
       </section>
+
     </motion.main>
   );
 };

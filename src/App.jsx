@@ -21,6 +21,7 @@ import FollowUs from "./Pages/Menu/FollowUs";
 import GetAQuote from "./Pages/Menu/GetAQuote";
 import PrivacyPolicy from "./components/layout/PrivacyPolicy";
 import TermsConditions from "./components/layout/TermsConditions";
+import OurProcess from "./Pages/OurProcess";
 
 import "./App.css";
 
@@ -51,6 +52,7 @@ function App() {
                 <Route path="/about" element={<About />} />
                 <Route path="/services" element={<Services />} />
                 <Route path="/projects" element={<Project />} />
+                <Route path="/our-process" element={<OurProcess />} />
                 <Route path="/contact" element={<Contact />} />
 
                 {/* Menu Pages */}
