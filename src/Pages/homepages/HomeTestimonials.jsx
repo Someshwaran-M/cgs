@@ -1,11 +1,15 @@
 import React from "react";
+
 import { motion } from "framer-motion";
+
 import {
   ArrowUpRight,
   Star,
   Quote,
+  Heart,
   ArrowRight,
 } from "lucide-react";
+
 import { Link } from "react-router-dom";
 
 /* =========================================================
@@ -27,13 +31,15 @@ const reviews = [
     review:
       "Their communication was friendly, responsive, and they patiently understood all my requirements before starting the work. The quality, formatting, and overall presentation were outstanding. I truly appreciate their dedication and effort. If anyone is looking for a reliable service for internship reports or academic documentation, I would highly recommend them.",
   },
+
   {
     name: "suriyan chinnadurai",
     meta: "2 reviews",
     time: "3 months ago",
     review:
-      "I am thoroughly impressed by the excellent visual presentation and user-friendly interface. 🥰 Everything looks fantastic and is so easy to navigate! Great job on this outstanding experience. 🎉👏 👍",
+      "I am thoroughly impressed by the excellent visual presentation and user-friendly interface. Everything looks fantastic and is so easy to navigate! Great job on this outstanding experience.",
   },
+
   {
     name: "Gowsalya raman",
     meta: "4 reviews",
@@ -72,6 +78,7 @@ const ReviewCard = ({ review }) => {
       "
     >
       {/* Top accent */}
+
       <div
         className="
           absolute
@@ -89,11 +96,11 @@ const ReviewCard = ({ review }) => {
       />
 
       {/* Header */}
+
       <div className="flex items-start justify-between gap-4">
-
         <div className="flex items-center gap-3">
-
           {/* Avatar */}
+
           <div
             className="
               flex
@@ -113,13 +120,11 @@ const ReviewCard = ({ review }) => {
           </div>
 
           <div>
-
             <h3 className="text-[12px] font-semibold text-[#17324D]">
               {review.name}
             </h3>
 
             <div className="mt-1 flex items-center gap-2">
-
               <span className="text-[8px] text-[#8A9AAC]">
                 {review.meta}
               </span>
@@ -129,14 +134,12 @@ const ReviewCard = ({ review }) => {
               <span className="text-[8px] text-[#8A9AAC]">
                 {review.time}
               </span>
-
             </div>
-
           </div>
-
         </div>
 
         {/* Google */}
+
         <div
           className="
             flex
@@ -154,12 +157,11 @@ const ReviewCard = ({ review }) => {
         >
           <span className="text-[#4285F4]">G</span>
         </div>
-
       </div>
 
       {/* Stars */}
-      <div className="mt-6 flex items-center gap-1">
 
+      <div className="mt-6 flex items-center gap-1">
         {[1, 2, 3, 4, 5].map((star) => (
           <Star
             key={star}
@@ -169,11 +171,19 @@ const ReviewCard = ({ review }) => {
           />
         ))}
 
+        {/* Replaced review emoji with icon */}
+
+        <Heart
+          size={12}
+          fill="currentColor"
+          className="ml-2 text-[#1769C2]"
+          strokeWidth={1.8}
+        />
       </div>
 
       {/* Quote */}
-      <div className="mt-5 flex gap-3">
 
+      <div className="mt-5 flex gap-3">
         <Quote
           size={18}
           strokeWidth={1.4}
@@ -183,12 +193,11 @@ const ReviewCard = ({ review }) => {
         <p className="text-[11px] leading-6 text-[#64788C] sm:text-[12px] sm:leading-7">
           {review.review}
         </p>
-
       </div>
 
       {/* Bottom */}
-      <div className="mt-6 flex items-center justify-between border-t border-[#E8EDF1] pt-4">
 
+      <div className="mt-6 flex items-center justify-between border-t border-[#E8EDF1] pt-4">
         <span className="text-[7px] font-medium tracking-[0.2em] text-[#A3AFBA]">
           VERIFIED EXPERIENCE
         </span>
@@ -204,7 +213,6 @@ const ReviewCard = ({ review }) => {
             group-hover:text-[#1769C2]
           "
         />
-
       </div>
     </article>
   );
@@ -225,7 +233,6 @@ const HomeTestimonials = () => {
         bg-[#F7F9FB]
         py-20
         font-['Roboto',sans-serif]
-        
       "
     >
       {/* =====================================================
@@ -233,8 +240,8 @@ const HomeTestimonials = () => {
       ====================================================== */}
 
       <div className="pointer-events-none absolute inset-0">
-
         {/* Soft blue glow */}
+
         <div
           className="
             absolute
@@ -262,7 +269,6 @@ const HomeTestimonials = () => {
         />
 
         {/* Architectural lines */}
-        
       </div>
 
       {/* =====================================================
@@ -270,7 +276,6 @@ const HomeTestimonials = () => {
       ====================================================== */}
 
       <div className="relative mx-auto max-w-[1500px]">
-
         {/* ===================================================
             HEADER
         ==================================================== */}
@@ -293,13 +298,9 @@ const HomeTestimonials = () => {
           }}
           className="px-5 sm:px-8 lg:px-10"
         >
-
           <div className="flex items-center justify-between">
-
             <div className="flex items-center gap-3">
-
               <span className="relative flex h-2 w-2 items-center justify-center">
-
                 <motion.span
                   animate={{
                     scale: [1, 1.7, 1],
@@ -313,18 +314,13 @@ const HomeTestimonials = () => {
                 />
 
                 <span className="relative h-1.5 w-1.5 rounded-full bg-[#1769C2]" />
-
               </span>
 
               <span className="text-[10px] font-semibold tracking-[0.3em] text-[#1769C2] sm:text-[12px]">
                 CLIENT REVIEWS
               </span>
-
             </div>
-
-
           </div>
-
         </motion.div>
 
         {/* ===================================================
@@ -360,10 +356,9 @@ const HomeTestimonials = () => {
             lg:px-10
           "
         >
-
           {/* Heading */}
-          <div>
 
+          <div>
             <p className="mb-4 text-[10px] font-medium tracking-[0.25em] text-[#8A9AAC]">
               GOOGLE FEEDBACK
             </p>
@@ -385,19 +380,17 @@ const HomeTestimonials = () => {
                 say about us.
               </span>
             </h2>
-
           </div>
 
           {/* Description */}
-          <div className="lg:pb-1">
 
+          <div className="lg:pb-1">
             <p className="max-w-[480px] text-[14px] leading-7 text-[#718398] lg:ml-auto lg:text-right sm:text-[15px]">
               Real experiences from people who have worked with CodeGenZ
               Solutions. A small selection of feedback from our Google reviews.
             </p>
 
             <div className="mt-5 flex flex-wrap items-center gap-5 lg:justify-end">
-
               <a
                 href={GOOGLE_REVIEW_URL}
                 target="_blank"
@@ -446,11 +439,8 @@ const HomeTestimonials = () => {
                   className="transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1"
                 />
               </Link>
-
             </div>
-
           </div>
-
         </motion.div>
 
         {/* ===================================================
@@ -458,8 +448,8 @@ const HomeTestimonials = () => {
         ==================================================== */}
 
         <div className="relative mt-14 overflow-hidden">
-
           {/* Left fade */}
+
           <div
             className="
               pointer-events-none
@@ -478,6 +468,7 @@ const HomeTestimonials = () => {
           />
 
           {/* Right fade */}
+
           <div
             className="
               pointer-events-none
@@ -496,6 +487,7 @@ const HomeTestimonials = () => {
           />
 
           {/* Moving track */}
+
           <motion.div
             animate={{
               x: ["0%", "-50%"],
@@ -507,8 +499,8 @@ const HomeTestimonials = () => {
             }}
             className="flex w-max gap-5 pl-5 sm:gap-6 sm:pl-8 lg:gap-7 lg:pl-10"
           >
-
             {/* First set */}
+
             {reviews.map((review) => (
               <ReviewCard
                 key={`first-${review.name}`}
@@ -517,15 +509,14 @@ const HomeTestimonials = () => {
             ))}
 
             {/* Duplicate set for seamless animation */}
+
             {reviews.map((review) => (
               <ReviewCard
                 key={`second-${review.name}`}
                 review={review}
               />
             ))}
-
           </motion.div>
-
         </div>
 
         {/* ===================================================
@@ -553,11 +544,7 @@ const HomeTestimonials = () => {
             gap-3
             px-5
           "
-        >
-
-          
-
-        </motion.div>
+        ></motion.div>
 
         {/* ===================================================
             BOTTOM CTA
@@ -595,9 +582,7 @@ const HomeTestimonials = () => {
             lg:mx-10
           "
         >
-
           <div>
-
             <p className="text-[12px] font-medium text-[#203B58] sm:text-xs">
               Your experience matters.
             </p>
@@ -605,7 +590,6 @@ const HomeTestimonials = () => {
             <p className="mt-1 text-[10px] text-[#8A9AAC] sm:text-[12px]">
               Explore more feedback or share your own experience.
             </p>
-
           </div>
 
           <a
@@ -632,11 +616,8 @@ const HomeTestimonials = () => {
               size={12}
               className="transition-transform duration-300 group-hover:translate-x-1"
             />
-
           </a>
-
         </motion.div>
-
       </div>
     </section>
   );

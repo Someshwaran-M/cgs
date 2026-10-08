@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+
 import { motion } from "framer-motion";
+
 import {
   ArrowRight,
   ArrowUpRight,
@@ -7,8 +9,62 @@ import {
   Code2,
   Layers3,
   Sparkles,
+  Star,
+  Headphones,
 } from "lucide-react";
+
 import { Link } from "react-router-dom";
+
+/* =========================================================
+   ANIMATED NUMBER
+========================================================= */
+
+const AnimatedNumber = ({
+  target,
+  duration = 1600,
+  suffix = "",
+}) => {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    let startTime = null;
+    let animationFrame;
+
+    const animate = (currentTime) => {
+      if (!startTime) startTime = currentTime;
+
+      const progress = Math.min(
+        (currentTime - startTime) / duration,
+        1
+      );
+
+      const easeOut = 1 - Math.pow(1 - progress, 3);
+
+      setCount(Math.floor(easeOut * target));
+
+      if (progress < 1) {
+        animationFrame = requestAnimationFrame(animate);
+      } else {
+        setCount(target);
+      }
+    };
+
+    animationFrame = requestAnimationFrame(animate);
+
+    return () => cancelAnimationFrame(animationFrame);
+  }, [target, duration]);
+
+  return (
+    <>
+      {count}
+      {suffix}
+    </>
+  );
+};
+
+/* =========================================================
+   ABOUT PREVIEW
+========================================================= */
 
 const AboutPreview = () => {
   return (
@@ -150,11 +206,10 @@ const AboutPreview = () => {
 
             <span
               className="
-                text-10px]
+                text-[10px]
                 font-semibold
                 tracking-[0.3em]
                 text-[#1769C2]
-                sm:text-[10px]
               "
             >
               ABOUT CODEGENZ
@@ -231,7 +286,7 @@ const AboutPreview = () => {
                 "
               >
                 <img
-                  src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1600&q=90"
+                  src="/About1.jpg"
                   alt="CodeGenZ digital technology team"
                   className="
                     h-full
@@ -371,37 +426,27 @@ const AboutPreview = () => {
                       </p>
                     </div>
 
-                    <div
-                      className="
-                        hidden
-                        h-11
-                        w-11
-                        shrink-0
-                        items-center
-                        justify-center
-                        border
-                        border-white/20
-                        text-white
-                        transition-all
-                        duration-300
-                        group-hover:bg-white/10
-                        sm:flex
-                      "
-                    >
-                      <ArrowUpRight size={15} />
-                    </div>
+                    
                   </div>
                 </div>
               </div>
 
+            </div>
+
+            {/* =================================================
+                NEW PREMIUM STATS
+                DIRECTLY BELOW LEFT IMAGE
+            ================================================== */}
+
+            <div className="mt-12 grid grid-cols-2 gap-3 sm:gap-4">
               {/* =================================================
-                  FLOATING APPROACH CARD
+                  RATING
               ================================================== */}
 
               <motion.div
                 initial={{
                   opacity: 0,
-                  y: 15,
+                  y: 20,
                 }}
                 whileInView={{
                   opacity: 1,
@@ -409,55 +454,176 @@ const AboutPreview = () => {
                 }}
                 transition={{
                   duration: 0.6,
-                  delay: 0.35,
+                  delay: 0.15,
                 }}
                 viewport={{
                   once: true,
+                  amount: 0.3,
                 }}
                 className="
-                  absolute
-                  -bottom-5
-                  right-4
-                  z-10
-                  w-[190px]
+                  group
+                  relative
+                  overflow-hidden
                   border
                   border-[#DCE5ED]
                   bg-white
                   p-4
-                  shadow-[0_18px_45px_rgba(7,26,45,0.09)]
-                  sm:right-8
-                  sm:w-[225px]
+                  transition-all
+                  duration-300
+                  hover:-translate-y-1
+                  hover:border-[#1769C2]/30
+                  hover:shadow-[0_15px_35px_rgba(7,26,45,0.07)]
                   sm:p-5
                 "
               >
-                <div className="flex items-center justify-between">
-                  <span
+                <div
+                  className="
+                    absolute
+                    left-0
+                    top-0
+                    h-full
+                    w-[2px]
+                    bg-[#1769C2]
+                    opacity-0
+                    transition-opacity
+                    duration-300
+                    group-hover:opacity-100
+                  "
+                />
+
+                <div className="flex items-center justify-between gap-3">
+                  <div
                     className="
-                      text-[10px]
-                      font-semibold
-                      tracking-[0.22em]
+                      flex
+                      h-10
+                      w-10
+                      items-center
+                      justify-center
+                      rounded-xl
+                      bg-[#1769C2]/[0.08]
                       text-[#1769C2]
+                      transition-all
+                      duration-300
+                      group-hover:bg-[#1769C2]
+                      group-hover:text-white
                     "
                   >
-                    OUR APPROACH
-                  </span>
+                    <Star
+                      size={18}
+                      fill="currentColor"
+                      strokeWidth={1.5}
+                    />
+                  </div>
 
-                  <Sparkles
-                    size={13}
-                    className="text-[#1769C2]"
-                  />
+                  <span className="text-[9px] font-semibold tracking-[0.18em] text-[#A3AFBA]">
+                    RATING
+                  </span>
                 </div>
 
-                <p
+                <div className="mt-5 flex items-end gap-2">
+                  <span className="text-3xl font-semibold tracking-[-0.04em] text-[#071A2D] sm:text-4xl">
+                    <AnimatedNumber target={5} />
+                    <span className="ml-1 text-[#1769C2]">★</span>
+                  </span>
+                </div>
+
+                <p className="mt-1 text-[10px] font-medium tracking-[0.08em] text-[#718398] sm:text-[11px]">
+                  Average Rating
+                </p>
+              </motion.div>
+
+              {/* =================================================
+                  SUPPORT
+              ================================================== */}
+
+              <motion.div
+                initial={{
+                  opacity: 0,
+                  y: 20,
+                }}
+                whileInView={{
+                  opacity: 1,
+                  y: 0,
+                }}
+                transition={{
+                  duration: 0.6,
+                  delay: 0.25,
+                }}
+                viewport={{
+                  once: true,
+                  amount: 0.3,
+                }}
+                className="
+                  group
+                  relative
+                  overflow-hidden
+                  border
+                  border-[#DCE5ED]
+                  bg-white
+                  p-4
+                  transition-all
+                  duration-300
+                  hover:-translate-y-1
+                  hover:border-[#1769C2]/30
+                  hover:shadow-[0_15px_35px_rgba(7,26,45,0.07)]
+                  sm:p-5
+                "
+              >
+                <div
                   className="
-                    mt-3
-                    text-[11px]
-                    leading-5
-                    text-[#718398]
+                    absolute
+                    left-0
+                    top-0
+                    h-full
+                    w-[2px]
+                    bg-[#1769C2]
+                    opacity-0
+                    transition-opacity
+                    duration-300
+                    group-hover:opacity-100
                   "
-                >
-                  Modern technology, thoughtful design and practical
-                  development.
+                />
+
+                <div className="flex items-center justify-between gap-3">
+                  <div
+                    className="
+                      flex
+                      h-10
+                      w-10
+                      items-center
+                      justify-center
+                      rounded-xl
+                      bg-[#1769C2]/[0.08]
+                      text-[#1769C2]
+                      transition-all
+                      duration-300
+                      group-hover:bg-[#1769C2]
+                      group-hover:text-white
+                    "
+                  >
+                    <Headphones
+                      size={18}
+                      strokeWidth={1.7}
+                    />
+                  </div>
+
+                  <span className="text-[9px] font-semibold tracking-[0.18em] text-[#A3AFBA]">
+                    SUPPORT
+                  </span>
+                </div>
+
+                <div className="mt-5 flex items-end gap-1">
+                  <span className="text-3xl font-semibold tracking-[-0.04em] text-[#071A2D] sm:text-4xl">
+                    <AnimatedNumber target={24} />
+                  </span>
+
+                  <span className="mb-1 text-xl font-semibold text-[#1769C2]">
+                    /7
+                  </span>
+                </div>
+
+                <p className="mt-1 text-[10px] font-medium tracking-[0.08em] text-[#718398] sm:text-[11px]">
+                  Support Available
                 </p>
               </motion.div>
             </div>
@@ -874,7 +1040,6 @@ const AboutPreview = () => {
             </div>
           </motion.div>
         </div>
-
       </div>
     </section>
   );

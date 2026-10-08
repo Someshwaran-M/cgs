@@ -559,7 +559,7 @@ const HomeAbout = () => {
                 "
               >
                 <img
-                  src="/About1.jpg"
+                  src="/About2.jpg"
                   alt="CodeGenZ digital solutions"
                   className="
                     h-full

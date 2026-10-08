@@ -396,7 +396,7 @@ const HomeProject = () => {
                 },
 
                 {
-                  x: 270,
+                  x: 280,
                   y: 0,
                   rotate: 2,
                 },
@@ -515,7 +515,7 @@ const HomeProject = () => {
                         IMAGE
                     ================================================== */}
 
-                    <div className="relative h-[245px] overflow-hidden xl:h-[260px]">
+                    <div className="relative h-[255px] overflow-hidden xl:h-[200px]">
                       <img
                         src={project.image}
                         alt={project.title}
