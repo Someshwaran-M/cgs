@@ -67,16 +67,16 @@ const Footer = () => {
       href: "/projects",
     },
     {
-      name: "Pricing",
-      href: "/pricing",
+      name: "Careers",
+      href: "/careers",
     },
     {
       name: "Internship",
       href: "/internship",
     },
     {
-      name: "Careers",
-      href: "/careers",
+      name: "Pricing",
+      href: "/pricing",
     },
     {
       name: "Testimonials",
