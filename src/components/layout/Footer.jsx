@@ -90,6 +90,10 @@ const Footer = () => {
       name: "Blog",
       href: "/blog",
     },
+    {
+      name: "Follow Us",
+      href: "/follow-us",
+    },
   ];
 
   // ============================================
@@ -130,11 +134,17 @@ const Footer = () => {
       href: "tel:+919384712673",
     },
     {
-      icon: MapPin,
-      label: "LOCATION",
-      value: "Tamil Nadu, India",
-      href: "https://www.google.com/maps/search/?api=1&query=Tamil+Nadu%2C+India",
-    },
+  icon: MapPin,
+  label: "LOCATION",
+  value: (
+    <>
+      Paramathi Velur, Namakkal
+      <br />
+      Tamil Nadu, India
+    </>
+  ),
+  href: "https://www.google.com/maps/place/Paramathi+Velur,+Tamil+Nadu/@11.1002814,78.0061074,15z",
+},
   ];
 
   return (
@@ -326,24 +336,24 @@ const Footer = () => {
       <div className="relative border-t border-slate-800/70">
         <div className="mx-auto flex max-w-[1600px] flex-col gap-4 px-6 py-5 sm:px-8 md:flex-row md:items-center md:justify-between md:px-12 lg:px-14 xl:px-16">
           {/* COPYRIGHT */}
-          <p className="text-[11px] font-medium tracking-[0.04em] text-slate-600">
+          <p className="text-[16px] font-medium tracking-[0.04em] text-slate-600">
             © 2026 CodeGenZ Solutions. All rights reserved.
           </p>
 
           {/* LEGAL LINKS */}
           <div className="flex items-center gap-4 sm:gap-5">
             <Link
-              to="/privacy-policy"
-              onClick={scrollToTop}
-              className="text-[11px] font-medium tracking-[0.04em] text-slate-600 transition-colors duration-300 hover:text-white"
-            >
-              Privacy Policy
-            </Link>
+  to="/privacy-policy"
+  onClick={scrollToTop}
+  className="text-[11px] font-medium tracking-[0.04em] text-slate-600 transition-colors duration-300 hover:text-white"
+>
+  Privacy Policy
+</Link>
 
             <span className="h-3 w-px bg-slate-800" />
 
             <Link
-              to="/terms-and-conditions"
+              to="/terms-conditions"
               onClick={scrollToTop}
               className="text-[11px] font-medium tracking-[0.04em] text-slate-600 transition-colors duration-300 hover:text-white"
             >

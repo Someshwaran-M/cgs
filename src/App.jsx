@@ -19,6 +19,8 @@ import Faq from "./Pages/Menu/Faq";
 import Blog from "./Pages/Menu/Blog";
 import FollowUs from "./Pages/Menu/FollowUs";
 import GetAQuote from "./Pages/Menu/GetAQuote";
+import PrivacyPolicy from "./components/layout/PrivacyPolicy";
+import TermsConditions from "./components/layout/TermsConditions";
 
 import "./App.css";
 
@@ -63,6 +65,9 @@ function App() {
                 <Route path="/blog" element={<Blog />} />
                 <Route path="/follow-us" element={<FollowUs />} />
                 <Route path="/get-a-quote" element={<GetAQuote />} />
+                <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+                <Route path="/terms-conditions" element={<TermsConditions />} />
+                
               </Routes>
             </main>
 

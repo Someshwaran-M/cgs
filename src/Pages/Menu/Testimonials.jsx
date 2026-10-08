@@ -4,9 +4,11 @@ import {
   ArrowUpRight,
   Star,
   MapPin,
-  ExternalLink,
   Quote,
   Sparkles,
+  Heart,
+  MessageSquareQuote,
+  ExternalLink,
 } from "lucide-react";
 
 /* =========================================================
@@ -18,7 +20,6 @@ const GOOGLE_REVIEW_URL =
 
 /* =========================================================
    GOOGLE REVIEWS
-   Reviews taken from the screenshots provided.
 ========================================================= */
 
 const googleReviews = [
@@ -40,7 +41,7 @@ const googleReviews = [
     initials: "SC",
     time: "3 months ago",
     review:
-      "I am thoroughly impressed by the excellent visual presentation and user-friendly interface. 🥰 Everything looks fantastic and is so easy to navigate! Great job on this outstanding experience. 🎉👏 👍",
+      "I am thoroughly impressed with the excellent visual presentation and user-friendly interface. Everything looks fantastic and is so easy to navigate. Great job on this outstanding experience.",
     likes: "",
   },
 
@@ -73,7 +74,7 @@ const googleReviews = [
     initials: "SP",
     time: "3 months ago",
     review:
-      "I had a great internship experience at CodeGen Solutions. They provide excellent project support and software solutions. The team is friendly, supportive, and always willing to help. It is a great place for learning, especially for freshers, as they offer practical guidance and real-time project experience. Thank you, CodeGen Solutions, for the valuable learning opportunity",
+      "I had a great internship experience at CodeGen Solutions. They provide excellent project support and software solutions. The team is friendly, supportive, and always willing to help. It is a great place for learning, especially for freshers, as they offer practical guidance and real-time project experience. Thank you, CodeGen Solutions, for the valuable learning opportunity.",
     likes: "",
   },
 
@@ -84,7 +85,7 @@ const googleReviews = [
     initials: "GR",
     time: "3 months ago",
     review:
-      "I had a great experience working with CodeGenZ Solutions software company.The entire team was professional,responsive and highly knowledgeable. Communication was excellent throughout the project and questions or concerns were addressed promptly. The software was delivered on time at expected level. I particularly appreciated their attention to transparency, detailed manner of explaining and commitment to customer satisfaction.I would recommend this company to anyone looking for reliable and high quality software development services.",
+      "I had a great experience working with CodeGenZ Solutions software company. The entire team was professional, responsive and highly knowledgeable. Communication was excellent throughout the project and questions or concerns were addressed promptly. The software was delivered on time at the expected level. I particularly appreciated their attention to transparency, detailed manner of explaining and commitment to customer satisfaction. I would recommend this company to anyone looking for reliable and high quality software development services.",
     likes: "2",
   },
 
@@ -95,7 +96,7 @@ const googleReviews = [
     initials: "VS",
     time: "3 months ago",
     review:
-      "Nice work done... Young energetic and more enthusiastic ppl... Hearty congratulations 🎉 Give a try to them Emerging new eraaa",
+      "Nice work done. Young, energetic and enthusiastic team. Hearty congratulations. Give them a try as an emerging and promising team.",
     likes: "1",
   },
 
@@ -106,7 +107,7 @@ const googleReviews = [
     initials: "SG",
     time: "3 months ago",
     review:
-      "These guys are awesome and really they provide good services",
+      "These guys are awesome and really provide good services.",
     likes: "1",
   },
 ];
@@ -143,6 +144,44 @@ const cardVariants = {
 };
 
 /* =========================================================
+   STAR RATING
+========================================================= */
+
+const StarRating = ({ compact = false }) => {
+  return (
+    <div className={`flex ${compact ? "gap-0.5" : "gap-1"}`}>
+      {[1, 2, 3, 4, 5].map((star) => (
+        <motion.div
+          key={star}
+          initial={{
+            opacity: 0,
+            scale: 0.5,
+          }}
+          whileInView={{
+            opacity: 1,
+            scale: 1,
+          }}
+          viewport={{
+            once: true,
+          }}
+          transition={{
+            delay: star * 0.06,
+            duration: 0.25,
+          }}
+        >
+          <Star
+            size={compact ? 14 : 20}
+            fill="currentColor"
+            strokeWidth={1.5}
+            className="text-[#f4b400]"
+          />
+        </motion.div>
+      ))}
+    </div>
+  );
+};
+
+/* =========================================================
    COMPONENT
 ========================================================= */
 
@@ -152,12 +191,13 @@ const Testimonials = () => {
       id="testimonials"
       className="relative overflow-hidden bg-white font-['Roboto'] text-[#061525]"
     >
-      {/* =========================================================
+      {/* =====================================================
           PREMIUM BACKGROUND
-      ========================================================= */}
+      ===================================================== */}
 
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        {/* Large circles */}
+        {/* Large rotating circle */}
+
         <motion.div
           animate={{
             rotate: 360,
@@ -169,6 +209,8 @@ const Testimonials = () => {
           }}
           className="absolute -left-[280px] top-[80px] h-[650px] w-[650px] rounded-full border border-slate-100"
         />
+
+        {/* Right rotating circle */}
 
         <motion.div
           animate={{
@@ -187,6 +229,7 @@ const Testimonials = () => {
         <div className="absolute -right-[150px] top-[300px] h-[430px] w-[430px] rounded-full border border-slate-100" />
 
         {/* Blue glow */}
+
         <motion.div
           animate={{
             scale: [1, 1.15, 1],
@@ -214,6 +257,7 @@ const Testimonials = () => {
         />
 
         {/* Floating dots */}
+
         <motion.div
           animate={{
             y: [-12, 12, -12],
@@ -241,11 +285,12 @@ const Testimonials = () => {
         />
       </div>
 
-      {/* =========================================================
+      {/* =====================================================
           MAIN CONTENT
-      ========================================================= */}
+      ===================================================== */}
 
       <div className="relative mx-auto max-w-[1500px] px-5 pb-24 pt-32 sm:px-8 lg:px-12 lg:pb-32 lg:pt-40">
+
         {/* =====================================================
             HEADER
         ===================================================== */}
@@ -269,21 +314,30 @@ const Testimonials = () => {
           className="text-center"
         >
           {/* Label */}
+
           <div className="mb-7 flex items-center justify-center gap-3">
             <span className="h-px w-10 bg-[#061525]" />
 
-            <span className="text-[10px] font-semibold uppercase tracking-[0.3em] text-slate-500">
-              Google Reviews
-            </span>
+            <div className="flex items-center gap-2">
+              <MessageSquareQuote
+                size={14}
+                strokeWidth={1.8}
+                className="text-[#061525]"
+              />
+
+              <span className="text-[10px] font-semibold uppercase tracking-[0.3em] text-slate-500">
+                Google Reviews
+              </span>
+            </div>
 
             <span className="h-px w-10 bg-[#061525]" />
           </div>
 
           {/* Heading */}
+
           <h1 className="mx-auto max-w-5xl text-[48px] font-semibold leading-[0.98] tracking-[-0.055em] sm:text-[64px] lg:text-[90px]">
             Real experiences.
             <br />
-
             <span className="text-slate-400">
               Real feedback.
             </span>
@@ -319,7 +373,9 @@ const Testimonials = () => {
           className="mx-auto mt-16 max-w-5xl"
         >
           <div className="relative overflow-hidden rounded-[30px] border border-slate-200 bg-white shadow-[0_25px_80px_rgba(6,21,37,0.07)]">
+
             {/* Decorative top line */}
+
             <motion.div
               initial={{
                 scaleX: 0,
@@ -338,11 +394,16 @@ const Testimonials = () => {
             />
 
             <div className="grid lg:grid-cols-[0.7fr_1.3fr]">
+
               {/* Google Identity */}
+
               <div className="border-b border-slate-100 p-7 sm:p-10 lg:border-b-0 lg:border-r lg:p-12">
                 <div className="flex items-center gap-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full border border-slate-200 bg-white text-xl font-bold shadow-sm">
-                    <span className="text-[#4285F4]">
+
+                  {/* Google Icon */}
+
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full border border-slate-200 bg-white shadow-sm">
+                    <span className="text-xl font-bold text-[#4285F4]">
                       G
                     </span>
                   </div>
@@ -359,36 +420,7 @@ const Testimonials = () => {
                 </div>
 
                 <div className="mt-9">
-                  <div className="flex gap-1">
-                    {[1, 2, 3, 4, 5].map((star) => (
-                      <motion.div
-                        key={star}
-                        initial={{
-                          opacity: 0,
-                          scale: 0,
-                        }}
-                        whileInView={{
-                          opacity: 1,
-                          scale: 1,
-                        }}
-                        viewport={{
-                          once: true,
-                        }}
-                        transition={{
-                          delay: 0.25 + star * 0.08,
-                          type: "spring",
-                          stiffness: 300,
-                          damping: 15,
-                        }}
-                      >
-                        <Star
-                          size={21}
-                          fill="currentColor"
-                          className="text-[#f4b400]"
-                        />
-                      </motion.div>
-                    ))}
-                  </div>
+                  <StarRating />
 
                   <p className="mt-4 text-sm text-slate-500">
                     Genuine experiences from our clients,
@@ -398,7 +430,9 @@ const Testimonials = () => {
               </div>
 
               {/* CTA */}
+
               <div className="flex flex-col justify-center p-7 sm:p-10 lg:p-12">
+
                 <div className="flex items-center gap-2">
                   <Sparkles
                     size={16}
@@ -461,7 +495,8 @@ const Testimonials = () => {
           className="mt-28 flex flex-col justify-between gap-5 sm:flex-row sm:items-end"
         >
           <div>
-            <p className="text-[10px] font-semibold uppercase tracking-[0.25em] text-slate-400">
+            <p className="flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.25em] text-slate-400">
+              <MessageSquareQuote size={13} />
               Client Experiences
             </p>
 
@@ -472,7 +507,6 @@ const Testimonials = () => {
 
           <div className="flex items-center gap-2 text-xs text-slate-400">
             <span className="h-1.5 w-1.5 rounded-full bg-[#34a853]" />
-
             Genuine Google Reviews
           </div>
         </motion.div>
@@ -502,6 +536,7 @@ const Testimonials = () => {
               }`}
             >
               {/* Animated top border */}
+
               <motion.div
                 initial={{
                   scaleX: 0,
@@ -516,12 +551,17 @@ const Testimonials = () => {
               />
 
               {/* Background glow */}
+
               <div className="pointer-events-none absolute -right-20 -top-20 h-40 w-40 rounded-full bg-slate-100/60 opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-100" />
 
               {/* Top */}
+
               <div className="relative flex items-start justify-between gap-4">
+
                 <div className="flex items-center gap-3">
+
                   {/* Avatar */}
+
                   <motion.div
                     whileHover={{
                       scale: 1.08,
@@ -549,6 +589,7 @@ const Testimonials = () => {
                 </div>
 
                 {/* Google */}
+
                 <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-slate-50 text-sm font-bold">
                   <span className="text-[#4285F4]">
                     G
@@ -557,36 +598,9 @@ const Testimonials = () => {
               </div>
 
               {/* Stars + time */}
+
               <div className="relative mt-6 flex items-center justify-between gap-4">
-                <div className="flex gap-0.5">
-                  {[1, 2, 3, 4, 5].map((star) => (
-                    <motion.div
-                      key={star}
-                      initial={{
-                        opacity: 0,
-                        scale: 0.5,
-                      }}
-                      whileInView={{
-                        opacity: 1,
-                        scale: 1,
-                      }}
-                      viewport={{
-                        once: true,
-                      }}
-                      transition={{
-                        delay: index * 0.08 + star * 0.035,
-                        duration: 0.25,
-                      }}
-                    >
-                      <Star
-                        size={14}
-                        fill="currentColor"
-                        strokeWidth={1.5}
-                        className="text-[#f4b400]"
-                      />
-                    </motion.div>
-                  ))}
-                </div>
+                <StarRating compact />
 
                 <span className="text-[10px] text-slate-400">
                   {review.time}
@@ -594,10 +608,13 @@ const Testimonials = () => {
               </div>
 
               {/* Quote */}
+
               <div className="relative mt-6">
-                <div className="absolute -left-1 -top-3 text-4xl font-serif text-slate-100">
-                  “
-                </div>
+                <Quote
+                  size={24}
+                  className="absolute -left-1 -top-2 text-slate-100"
+                  fill="currentColor"
+                />
 
                 <p className="relative text-[14px] leading-7 text-slate-600 sm:text-[15px]">
                   {review.review}
@@ -605,7 +622,9 @@ const Testimonials = () => {
               </div>
 
               {/* Bottom */}
+
               <div className="relative mt-7 flex items-center justify-between border-t border-slate-100 pt-5">
+
                 <div className="flex items-center gap-2">
                   <div className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-50">
                     <Quote
@@ -619,10 +638,16 @@ const Testimonials = () => {
                   </span>
                 </div>
 
+                {/* Likes with icon instead of emoji */}
+
                 {review.likes && (
-                  <span className="text-[11px] text-slate-400">
-                    ❤️ {review.likes}
-                  </span>
+                  <div className="flex items-center gap-1.5 text-[11px] text-slate-400">
+                    <Heart
+                      size={13}
+                      strokeWidth={1.8}
+                    />
+                    <span>{review.likes}</span>
+                  </div>
                 )}
               </div>
             </motion.article>
@@ -651,6 +676,7 @@ const Testimonials = () => {
           className="relative mt-20 overflow-hidden rounded-[30px] bg-[#061525]"
         >
           {/* Animated circles */}
+
           <motion.div
             animate={{
               rotate: 360,
@@ -666,8 +692,10 @@ const Testimonials = () => {
           <div className="pointer-events-none absolute -bottom-32 -left-20 h-64 w-64 rounded-full bg-blue-500/[0.08] blur-3xl" />
 
           <div className="relative flex flex-col items-center justify-between gap-8 px-7 py-11 text-center sm:px-10 lg:flex-row lg:px-14 lg:py-12 lg:text-left">
+
             <div>
-              <p className="text-[10px] font-semibold uppercase tracking-[0.25em] text-slate-500">
+              <p className="flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.25em] text-slate-500">
+                <ExternalLink size={12} />
                 Worked with CodeGenZ?
               </p>
 
