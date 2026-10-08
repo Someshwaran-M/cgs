@@ -225,8 +225,7 @@ const HomeTestimonials = () => {
         bg-[#F7F9FB]
         py-20
         font-['Roboto',sans-serif]
-        sm:py-24
-        lg:py-28
+        
       "
     >
       {/* =====================================================
@@ -263,10 +262,7 @@ const HomeTestimonials = () => {
         />
 
         {/* Architectural lines */}
-        <div className="absolute left-[6%] top-0 h-full w-px bg-[#071827]/[0.025]" />
-
-        <div className="absolute right-[6%] top-0 h-full w-px bg-[#071827]/[0.025]" />
-
+        
       </div>
 
       {/* =====================================================
@@ -320,15 +316,12 @@ const HomeTestimonials = () => {
 
               </span>
 
-              <span className="text-[8px] font-semibold tracking-[0.3em] text-[#1769C2] sm:text-[9px]">
+              <span className="text-[10px] font-semibold tracking-[0.3em] text-[#1769C2] sm:text-[12px]">
                 CLIENT REVIEWS
               </span>
 
             </div>
 
-            <span className="hidden text-[8px] tracking-[0.25em] text-[#A2AFBA] sm:block">
-              CODEGENZ / TRUST
-            </span>
 
           </div>
 
@@ -371,7 +364,7 @@ const HomeTestimonials = () => {
           {/* Heading */}
           <div>
 
-            <p className="mb-4 text-[8px] font-medium tracking-[0.25em] text-[#8A9AAC]">
+            <p className="mb-4 text-[10px] font-medium tracking-[0.25em] text-[#8A9AAC]">
               GOOGLE FEEDBACK
             </p>
 
@@ -398,7 +391,7 @@ const HomeTestimonials = () => {
           {/* Description */}
           <div className="lg:pb-1">
 
-            <p className="max-w-[480px] text-[12px] leading-7 text-[#718398] lg:ml-auto lg:text-right sm:text-[13px]">
+            <p className="max-w-[480px] text-[14px] leading-7 text-[#718398] lg:ml-auto lg:text-right sm:text-[15px]">
               Real experiences from people who have worked with CodeGenZ
               Solutions. A small selection of feedback from our Google reviews.
             </p>
@@ -414,7 +407,7 @@ const HomeTestimonials = () => {
                   inline-flex
                   items-center
                   gap-2
-                  text-[8px]
+                  text-[12px]
                   font-semibold
                   tracking-[0.2em]
                   text-[#1769C2]
@@ -437,7 +430,7 @@ const HomeTestimonials = () => {
                   inline-flex
                   items-center
                   gap-2
-                  text-[8px]
+                  text-[12px]
                   font-semibold
                   tracking-[0.2em]
                   text-[#8A9AAC]
@@ -562,13 +555,7 @@ const HomeTestimonials = () => {
           "
         >
 
-          <span className="h-px w-10 bg-[#D6E0E8]" />
-
-          <span className="text-[7px] font-medium tracking-[0.25em] text-[#A2AFBA]">
-            MOVING CLIENT STORIES
-          </span>
-
-          <span className="h-px w-10 bg-[#D6E0E8]" />
+          
 
         </motion.div>
 
@@ -601,7 +588,7 @@ const HomeTestimonials = () => {
             gap-5
             border-t
             border-[#DCE5ED]
-            pt-7
+            pt-5
             sm:mx-8
             sm:flex-row
             sm:items-center
@@ -611,11 +598,11 @@ const HomeTestimonials = () => {
 
           <div>
 
-            <p className="text-[11px] font-medium text-[#203B58] sm:text-xs">
+            <p className="text-[12px] font-medium text-[#203B58] sm:text-xs">
               Your experience matters.
             </p>
 
-            <p className="mt-1 text-[9px] text-[#8A9AAC] sm:text-[10px]">
+            <p className="mt-1 text-[10px] text-[#8A9AAC] sm:text-[12px]">
               Explore more feedback or share your own experience.
             </p>
 
@@ -630,7 +617,7 @@ const HomeTestimonials = () => {
               inline-flex
               items-center
               gap-3
-              text-[8px]
+              text-[12px]
               font-semibold
               tracking-[0.2em]
               text-[#1769C2]

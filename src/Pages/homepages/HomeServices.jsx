@@ -174,10 +174,7 @@ const HomeServices = () => {
         py-20
         font-['Roboto',sans-serif]
         text-[#071A2D]
-        sm:px-8
-        sm:py-24
-        lg:px-10
-        lg:py-28
+        
       "
     >
       {/* =========================================================
@@ -256,13 +253,11 @@ const HomeServices = () => {
 
               <span className="h-px w-8 bg-[#1769C2]" />
 
-              <span className="text-[8px] font-semibold tracking-[0.3em] text-[#1769C2]">
+              <span className="text-[10px] font-semibold tracking-[0.3em] text-[#1769C2]">
                 WHAT WE DO
               </span>
 
-              <span className="text-[8px] tracking-[0.2em] text-[#a4b0bb]">
-                / 09 SERVICES
-              </span>
+              
 
             </div>
 
@@ -311,7 +306,7 @@ const HomeServices = () => {
             className="lg:pb-2"
           >
 
-            <p className="max-w-[440px] text-[12px] leading-7 text-[#718398] sm:text-[13px] sm:leading-8">
+            <p className="max-w-[440px] text-[14px] leading-7 text-[#718398] sm:text-[13px] sm:leading-8">
               We combine strategy, design, development and digital growth
               to create experiences that are useful, scalable and built
               around real business goals.
@@ -328,7 +323,7 @@ const HomeServices = () => {
                 border-b
                 border-[#ccd6df]
                 pb-2
-                text-[8px]
+                text-[10px]
                 font-semibold
                 tracking-[0.2em]
                 text-[#1769C2]
@@ -367,11 +362,11 @@ const HomeServices = () => {
 
         <div className="flex flex-col justify-between gap-3 py-5 sm:flex-row sm:items-center">
 
-          <span className="text-[7px] tracking-[0.28em] text-[#9daab6]">
+          <span className="text-[9px] tracking-[0.28em] text-[#9daab6]">
             OUR CAPABILITIES
           </span>
 
-          <span className="text-[7px] tracking-[0.25em] text-[#b1bbc4]">
+          <span className="text-[8px] tracking-[0.25em] text-[#b1bbc4]">
             DESIGN / DEVELOP / OPTIMIZE / GROW
           </span>
 
@@ -485,7 +480,7 @@ const HomeServices = () => {
 
                     <span
                       className="
-                        text-[8px]
+                        text-[9px]
                         font-semibold
                         tracking-[0.18em]
                         text-[#1769C2]
@@ -535,7 +530,7 @@ const HomeServices = () => {
 
                   <span
                     className="
-                      text-[7px]
+                      text-[9px]
                       font-semibold
                       tracking-[0.25em]
                       text-[#a3b0bc]
@@ -576,7 +571,7 @@ const HomeServices = () => {
                     relative
                     mt-5
                     max-w-[560px]
-                    text-[10px]
+                    text-[12px]
                     leading-6
                     text-[#7b8b9b]
                     sm:text-[11px]
@@ -607,7 +602,7 @@ const HomeServices = () => {
                         bg-[#fafcfd]
                         px-3
                         py-2
-                        text-[7px]
+                        text-[9px]
                         text-[#7e8e9d]
                         transition-all
                         duration-300
@@ -716,7 +711,7 @@ const HomeServices = () => {
 
                 <span className="h-px w-7 bg-[#5b9fe0]" />
 
-                <span className="text-[7px] tracking-[0.25em] text-[#83b5df]">
+                <span className="text-[10px] tracking-[0.25em] text-[#83b5df]">
                   OUR APPROACH
                 </span>
 
@@ -768,15 +763,15 @@ const HomeServices = () => {
                   className="border-l border-white/10 pl-4"
                 >
 
-                  <span className="text-[8px] font-semibold tracking-[0.2em] text-[#5f9fd7]">
+                  <span className="text-[10px] font-semibold tracking-[0.2em] text-[#5f9fd7]">
                     {item.number}
                   </span>
-
-                  <h4 className="mt-3 text-[8px] font-semibold tracking-[0.18em] text-white">
+                
+                  <h4 className="mt-3 text-[10px] font-semibold tracking-[0.18em] text-white">
                     {item.title}
                   </h4>
 
-                  <p className="mt-2 text-[9px] leading-5 text-white/45">
+                  <p className="mt-2 text-[11px] leading-5 text-white/45">
                     {item.text}
                   </p>
 
@@ -826,7 +821,7 @@ const HomeServices = () => {
               Have a project in mind?
             </p>
 
-            <p className="mt-2 max-w-[500px] text-[10px] leading-6 text-[#8a9aaa]">
+            <p className="mt-2 max-w-[500px] text-[12px] leading-6 text-[#8a9aaa]">
               Tell us what you want to build. We'll help you choose the right
               technology, design direction and development approach.
             </p>
@@ -845,7 +840,7 @@ const HomeServices = () => {
               bg-[#1769C2]
               px-7
               py-4
-              text-[8px]
+              text-[9px]
               font-semibold
               tracking-[0.2em]
               text-white

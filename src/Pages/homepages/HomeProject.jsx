@@ -117,11 +117,11 @@ const HomeProject = () => {
           mx-auto
           max-w-[1500px]
           px-6
-          py-20
+          py-10
           sm:px-8
-          sm:py-24
+        
           lg:px-12
-          lg:py-32
+        
         "
       >
         {/* ===================================================
@@ -148,7 +148,7 @@ const HomeProject = () => {
             <div className="flex items-center gap-3">
               <span className="h-px w-10 bg-[#1769C2]" />
 
-              <span className="text-[9px] font-semibold tracking-[0.28em] text-[#1769C2]">
+              <span className="text-[10px] font-semibold tracking-[0.28em] text-[#1769C2]">
                 SELECTED WORK
               </span>
             </div>
@@ -207,7 +207,7 @@ const HomeProject = () => {
                   bg-[#1769C2]
                   px-6
                   py-3.5
-                  text-[9px]
+                  text-[10px]
                   font-semibold
                   tracking-[0.2em]
                   text-white
@@ -252,7 +252,7 @@ const HomeProject = () => {
                     DIGITAL
                   </p>
 
-                  <p className="mt-0.5 text-[8px] tracking-[0.18em] text-[#9AAABB]">
+                  <p className="mt-0.5 text-[9px] tracking-[0.18em] text-[#9AAABB]">
                     EXPERIENCES
                   </p>
                 </div>
@@ -264,7 +264,7 @@ const HomeProject = () => {
             <div className="mt-12 flex items-center gap-4">
               <span className="h-px w-20 bg-[#DCE5ED]" />
 
-              <span className="text-[8px] font-medium tracking-[0.2em] text-[#A5B2BE]">
+              <span className="text-[9px] font-medium tracking-[0.2em] text-[#A5B2BE]">
                 CODEGENZ SOLUTIONS
               </span>
             </div>
@@ -390,20 +390,20 @@ const HomeProject = () => {
 
               const positions = [
                 {
-                  x: -15,
+                  x: 180,
                   y: 35,
                   rotate: -6,
                 },
 
                 {
-                  x: 100,
+                  x: 270,
                   y: 0,
                   rotate: 2,
                 },
 
                 {
-                  x: 215,
-                  y: 55,
+                  x: 395,
+                  y: 15,
                   rotate: 7,
                 },
               ];
@@ -737,7 +737,7 @@ const HomeProject = () => {
             >
               <span className="h-px w-8 bg-[#DCE5ED]" />
 
-              <span className="text-[7px] font-semibold tracking-[0.22em] text-[#A3AFBA]">
+              <span className="text-[9px] font-semibold tracking-[0.22em] text-[#A3AFBA]">
                 HOVER TO EXPLORE
               </span>
             </div>
@@ -944,7 +944,7 @@ const HomeProject = () => {
             duration: 0.8,
             ease: [0.22, 1, 0.36, 1],
           }}
-          className="mt-20 max-w-3xl border-t border-[#DCE5ED] pt-12 lg:mt-28"
+          className="mt-20 max-w-3xl border-t border-[#DCE5ED] pt-12 lg:mt-10"
         >
           <div className="flex items-center gap-3">
             <Sparkles
@@ -952,7 +952,7 @@ const HomeProject = () => {
               className="text-[#1769C2]"
             />
 
-            <span className="text-[8px] font-semibold tracking-[0.24em] text-[#1769C2]">
+            <span className="text-[10px] font-semibold tracking-[0.24em] text-[#1769C2]">
               NEXT PROJECT
             </span>
           </div>

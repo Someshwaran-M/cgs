@@ -64,7 +64,7 @@ const HomeFaq = () => {
   return (
     <section
       id="home-faq"
-      className="relative overflow-hidden bg-white py-20 font-['Roboto',sans-serif] sm:py-24 lg:py-28"
+      className="relative overflow-hidden bg-white py-20 font-['Roboto',sans-serif]"
     >
       {/* =========================================================
           BACKGROUND
@@ -77,11 +77,7 @@ const HomeFaq = () => {
 
         <div className="absolute bottom-[-150px] right-[-100px] h-[320px] w-[320px] rounded-full bg-[#1769C2]/[0.035] blur-[110px]" />
 
-        {/* Architectural vertical lines */}
-        <div className="absolute left-[6%] top-0 h-full w-px bg-[#071A2D]/[0.035]" />
-
-        <div className="absolute right-[6%] top-0 h-full w-px bg-[#071A2D]/[0.025]" />
-
+        
       </div>
 
       {/* =========================================================
@@ -135,15 +131,12 @@ const HomeFaq = () => {
 
               </span>
 
-              <span className="text-[8px] font-semibold tracking-[0.3em] text-[#1769C2] sm:text-[9px]">
-                FREQUENTLY ASKED
+              <span className="text-[10px] font-semibold tracking-[0.3em] text-[#1769C2] sm:text-[9px]">
+                FREQUENTLY ASKED QUESTIONS
               </span>
 
             </div>
 
-            <span className="hidden text-[8px] tracking-[0.25em] text-slate-300 sm:block">
-              CODEGENZ / FAQ
-            </span>
 
           </div>
 
@@ -175,18 +168,16 @@ const HomeFaq = () => {
             }}
           >
 
-            <p className="mb-5 text-[8px] font-medium tracking-[0.25em] text-slate-400">
-              QUESTIONS / ANSWERS
-            </p>
+           
 
             <h2 className="max-w-[600px] text-[clamp(3rem,5.5vw,6rem)] font-medium leading-[0.9] tracking-[-0.07em] text-[#071A2D]">
 
-              Questions.
+              Before.
 
               <br />
 
-              <span className="text-slate-300">
-                Clear answers.
+              <span className="text-slate-500">
+                We Start.
               </span>
 
             </h2>
@@ -223,7 +214,7 @@ const HomeFaq = () => {
 
             <Link
               to="/faq"
-              className="group inline-flex items-center gap-3 border-b border-slate-300 pb-2 text-[8px] font-semibold tracking-[0.2em] text-[#071A2D] transition-all duration-300 hover:border-[#1769C2] hover:text-[#1769C2]"
+              className="group inline-flex items-center gap-3 border-b border-slate-300 pb-2 text-[10px] font-semibold tracking-[0.2em] text-[#071A2D] transition-all duration-300 hover:border-[#1769C2] hover:text-[#1769C2]"
             >
               VIEW COMPLETE FAQ
 
@@ -291,11 +282,11 @@ const HomeFaq = () => {
                 {/* Small label */}
                 <div className="flex items-center justify-between">
 
-                  <span className="text-[8px] font-semibold tracking-[0.25em] text-[#579FFF]">
+                  <span className="text-[9px] font-semibold tracking-[0.25em] text-[#579FFF]">
                     NEED HELP?
                   </span>
 
-                  <span className="text-[7px] tracking-[0.2em] text-white/20">
+                  <span className="text-[9px] tracking-[0.2em] text-white/20">
                     06 QUESTIONS
                   </span>
 
@@ -330,7 +321,7 @@ const HomeFaq = () => {
                 {/* CTA */}
                 <Link
                   to="/contact"
-                  className="group mt-7 inline-flex items-center gap-3 bg-white px-5 py-3 text-[8px] font-semibold tracking-[0.18em] text-[#071827] transition-all duration-300 hover:bg-[#579FFF] hover:text-white"
+                  className="group mt-7 inline-flex items-center gap-3 bg-white px-5 py-3 text-[10px] font-semibold tracking-[0.18em] text-[#071827] transition-all duration-300 hover:bg-[#579FFF] hover:text-white"
                 >
                   TALK TO OUR TEAM
 
@@ -364,7 +355,7 @@ const HomeFaq = () => {
                       className="text-[#579FFF]"
                     />
 
-                    <span className="text-[8px] tracking-[0.12em] text-white/30">
+                    <span className="text-[9px] tracking-[0.12em] text-white/30">
                       BUSINESS-FOCUSED
                     </span>
 
@@ -377,7 +368,7 @@ const HomeFaq = () => {
                       className="text-[#579FFF]"
                     />
 
-                    <span className="text-[8px] tracking-[0.12em] text-white/30">
+                    <span className="text-[9px] tracking-[0.12em] text-white/30">
                       PRACTICAL APPROACH
                     </span>
 
@@ -392,18 +383,7 @@ const HomeFaq = () => {
 
               </div>
 
-              {/* Small metadata */}
-              <div className="mt-5 flex items-center justify-between border-t border-slate-200 pt-4">
-
-                <span className="text-[7px] tracking-[0.2em] text-slate-400">
-                  CODEGENZ SOLUTIONS
-                </span>
-
-                <span className="text-[7px] tracking-[0.2em] text-[#1769C2]">
-                  2026
-                </span>
-
-              </div>
+            
 
             </div>
 
@@ -493,7 +473,7 @@ const HomeFaq = () => {
                         <div className="mb-2 flex items-center gap-3">
 
                           <span
-                            className={`text-[7px] font-medium tracking-[0.2em] transition-colors duration-300 ${
+                            className={`text-[9px] font-medium tracking-[0.2em] transition-colors duration-300 ${
                               isOpen
                                 ? "text-[#1769C2]"
                                 : "text-slate-300"
@@ -583,20 +563,7 @@ const HomeFaq = () => {
 
             </div>
 
-            {/* FAQ footer */}
-            <div className="mt-7 flex items-center justify-between">
-
-              <span className="text-[7px] tracking-[0.22em] text-slate-300">
-                01 — 06
-              </span>
-
-              <span className="h-px flex-1 bg-slate-200 mx-5" />
-
-              <span className="text-[7px] tracking-[0.2em] text-slate-400">
-                QUESTIONS & ANSWERS
-              </span>
-
-            </div>
+           
 
           </motion.div>
 
@@ -621,18 +588,18 @@ const HomeFaq = () => {
           viewport={{
             once: true,
           }}
-          className="mt-16 border-t border-slate-200 pt-7 sm:mt-20"
+          className="mt-12  pt-5 sm:mt-10"
         >
 
           <div className="flex flex-col justify-between gap-5 sm:flex-row sm:items-center">
 
             <div>
 
-              <p className="text-[11px] font-medium text-[#071A2D] sm:text-xs">
+              <p className="text-[12px] font-medium text-[#071A2D] sm:text-xs">
                 Still have questions?
               </p>
 
-              <p className="mt-1 text-[10px] text-slate-400 sm:text-[11px]">
+              <p className="mt-1 text-[12px] text-slate-400 sm:text-[13px]">
                 Explore the complete FAQ section for more information.
               </p>
 
@@ -640,7 +607,7 @@ const HomeFaq = () => {
 
             <Link
               to="/faq"
-              className="group inline-flex items-center gap-3 text-[8px] font-semibold tracking-[0.2em] text-[#071A2D] transition-colors duration-300 hover:text-[#1769C2]"
+              className="group inline-flex items-center gap-3 text-[12px] font-semibold tracking-[0.2em] text-[#071A2D] transition-colors duration-300 hover:text-[#1769C2]"
             >
               EXPLORE ALL QUESTIONS
 

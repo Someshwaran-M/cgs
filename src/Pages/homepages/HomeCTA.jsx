@@ -35,7 +35,7 @@ const HomeCTA = () => {
   return (
     <section
       id="home-cta"
-      className="relative w-full overflow-hidden bg-[#04111D] px-5 py-20 text-white sm:px-8 sm:py-24 lg:px-10 lg:py-28"
+      className="relative w-full overflow-hidden bg-[#04111D] px-5 py-20 text-white sm:px-8 lg:px-10"
     >
       {/* =========================================================
           BACKGROUND
@@ -51,11 +51,7 @@ const HomeCTA = () => {
         {/* Subtle diagonal light */}
         <div className="absolute inset-0 bg-gradient-to-br from-[#1769C2]/[0.035] via-transparent to-[#1769C2]/[0.025]" />
 
-        {/* Side architectural lines */}
-        <div className="absolute left-[7%] top-0 h-full w-px bg-white/[0.035]" />
-
-        <div className="absolute right-[7%] top-0 h-full w-px bg-white/[0.025]" />
-
+        
       </div>
 
       {/* =========================================================
@@ -106,15 +102,13 @@ const HomeCTA = () => {
 
             </span>
 
-            <span className="text-[8px] font-semibold tracking-[0.3em] text-[#579FFF] sm:text-[9px]">
+            <span className="text-[10px] font-semibold tracking-[0.3em] text-[#579FFF] sm:text-[11px]">
               LET'S BUILD TOGETHER
             </span>
 
           </div>
 
-          <span className="hidden text-[8px] tracking-[0.25em] text-white/20 sm:block">
-            CODEGENZ / 2026
-          </span>
+        
 
         </motion.div>
 
@@ -151,7 +145,7 @@ const HomeCTA = () => {
 
               <span className="h-px w-8 bg-[#1769C2]" />
 
-              <span className="text-[8px] tracking-[0.25em] text-white/30">
+              <span className="text-[10px] tracking-[0.25em] text-white/30">
                 YOUR NEXT DIGITAL MOVE
               </span>
 
@@ -187,7 +181,7 @@ const HomeCTA = () => {
 
               <Link
                 to="/contact"
-                className="group inline-flex w-fit items-center justify-center gap-4 rounded-full bg-[#1769C2] px-6 py-3.5 text-[8px] font-semibold tracking-[0.2em] text-white shadow-[0_15px_40px_rgba(23,105,194,0.22)] transition-all duration-300 hover:-translate-y-1 hover:bg-[#2580DE]"
+                className="group inline-flex w-fit items-center justify-center gap-4 rounded-full bg-[#1769C2] px-6 py-3.5 text-[10px] font-semibold tracking-[0.2em] text-white shadow-[0_15px_40px_rgba(23,105,194,0.22)] transition-all duration-300 hover:-translate-y-1 hover:bg-[#2580DE]"
               >
                 START A PROJECT
 
@@ -199,7 +193,7 @@ const HomeCTA = () => {
 
               <Link
                 to="/projects"
-                className="group inline-flex w-fit items-center justify-center gap-3 rounded-full border border-white/10 px-6 py-3.5 text-[8px] font-semibold tracking-[0.2em] text-white/55 transition-all duration-300 hover:border-white/25 hover:text-white"
+                className="group inline-flex w-fit items-center justify-center gap-3 rounded-full border border-white/10 px-6 py-3.5 text-[10px] font-semibold tracking-[0.2em] text-white/55 transition-all duration-300 hover:border-white/25 hover:text-white"
               >
                 VIEW OUR WORK
 
@@ -244,7 +238,7 @@ const HomeCTA = () => {
 
               <div>
 
-                <span className="text-[8px] tracking-[0.25em] text-white/25">
+                <span className="text-[10px] tracking-[0.25em] text-white/25">
                   HOW WE BUILD
                 </span>
 
@@ -254,10 +248,7 @@ const HomeCTA = () => {
 
               </div>
 
-              <span className="text-[8px] tracking-[0.2em] text-[#579FFF]">
-                03 STAGES
-              </span>
-
+             
             </div>
 
             {/* =================================================
@@ -323,7 +314,7 @@ const HomeCTA = () => {
                             : "border-white/10 bg-[#071725] text-white/30 group-hover:border-[#579FFF]/40 group-hover:text-[#579FFF]"
                         }`}
                       >
-                        <span className="text-[7px] font-semibold tracking-[0.1em]">
+                        <span className="text-[9px] font-semibold tracking-[0.1em]">
                           {stage.number}
                         </span>
                       </motion.div>
@@ -341,15 +332,11 @@ const HomeCTA = () => {
                             {stage.title}
                           </h4>
 
-                          {index === 1 && (
-                            <span className="text-[6px] tracking-[0.18em] text-[#579FFF]">
-                              CORE
-                            </span>
-                          )}
+                          
 
                         </div>
 
-                        <p className="mt-2 text-[10px] text-white/25">
+                        <p className="mt-2 text-[12px] text-white/25">
                           {stage.description}
                         </p>
 
@@ -392,11 +379,11 @@ const HomeCTA = () => {
 
               <div>
 
-                <span className="text-[7px] tracking-[0.2em] text-white/20">
+                <span className="text-[9px] tracking-[0.2em] text-white/20">
                   APPROACH
                 </span>
 
-                <p className="mt-2 text-[10px] text-white/50">
+                <p className="mt-2 text-[12px] text-white/50">
                   Strategy first
                 </p>
 
@@ -404,11 +391,11 @@ const HomeCTA = () => {
 
               <div>
 
-                <span className="text-[7px] tracking-[0.2em] text-white/20">
+                <span className="text-[9px] tracking-[0.2em] text-white/20">
                   FOCUS
                 </span>
 
-                <p className="mt-2 text-[10px] text-white/50">
+                <p className="mt-2 text-[12px] text-white/50">
                   User experience
                 </p>
 
@@ -416,11 +403,11 @@ const HomeCTA = () => {
 
               <div className="hidden sm:block">
 
-                <span className="text-[7px] tracking-[0.2em] text-white/20">
+                <span className="text-[9px] tracking-[0.2em] text-white/20">
                   RESULT
                 </span>
 
-                <p className="mt-2 text-[10px] text-white/50">
+                <p className="mt-2 text-[12px] text-white/50">
                   Built to grow
                 </p>
 
@@ -465,7 +452,7 @@ const HomeCTA = () => {
           viewport={{
             once: true,
           }}
-          className="mt-14 border-t border-white/[0.08] pt-6 sm:mt-16 sm:pt-7"
+          className="mt-4  pt-6 sm:mt-10 sm:pt-3"
         >
 
           <div className="flex flex-col justify-between gap-5 sm:flex-row sm:items-center">
@@ -477,7 +464,7 @@ const HomeCTA = () => {
                 className="text-[#579FFF]"
               />
 
-              <p className="text-[11px] text-white/30 sm:text-[12px]">
+              <p className="text-[12px] text-white/30 sm:text-[14px]">
                 From concept to launch, let's create something meaningful.
               </p>
 
@@ -485,7 +472,7 @@ const HomeCTA = () => {
 
             <Link
               to="/contact"
-              className="group inline-flex items-center gap-3 text-[8px] font-semibold tracking-[0.22em] text-[#579FFF] transition-colors duration-300 hover:text-white"
+              className="group inline-flex items-center gap-3 text-[12px] font-semibold tracking-[0.22em] text-[#579FFF] transition-colors duration-300 hover:text-white"
             >
               TALK TO US
 

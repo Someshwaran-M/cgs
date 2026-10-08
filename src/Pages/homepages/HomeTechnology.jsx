@@ -189,9 +189,7 @@ const HomeTechnology = () => {
         font-['Roboto',sans-serif]
         text-white
         sm:px-8
-        sm:py-24
         lg:px-10
-        lg:py-28
         xl:px-16
       "
     >
@@ -280,11 +278,11 @@ const HomeTechnology = () => {
 
               <span className="h-px w-9 bg-[#5EA5DF]" />
 
-              <span className="text-[8px] font-semibold tracking-[0.3em] text-[#65A8DE]">
+              <span className="text-[10px] font-semibold tracking-[0.3em] text-[#65A8DE]">
                 TECHNOLOGY STACK
               </span>
 
-              <span className="text-[8px] tracking-[0.2em] text-white/25">
+              <span className="text-[9px] tracking-[0.2em] text-white/25">
                 / BUILT TO SCALE
               </span>
 
@@ -330,7 +328,7 @@ const HomeTechnology = () => {
             className="lg:pb-2"
           >
 
-            <p className="max-w-[480px] text-[11px] leading-7 text-white/45 sm:text-[12px] sm:leading-8">
+            <p className="max-w-[480px] text-[14px] leading-7 text-white/45 sm:text-[14px] sm:leading-8">
               We select technologies based on the problem we're solving,
               combining modern frontend, backend, database, mobile,
               deployment and digital technologies to create practical
@@ -348,7 +346,7 @@ const HomeTechnology = () => {
                 border-b
                 border-white/10
                 pb-2
-                text-[8px]
+                text-[10px]
                 font-semibold
                 tracking-[0.2em]
                 text-white
@@ -408,7 +406,7 @@ const HomeTechnology = () => {
           "
         >
 
-          <span className="text-[7px] font-semibold tracking-[0.25em] text-white/30">
+          <span className="text-[9px] font-semibold tracking-[0.25em] text-white/30">
             OUR TECHNOLOGY ECOSYSTEM
           </span>
 
@@ -493,11 +491,11 @@ const HomeTechnology = () => {
 
                   <div>
 
-                    <span className="text-[7px] font-semibold tracking-[0.2em] text-[#5EA5DF]">
+                    <span className="text-[9px] font-semibold tracking-[0.2em] text-[#5EA5DF]">
                       {item.number}
                     </span>
 
-                    <span className="ml-3 text-[7px] tracking-[0.2em] text-white/25">
+                    <span className="ml-3 text-[9px] tracking-[0.2em] text-white/25">
                       {item.label}
                     </span>
 
@@ -551,7 +549,7 @@ const HomeTechnology = () => {
                     {item.title}
                   </h3>
 
-                  <p className="mt-4 max-w-[420px] text-[9px] leading-6 text-white/35 sm:text-[10px] sm:leading-7">
+                  <p className="mt-4 max-w-[420px] text-[11px] leading-6 text-white/35 sm:text-[12px] sm:leading-7">
                     {item.description}
                   </p>
 
@@ -572,7 +570,7 @@ const HomeTechnology = () => {
                         bg-white/[0.025]
                         px-3
                         py-2
-                        text-[7px]
+                        text-[9px]
                         font-medium
                         tracking-[0.08em]
                         text-white/40
@@ -671,7 +669,7 @@ const HomeTechnology = () => {
 
                 <span className="h-px w-7 bg-[#5EA5DF]" />
 
-                <span className="text-[7px] font-semibold tracking-[0.25em] text-[#65A8DE]">
+                <span className="text-[9px] font-semibold tracking-[0.25em] text-[#65A8DE]">
                   OUR APPROACH
                 </span>
 
@@ -738,11 +736,11 @@ const HomeTechnology = () => {
                       className="text-[#65A8DE]"
                     />
 
-                    <h4 className="mt-5 text-[7px] font-semibold tracking-[0.2em] text-white">
+                    <h4 className="mt-5 text-[9px] font-semibold tracking-[0.2em] text-white">
                       {item.title}
                     </h4>
 
-                    <p className="mt-2 text-[8px] leading-5 text-white/35">
+                    <p className="mt-2 text-[10px] leading-5 text-white/35">
                       {item.text}
                     </p>
 
@@ -792,7 +790,7 @@ const HomeTechnology = () => {
               Have a technology challenge?
             </p>
 
-            <p className="mt-2 max-w-[550px] text-[10px] leading-6 text-white/35">
+            <p className="mt-2 max-w-[550px] text-[12px] leading-6 text-white/35">
               Tell us what you want to build and we'll help you choose
               the right technology direction for your project.
             </p>
@@ -811,7 +809,7 @@ const HomeTechnology = () => {
               bg-[#1769C2]
               px-7
               py-4
-              text-[8px]
+              text-[10px]
               font-semibold
               tracking-[0.2em]
               text-white
@@ -870,7 +868,7 @@ const HomeTechnology = () => {
 
                   <span
                     className="
-                      text-[8px]
+                      text-[10px]
                       font-semibold
                       tracking-[0.2em]
                       text-white/25

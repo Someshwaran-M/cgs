@@ -1,13 +1,8 @@
 import React from "react";
-
-import {
-  ArrowUpRight,
-  Code2,
-} from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 import HomeFaq from "./homepages/HomeFaq";
 import HomeTestimonials from "./homepages/HomeTestimonials";
-import Pricing from "./Menu/Pricing";
 import HomeAbout from "./homepages/HomeAbout";
 import AboutPreview from "./homepages/AboutPreview";
 import HomeServices from "./homepages/HomeServices";
@@ -15,6 +10,8 @@ import HomeTechnology from "./homepages/HomeTechnology";
 import HomeProcess from "./homepages/HomeProcess";
 import HomeProject from "./homepages/HomeProject";
 import HomeCTA from "./homepages/HomeCTA";
+
+import HeroVideo from "./HeroVideo";
 
 const Home = () => {
   return (
@@ -39,7 +36,6 @@ const Home = () => {
           xl:px-16
         "
       >
-
         {/* =====================================================
             HOME BACKGROUND IMAGE
         ====================================================== */}
@@ -127,17 +123,14 @@ const Home = () => {
             xl:gap-24
           "
         >
-
           {/* ===================================================
               LEFT CONTENT
           ==================================================== */}
 
           <div className="max-w-[760px]">
-
             {/* Eyebrow */}
 
             <div className="mb-7 flex items-center gap-3">
-
               <span className="h-px w-10 bg-[#63A9FF]" />
 
               <span
@@ -150,9 +143,7 @@ const Home = () => {
               >
                 CODEGENZ SOLUTIONS
               </span>
-
             </div>
-
 
             {/* Main Heading */}
 
@@ -166,19 +157,16 @@ const Home = () => {
               "
             >
               We build
-
               <br />
 
               <span className="text-[#63A9FF]">
                 digital
               </span>{" "}
               experiences
-
               <br />
 
               that matter.
             </h1>
-
 
             {/* Description */}
 
@@ -197,10 +185,7 @@ const Home = () => {
               businesses grow, connect and move forward.
             </p>
 
-
-            {/* =================================================
-                BUTTONS
-            ================================================== */}
+            {/* Buttons */}
 
             <div
               className="
@@ -213,11 +198,10 @@ const Home = () => {
                 sm:items-center
               "
             >
-
-              {/* View Work */}
+              {/* View Services */}
 
               <a
-                href="#projects"
+                href="/services"
                 className="
                   group
                   flex
@@ -239,8 +223,7 @@ const Home = () => {
                   hover:shadow-[0_20px_45px_rgba(23,105,194,0.28)]
                 "
               >
-
-                VIEW OUR WORK
+                VIEW OUR SERVICES
 
                 <span
                   className="
@@ -258,14 +241,12 @@ const Home = () => {
                 >
                   <ArrowUpRight size={14} />
                 </span>
-
               </a>
-
 
               {/* Start Project */}
 
               <a
-                href="#contact"
+                href="/get-a-quote"
                 className="
                   flex
                   h-[54px]
@@ -292,13 +273,9 @@ const Home = () => {
               >
                 START A PROJECT
               </a>
-
             </div>
 
-
-            {/* =================================================
-                SERVICE LINE
-            ================================================== */}
+            {/* Service Line */}
 
             <div
               className="
@@ -314,10 +291,7 @@ const Home = () => {
                 text-white/60
               "
             >
-
-              <span>
-                WEB DEVELOPMENT
-              </span>
+              <span>WEB DEVELOPMENT</span>
 
               <span
                 className="
@@ -328,9 +302,7 @@ const Home = () => {
                 "
               />
 
-              <span>
-                WEB APPLICATIONS
-              </span>
+              <span>WEB APPLICATIONS</span>
 
               <span
                 className="
@@ -341,200 +313,16 @@ const Home = () => {
                 "
               />
 
-              <span>
-                DIGITAL SOLUTIONS
-              </span>
-
+              <span>DIGITAL SOLUTIONS</span>
             </div>
-
           </div>
-
 
           {/* ===================================================
               RIGHT VIDEO
           ==================================================== */}
 
-          <div
-            className="
-              relative
-              w-full
-            "
-          >
-
-            {/* Video Glow */}
-
-            <div
-              className="
-                pointer-events-none
-                absolute
-                -inset-6
-                rounded-[38px]
-                bg-[#1769C2]/[0.12]
-                blur-3xl
-              "
-            />
-
-
-            {/* Video Frame */}
-
-            <div
-              className="
-                relative
-                overflow-hidden
-                rounded-[30px]
-                border
-                border-white/20
-                bg-[#071C2E]/80
-                p-2
-                shadow-[0_30px_90px_rgba(0,0,0,0.30)]
-                backdrop-blur-sm
-              "
-            >
-
-              {/* Video */}
-
-              <div
-                className="
-                  relative
-                  aspect-[16/11]
-                  overflow-hidden
-                  rounded-[24px]
-                  bg-[#071C2E]
-                "
-              >
-
-                <video
-                  className="
-                    absolute
-                    inset-0
-                    h-full
-                    w-full
-                    object-cover
-                  "
-                  src="/background.mp4"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  preload="auto"
-                />
-
-
-                {/* Video Overlay */}
-
-                <div
-                  className="
-                    pointer-events-none
-                    absolute
-                    inset-0
-                    bg-gradient-to-tr
-                    from-[#071C2E]/30
-                    via-transparent
-                    to-[#1769C2]/10
-                  "
-                />
-
-
-                {/* Bottom Gradient */}
-
-                <div
-                  className="
-                    pointer-events-none
-                    absolute
-                    inset-x-0
-                    bottom-0
-                    h-32
-                    bg-gradient-to-t
-                    from-black/30
-                    to-transparent
-                  "
-                />
-
-
-                {/* Digital Innovation Label */}
-
-                <div
-                  className="
-                    absolute
-                    bottom-5
-                    left-5
-                    rounded-full
-                    border
-                    border-white/20
-                    bg-black/30
-                    px-4
-                    py-2
-                    backdrop-blur-md
-                  "
-                >
-
-                  <span
-                    className="
-                      text-[8px]
-                      font-semibold
-                      tracking-[0.25em]
-                      text-white
-                    "
-                  >
-                    DIGITAL INNOVATION
-                  </span>
-
-                </div>
-
-
-                {/* Live Indicator */}
-
-                <div
-                  className="
-                    absolute
-                    right-5
-                    top-5
-                    flex
-                    items-center
-                    gap-2
-                    rounded-full
-                    border
-                    border-white/20
-                    bg-black/30
-                    px-3
-                    py-2
-                    backdrop-blur-md
-                  "
-                >
-
-                  <span
-                    className="
-                      h-2
-                      w-2
-                      rounded-full
-                      bg-[#7CFF4F]
-                    "
-                  />
-
-                  <span
-                    className="
-                      text-[8px]
-                      font-semibold
-                      tracking-[0.18em]
-                      text-white
-                    "
-                  >
-                    LIVE
-                  </span>
-
-                </div>
-
-              </div>
-
-            </div>
-
-
-           
-
-          </div>
-
+          <HeroVideo />
         </div>
-
 
         {/* =====================================================
             SCROLL INDICATOR
@@ -553,7 +341,6 @@ const Home = () => {
             md:flex
           "
         >
-
           <span
             className="
               text-[7px]
@@ -572,92 +359,9 @@ const Home = () => {
               bg-[#63A9FF]/50
             "
           />
-
         </div>
-
       </section>
-
-
-      {/* =========================================================
-          INTRO STRIP
-      ========================================================== */}
-
-      <section
-        className="
-          border-y
-          border-[#E9EFF4]
-          bg-[#F8FAFC]
-          px-6
-          py-10
-          sm:px-8
-          xl:px-16
-        "
-      >
-
-        <div
-          className="
-            mx-auto
-            flex
-            max-w-[1680px]
-            flex-col
-            items-start
-            justify-between
-            gap-6
-            lg:flex-row
-            lg:items-center
-          "
-        >
-
-          <p
-            className="
-              max-w-[700px]
-              text-[13px]
-              font-medium
-              leading-7
-              text-[#52697D]
-            "
-          >
-            From concept to launch, we combine creativity,
-            technology and strategy to create digital solutions
-            that are practical, scalable and built around your goals.
-          </p>
-
-
-          <a
-            href="#services"
-            className="
-              group
-              flex
-              items-center
-              gap-3
-              text-[9px]
-              font-bold
-              tracking-[0.2em]
-              text-[#1769C2]
-              transition-colors
-              duration-300
-              hover:text-[#0E579F]
-            "
-          >
-
-            EXPLORE SERVICES
-
-            <ArrowUpRight
-              size={15}
-              className="
-                transition-transform
-                duration-300
-                group-hover:translate-x-1
-                group-hover:-translate-y-1
-              "
-            />
-
-          </a>
-
-        </div>
-
-      </section>
-
+     
 
       {/* =========================================================
           ABOUT PREVIEW
@@ -665,13 +369,11 @@ const Home = () => {
 
       <AboutPreview />
 
-
       {/* =========================================================
           WHY CODEGENZ
       ========================================================== */}
 
       <HomeAbout />
-
 
       {/* =========================================================
           SERVICES
@@ -679,13 +381,11 @@ const Home = () => {
 
       <HomeServices />
 
-
       {/* =========================================================
           PROCESS
       ========================================================== */}
 
       <HomeProcess />
-
 
       {/* =========================================================
           TECHNOLOGY
@@ -693,13 +393,11 @@ const Home = () => {
 
       <HomeTechnology />
 
-
       {/* =========================================================
           PROJECTS
       ========================================================== */}
 
       <HomeProject />
-
 
       {/* =========================================================
           TESTIMONIALS
@@ -707,20 +405,17 @@ const Home = () => {
 
       <HomeTestimonials />
 
-
       {/* =========================================================
           FAQ
       ========================================================== */}
 
       <HomeFaq />
 
-
       {/* =========================================================
           FINAL CTA
       ========================================================== */}
 
       <HomeCTA />
-
     </main>
   );
 };

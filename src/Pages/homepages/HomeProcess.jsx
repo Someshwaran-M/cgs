@@ -52,7 +52,7 @@ const HomeProcess = () => {
   return (
     <section
       id="home-process"
-      className="relative w-full overflow-hidden bg-white px-6 py-24 text-[#102A43] sm:px-8 lg:px-12 xl:px-16 xl:py-32"
+      className="relative w-full overflow-hidden bg-white px-6 py-20 text-[#102A43] sm:px-8 lg:px-12 xl:px-16"
     >
       {/* =========================================================
           BACKGROUND
@@ -92,7 +92,7 @@ const HomeProcess = () => {
             <div className="mb-6 flex items-center gap-3">
               <span className="h-px w-10 bg-[#1769C2]" />
 
-              <span className="text-[9px] font-semibold tracking-[0.3em] text-[#1769C2]">
+              <span className="text-[10px] font-semibold tracking-[0.3em] text-[#1769C2]">
                 OUR PROCESS
               </span>
             </div>
@@ -167,7 +167,7 @@ const HomeProcess = () => {
                     {/* Number Circle */}
 
                     <div className="relative z-10 flex h-[43px] w-[43px] shrink-0 items-center justify-center rounded-full border border-[#DCE5ED] bg-white shadow-[0_8px_25px_rgba(15,65,105,0.06)]">
-                      <span className="text-[9px] font-bold tracking-[0.1em] text-[#1769C2]">
+                      <span className="text-[11px] font-bold tracking-[0.1em] text-[#1769C2]">
                         {step.number}
                       </span>
                     </div>
@@ -185,7 +185,7 @@ const HomeProcess = () => {
                         </h3>
                       </div>
 
-                      <p className="max-w-[550px] text-[12px] leading-7 text-[#718398]">
+                      <p className="max-w-[550px] text-[14px] leading-7 text-[#718398]">
                         {step.description}
                       </p>
                     </div>
@@ -209,7 +209,7 @@ const HomeProcess = () => {
                     {/* Number Label */}
 
                     <div className="mt-6 text-center">
-                      <span className="text-[8px] font-semibold tracking-[0.2em] text-[#8A9AAC]">
+                      <span className="text-[10px] font-semibold tracking-[0.2em] text-[#8A9AAC]">
                         STEP {step.number}
                       </span>
                     </div>
@@ -222,7 +222,7 @@ const HomeProcess = () => {
 
                     {/* Description */}
 
-                    <p className="mx-auto mt-5 max-w-[220px] text-center text-[11px] leading-6 text-[#718398]">
+                    <p className="mx-auto mt-5 max-w-[220px] text-center text-[13px] leading-6 text-[#718398]">
                       {step.description}
                     </p>
 
@@ -254,7 +254,7 @@ const HomeProcess = () => {
         >
           <div className="flex flex-col justify-between gap-6 sm:flex-row sm:items-center">
             <div>
-              <p className="text-[9px] font-semibold tracking-[0.25em] text-[#1769C2]">
+              <p className="text-[14px] font-semibold tracking-[0.25em] text-[#1769C2]">
                 FROM IDEA TO LAUNCH
               </p>
 
