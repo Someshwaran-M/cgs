@@ -30,7 +30,7 @@ const Footer = () => {
     "Hello CodeGenZ Solutions, I would like to discuss a project with you."
   );
 
-  const whatsappUrl = `https://wa.me/919384712673?text=${whatsappMessage}`;
+  const whatsappUrl = `https://wa.me/919344054403?text=${whatsappMessage}`;
 
   // ============================================
   // COMPANY LINKS
@@ -130,8 +130,8 @@ const Footer = () => {
     {
       icon: Phone,
       label: "PHONE",
-      value: "+91 93847 12673",
-      href: "tel:+919384712673",
+      value: "+91 93 4405 4403",
+      href: "tel:+919344054403",
     },
     {
   icon: MapPin,

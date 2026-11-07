@@ -522,7 +522,7 @@ const AboutPreview = () => {
 
                 <div className="mt-5 flex items-end gap-2">
                   <span className="text-3xl font-semibold tracking-[-0.04em] text-[#071A2D] sm:text-4xl">
-                    <AnimatedNumber target={5} />
+                    <AnimatedNumber target={4.8} />
                     <span className="ml-1 text-[#1769C2]">★</span>
                   </span>
                 </div>

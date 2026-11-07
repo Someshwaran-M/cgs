@@ -33,9 +33,9 @@ const Contact = () => {
       number: "02",
       icon: Phone,
       label: "Phone",
-      title: "+91 93847 12673",
+      title: "+91 93 4405 4403",
       description: "Talk directly with us about your requirement.",
-      href: "tel:+919384712673",
+      href: "tel:+919344054403",
       action: "Call Now",
     },
     {
@@ -107,7 +107,7 @@ const Contact = () => {
     "https://www.google.com/maps/place/Paramathi+Velur,+Tamil+Nadu";
 
   const whatsappUrl =
-    "https://wa.me/919384712673?text=Hello%20CodeGenZ%20Solutions%2C%20I%20would%20like%20to%20discuss%20a%20project.";
+    "https://wa.me/919344054403?text=Hello%20CodeGenZ%20Solutions%2C%20I%20would%20like%20to%20discuss%20a%20project.";
 
   return (
     <main className="min-h-screen overflow-hidden bg-white text-[#061525]">

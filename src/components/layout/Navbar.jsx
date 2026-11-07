@@ -97,7 +97,7 @@ const Navbar = () => {
   const whatsappMessage =
     "Hello CodeGenZ Solutions, I would like to discuss a project with you.";
 
-  const whatsappUrl = `https://wa.me/919384712673?text=${encodeURIComponent(
+  const whatsappUrl = `https://wa.me/919344054403?text=${encodeURIComponent(
     whatsappMessage
   )}`;
 
@@ -367,7 +367,7 @@ const Navbar = () => {
               </a>
 
               <a
-                href="tel:+919384712673"
+                href="tel:+919344054403"
                 className="
                   mt-1
                   font-['Roboto',sans-serif]
@@ -381,7 +381,7 @@ const Navbar = () => {
                   md:text-[9px]
                 "
               >
-                +91 93847 12673
+                +91 93 4405 4403
               </a>
             </div>
 
@@ -1122,7 +1122,7 @@ const Navbar = () => {
             </a>
 
             <a
-              href="tel:+919384712673"
+              href="tel:+919344054403"
               className="
                 mt-1
                 flex
@@ -1143,7 +1143,7 @@ const Navbar = () => {
                 className="shrink-0 text-[#5EA6FF]/70"
               />
 
-              +91 93847 12673
+              +91 93 4405 4403
             </a>
           </div>
         </div>
