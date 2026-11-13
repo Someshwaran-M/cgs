@@ -353,14 +353,14 @@ const Navbar = () => {
                 href="mailto:info@codegenzsolutions.com"
                 className="
                   font-['Roboto',sans-serif]
-                  text-[9px]
+                  text-[12px]
                   font-medium
                   tracking-[0.03em]
                   text-[#203B58]
                   transition-colors
                   duration-300
                   hover:text-[#1769C2]
-                  md:text-[10px]
+                  md:text-[12px]
                 "
               >
                 info@codegenzsolutions.com
@@ -371,14 +371,14 @@ const Navbar = () => {
                 className="
                   mt-1
                   font-['Roboto',sans-serif]
-                  text-[8px]
+                  text-[12px]
                   font-medium
                   tracking-[0.16em]
                   text-[#8A9AAC]
                   transition-colors
                   duration-300
                   hover:text-[#1769C2]
-                  md:text-[9px]
+                  md:text-[12px]
                 "
               >
                 +91 93 4405 4403
@@ -425,14 +425,14 @@ const Navbar = () => {
                 <span
                   className="
                     font-['Roboto',sans-serif]
-                    text-[7px]
+                    text-[10px]
                     font-bold
                     tracking-[0.15em]
                     text-[#1769C2]
                     transition-colors
                     duration-300
                     group-hover/menu:text-white
-                    sm:text-[8px]
+                    sm:text-[10px]
                   "
                 >
                   CGS
@@ -684,14 +684,14 @@ const Navbar = () => {
               <p
                 className="
                   font-['Roboto',sans-serif]
-                  text-[7px]
+                  text-[10px]
                   font-semibold
                   tracking-[0.35em]
                   text-[#63A9FF]
                   transition-colors
                   duration-300
                   group-hover/sidebar-logo:text-white
-                  sm:text-[8px]
+                  sm:text-[10px]
                 "
               >
                 CODEGENZ
@@ -790,11 +790,11 @@ const Navbar = () => {
             <span
               className="
                 font-['Roboto',sans-serif]
-                text-[7px]
+                text-[10px]
                 font-semibold
                 tracking-[0.3em]
                 text-white/30
-                sm:text-[8px]
+                sm:text-[10px]
               "
             >
               EXPLORE
@@ -803,10 +803,10 @@ const Navbar = () => {
             <span
               className="
                 font-['Roboto',sans-serif]
-                text-[7px]
+                text-[10px]
                 tracking-[0.18em]
                 text-white/20
-                sm:text-[8px]
+                sm:text-[10px]
               "
             >
               08
@@ -845,13 +845,13 @@ const Navbar = () => {
                     className="
                       w-[20px]
                       font-['Roboto',sans-serif]
-                      text-[7px]
+                      text-[10px]
                       tracking-[0.1em]
                       text-white/20
                       transition-colors
                       duration-300
                       group-hover/item:text-[#5EA6FF]
-                      sm:text-[8px]
+                      sm:text-[10px]
                     "
                   >
                     {String(index + 1).padStart(2, "0")}
@@ -1013,11 +1013,11 @@ const Navbar = () => {
               <p
                 className="
                   font-['Roboto',sans-serif]
-                  text-[7px]
+                  text-[10px]
                   font-semibold
                   tracking-[0.28em]
                   text-white/25
-                  sm:text-[8px]
+                  sm:text-[10px]
                 "
               >
                 FOLLOW US
@@ -1036,8 +1036,8 @@ const Navbar = () => {
                       aria-label={`Follow CodeGenZ on ${social.name}`}
                       className="
                         flex
-                        h-[30px]
-                        w-[30px]
+                        h-[43px]
+                        w-[43px]
                         items-center
                         justify-center
                         rounded-full
@@ -1049,8 +1049,8 @@ const Navbar = () => {
                         hover:border-[#5EA6FF]
                         hover:bg-[#1769C2]
                         hover:text-white
-                        sm:h-[31px]
-                        sm:w-[31px]
+                        sm:h-[44px]
+                        sm:w-[44px]
                       "
                     >
                       <Icon
@@ -1086,7 +1086,7 @@ const Navbar = () => {
               className="
                 mb-1.5
                 font-['Roboto',sans-serif]
-                text-[7px]
+                text-[10px]
                 font-semibold
                 tracking-[0.28em]
                 text-white/25
@@ -1102,12 +1102,12 @@ const Navbar = () => {
                 items-center
                 gap-2
                 font-['Roboto',sans-serif]
-                text-[8px]
+                text-[10px]
                 text-white/65
                 transition-colors
                 duration-300
                 hover:text-[#63A9FF]
-                sm:text-[9px]
+                sm:text-[12px]
               "
             >
               <Mail
@@ -1129,7 +1129,7 @@ const Navbar = () => {
                 items-center
                 gap-2
                 font-['Roboto',sans-serif]
-                text-[8px]
+                text-[10px]
                 tracking-[0.08em]
                 text-white/35
                 transition-colors
